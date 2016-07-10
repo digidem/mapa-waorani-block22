@@ -118,7 +118,7 @@ map.on('mousemove', function(e) {
 });
 
 function changeLanguage (language) {
-    waoLabelLayers.forEach(layerId => {
+    waoLabelLayers.forEach(function (layerId) {
         map.setLayoutProperty(layerId, 'text-field', `{name${language === 'espanol' ? ':es' : ''}}`)
     })
 }
