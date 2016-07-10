@@ -83,6 +83,21 @@ var interactiveLayers = ['actividad', 'comunidad', 'otro', 'lianas', 'palmeras',
 
 var waoLabelLayers = interactiveLayers.concat(['water-label', 'water-label-sm', 'caminos-de-viajar-label', 'caminos-de-caza-label', 'lago-label', 'areas-label'])
 
+map.on('load', function () {
+    map.addSource('hillshade', {
+        type: 'raster',
+        tiles: ['http://s3.amazonaws.com/dd-tiles/hillshade_wao/{z}/{x}/{y}.jpg'],
+        tileSize: 256
+    });
+    map.addLayer({
+        "id": "hillshade",
+        "type": "raster",
+        "source": "hillshade",
+        "minzoom": 5,
+        "maxzoom": 15
+    }, 'background');
+});
+
 map.on('mousemove', function(e) {
     var features = map.queryRenderedFeatures(e.point, { layers: interactiveLayers });
     // Change the cursor style as a UI indicator.
