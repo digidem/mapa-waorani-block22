@@ -8,6 +8,7 @@
     <script src='https://wzrd.in/standalone/string-template@latest'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.css' rel='stylesheet' />
     <link href='simbolos_wao.css' rel='stylesheet' />
+    <link href='styles.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -22,6 +23,16 @@
     }
 </style>
 <div id='map'></div>
+
+<div class="btn-group">
+  <label class="active">
+    <input type="radio" name="options" id="waorani" autocomplete="off" checked> Waorani
+  </label>
+  <label class="">
+    <input type="radio" name="options" id="espanol" autocomplete="off"> Español
+  </label>
+</div>
+
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ21hY2xlbm5hbiIsImEiOiJSaWVtd2lRIn0.ASYMZE2HhwkAw4Vt7SavEg';
 
@@ -38,6 +49,21 @@ var popup = new mapboxgl.Popup({
     closeOnClick: false
 });
 
+var btns = document.querySelectorAll('.btn-group input')
+
+for (var i = 0; i < btns.length; ++i) {
+    btns[i].addEventListener('change', function () {
+        for (var i = 0; i < btns.length; ++i) {
+            if (btns[i].checked) {
+                btns[i].parentNode.classList.add('active')
+                changeLanguage(btns[i].id)
+            } else {
+                btns[i].parentNode.classList.remove('active')
+            }
+        }
+    })
+}
+
 var blacklistProps = ['id', 'version', 'source:gps', 'raiz_grande']
 
 function translate (key) {
@@ -53,8 +79,12 @@ function translate (key) {
         .replace(/^waterway$/, 'Agua')
 }
 
+var interactiveLayers = ['actividad', 'comunidad', 'otro', 'lianas', 'palmeras', 'ceibo', 'flora', 'loro', 'danta', 'fauna', 'saladero']
+
+var waoLabelLayers = interactiveLayers.concat(['water-label', 'water-label-sm', 'caminos-de-viajar-label', 'caminos-de-caza-label', 'lago-label', 'areas-label'])
+
 map.on('mousemove', function(e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['actividad', 'comunidad', 'otro', 'lianas', 'palmeras', 'ceibo', 'flora', 'loro', 'danta', 'fauna'] });
+    var features = map.queryRenderedFeatures(e.point, { layers: interactiveLayers });
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 
@@ -86,6 +116,12 @@ map.on('mousemove', function(e) {
         .setHTML(html)
         .addTo(map);
 });
+
+function changeLanguage (language) {
+    waoLabelLayers.forEach(layerId => {
+        map.setLayoutProperty(layerId, 'text-field', `{name${language === 'espanol' ? ':es' : ''}}`)
+    })
+}
 </script>
 
 </body>
