@@ -7,14 +7,14 @@
 
 .actividades-caza-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -500px -300px;
+    background-position: -100px -700px;
     width: 24px;
     height: 24px;
   }
 
 .actividades-caza-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -524px -300px;
+    background-position: -124px -700px;
     width: 24px;
     height: 24px;
   }
@@ -28,7 +28,7 @@
 
 .actividades-pesca-24px {
     background-image: url(simbolos_wao.png);
-    background-position: -548px -300px;
+    background-position: -148px -700px;
     width: 24px;
     height: 24px;
   }
@@ -42,14 +42,14 @@
 
 .agua-cascada-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -572px -300px;
+    background-position: -172px -700px;
     width: 24px;
     height: 24px;
   }
 
 .agua-cascada-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -596px -300px;
+    background-position: -196px -700px;
     width: 24px;
     height: 24px;
   }
@@ -63,14 +63,14 @@
 
 .agua-laguna-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -620px -300px;
+    background-position: -220px -700px;
     width: 24px;
     height: 24px;
   }
 
 .agua-laguna-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -644px -300px;
+    background-position: -244px -700px;
     width: 24px;
     height: 24px;
   }
@@ -84,14 +84,14 @@
 
 .agua-riogrande-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -668px -300px;
+    background-position: -268px -700px;
     width: 24px;
     height: 24px;
   }
 
 .agua-riogrande-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -692px -300px;
+    background-position: -292px -700px;
     width: 24px;
     height: 24px;
   }
@@ -105,14 +105,14 @@
 
 .comunidad-campamento-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -716px -300px;
+    background-position: -316px -700px;
     width: 24px;
     height: 24px;
   }
 
 .comunidad-campamento-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -740px -300px;
+    background-position: -340px -700px;
     width: 24px;
     height: 24px;
   }
@@ -126,14 +126,14 @@
 
 .comunidad-escuela-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -764px -300px;
+    background-position: -364px -700px;
     width: 24px;
     height: 24px;
   }
 
 .comunidad-escuela-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -0px -400px;
+    background-position: -388px -700px;
     width: 24px;
     height: 24px;
   }
@@ -147,14 +147,14 @@
 
 .comunidad-pista-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -24px -400px;
+    background-position: -412px -700px;
     width: 24px;
     height: 24px;
   }
 
 .comunidad-pista-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -48px -400px;
+    background-position: -436px -700px;
     width: 24px;
     height: 24px;
   }
@@ -168,441 +168,1015 @@
 
 .comunidad-saladero-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -72px -400px;
+    background-position: -460px -700px;
     width: 24px;
     height: 24px;
   }
 
 .comunidad-saladero-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -96px -400px;
+    background-position: -484px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-danta-100 {
+.fauna-aguilaarpia-100 {
     background-image: url(simbolos_wao.png);
     background-position: -100px -200px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-danta-24 {
+.fauna-aguilaarpia-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -120px -400px;
+    background-position: -508px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-danta-48 {
+.fauna-aguilaarpia-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -144px -400px;
+    background-position: -532px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-guacamayo-100 {
+.fauna-ardilla-100 {
     background-image: url(simbolos_wao.png);
     background-position: -200px -200px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-guacamayo-24 {
+.fauna-ardilla-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -168px -400px;
+    background-position: -556px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-guacamayo-48 {
+.fauna-ardilla-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -192px -400px;
+    background-position: -580px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-jaguar-100 {
+.fauna-armadillogomata-100 {
     background-image: url(simbolos_wao.png);
     background-position: -300px -200px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-jaguar-24 {
+.fauna-armadillogomata-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -216px -400px;
+    background-position: -604px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-jaguar-48 {
+.fauna-armadillogomata-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -240px -400px;
+    background-position: -628px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-monoarana-100 {
+.fauna-boa-100 {
     background-image: url(simbolos_wao.png);
     background-position: -0px -300px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-monoarana-24 {
+.fauna-boa-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -264px -400px;
+    background-position: -652px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-monoarana-48 {
+.fauna-boa-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -288px -400px;
+    background-position: -676px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-monoaullador-100 {
+.fauna-buho-100 {
     background-image: url(simbolos_wao.png);
     background-position: -100px -300px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-monoaullador-24 {
+.fauna-buho-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -312px -400px;
+    background-position: -700px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-monoaullador-48 {
+.fauna-buho-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -336px -400px;
+    background-position: -724px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-monolanudo-100 {
+.fauna-danta-100 {
     background-image: url(simbolos_wao.png);
     background-position: -200px -300px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-monolanudo-24 {
+.fauna-danta-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -360px -400px;
+    background-position: -748px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-monolanudo-48 {
+.fauna-danta-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -384px -400px;
+    background-position: -772px -700px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-paujil-100 {
+.fauna-guacamayo-100 {
     background-image: url(simbolos_wao.png);
     background-position: -300px -300px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-paujil-24 {
+.fauna-guacamayo-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -408px -400px;
+    background-position: -800px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-paujil-48 {
+.fauna-guacamayo-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -432px -400px;
+    background-position: -824px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-puma-100 {
+.fauna-guanta-100 {
     background-image: url(simbolos_wao.png);
     background-position: -400px -0px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-puma-24 {
+.fauna-guanta-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -456px -400px;
+    background-position: -848px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-puma-48 {
+.fauna-guanta-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -480px -400px;
+    background-position: -872px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-sahino-100 {
+.fauna-hoatzin-100 {
     background-image: url(simbolos_wao.png);
     background-position: -500px -0px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-sahino-24 {
+.fauna-hoatzin-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -504px -400px;
+    background-position: -896px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-sahino-48 {
+.fauna-hoatzin-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -528px -400px;
+    background-position: -920px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-tigrillo-100 {
+.fauna-jaguar-100 {
     background-image: url(simbolos_wao.png);
     background-position: -600px -0px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-tigrillo-24 {
+.fauna-jaguar-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -552px -400px;
+    background-position: -944px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-tigrillo-48 {
+.fauna-jaguar-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -576px -400px;
+    background-position: -968px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-venadorojotierrabaja-100 {
+.fauna-lagarto-100 {
     background-image: url(simbolos_wao.png);
     background-position: -700px -0px;
     width: 100px;
     height: 100px;
   }
 
-.fauna-venadorojotierrabaja-24 {
+.fauna-lagarto-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -600px -400px;
+    background-position: -992px -0px;
     width: 24px;
     height: 24px;
   }
 
-.fauna-venadorojotierrabaja-48 {
+.fauna-lagarto-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -624px -400px;
+    background-position: -1016px -0px;
     width: 24px;
     height: 24px;
   }
 
-.flora-arbolceibo-100 {
+.fauna-monoarana-100 {
     background-image: url(simbolos_wao.png);
     background-position: -400px -100px;
     width: 100px;
     height: 100px;
   }
 
-.flora-arbolceibo-24 {
+.fauna-monoarana-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -648px -400px;
+    background-position: -1040px -0px;
     width: 24px;
     height: 24px;
   }
 
-.flora-arbolceibo-48 {
+.fauna-monoarana-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -672px -400px;
+    background-position: -1064px -0px;
     width: 24px;
     height: 24px;
   }
 
-.flora-liana-100 {
+.fauna-monoaullador-100 {
     background-image: url(simbolos_wao.png);
     background-position: -500px -100px;
     width: 100px;
     height: 100px;
   }
 
-.flora-liana-24 {
+.fauna-monoaullador-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -696px -400px;
+    background-position: -1088px -0px;
     width: 24px;
     height: 24px;
   }
 
-.flora-liana-48 {
+.fauna-monoaullador-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -720px -400px;
+    background-position: -1112px -0px;
     width: 24px;
     height: 24px;
   }
 
-.flora-lianaotome-24 {
-    background-image: url(simbolos_wao.png);
-    background-position: -744px -400px;
-    width: 24px;
-    height: 24px;
-  }
-
-.flora-lianaotome-48 {
-    background-image: url(simbolos_wao.png);
-    background-position: -768px -400px;
-    width: 24px;
-    height: 24px;
-  }
-
-.flora-palmeracalipato-100 {
+.fauna-monolanudo-100 {
     background-image: url(simbolos_wao.png);
     background-position: -600px -100px;
     width: 100px;
     height: 100px;
   }
 
-.flora-palmeracalipato-24 {
+.fauna-monolanudo-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -0px -424px;
+    background-position: -1136px -0px;
     width: 24px;
     height: 24px;
   }
 
-.flora-palmeracalipato-48 {
+.fauna-monolanudo-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -24px -424px;
+    background-position: -1160px -0px;
     width: 24px;
     height: 24px;
   }
 
-.flora-petomo-100 {
+.fauna-osohormiguero-100 {
     background-image: url(simbolos_wao.png);
     background-position: -700px -100px;
     width: 100px;
     height: 100px;
   }
 
-.flora-petomo-24 {
+.fauna-osohormiguero-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -48px -424px;
+    background-position: -1184px -0px;
     width: 24px;
     height: 24px;
   }
 
-.flora-petomo-48 {
+.fauna-osohormiguero-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -72px -424px;
+    background-position: -1208px -0px;
     width: 24px;
     height: 24px;
   }
 
-.otros-camaratrampa-100 {
+.fauna-paujil-100 {
     background-image: url(simbolos_wao.png);
     background-position: -400px -200px;
     width: 100px;
     height: 100px;
   }
 
-.otros-camaratrampa24 {
+.fauna-paujil-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -96px -424px;
+    background-position: -1232px -0px;
     width: 24px;
     height: 24px;
   }
 
-.otros-camaratrampa48 {
+.fauna-paujil-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -120px -424px;
+    background-position: -1256px -0px;
     width: 24px;
     height: 24px;
   }
 
-.otros-lago-100 {
+.fauna-pericoaboke-100 {
     background-image: url(simbolos_wao.png);
     background-position: -500px -200px;
     width: 100px;
     height: 100px;
   }
 
-.otros-lago-24 {
+.fauna-pericoaboke-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -144px -424px;
+    background-position: -1280px -0px;
     width: 24px;
     height: 24px;
   }
 
-.otros-lago-48 {
+.fauna-pericoaboke-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -168px -424px;
+    background-position: -1304px -0px;
     width: 24px;
     height: 24px;
   }
 
-.otros-quebrada {
-    background-image: url(simbolos_wao.png);
-    background-position: -192px -424px;
-    width: 24px;
-    height: 24px;
-  }
-
-.otros-quebrada-100 {
+.fauna-pezelectrico-100 {
     background-image: url(simbolos_wao.png);
     background-position: -600px -200px;
     width: 100px;
     height: 100px;
   }
 
-.peces-bagre-100 {
+.fauna-pezelectrico-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1328px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-pezelectrico-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1352px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-puma-100 {
     background-image: url(simbolos_wao.png);
     background-position: -700px -200px;
     width: 100px;
     height: 100px;
   }
 
-.peces-bagre-24 {
+.fauna-puma-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -216px -424px;
+    background-position: -1376px -0px;
     width: 24px;
     height: 24px;
   }
 
-.peces-bagre-48 {
+.fauna-puma-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -240px -424px;
+    background-position: -1400px -0px;
     width: 24px;
     height: 24px;
   }
 
-.peces-charapa-100 {
+.fauna-rayaboyotai-100 {
     background-image: url(simbolos_wao.png);
     background-position: -400px -300px;
     width: 100px;
     height: 100px;
   }
 
+.fauna-rayaboyotai-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1424px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-rayaboyotai-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1448px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-sahino-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -500px -300px;
+    width: 100px;
+    height: 100px;
+  }
+
+.fauna-sahino-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1472px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-sahino-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1496px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-tigrillo-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -600px -300px;
+    width: 100px;
+    height: 100px;
+  }
+
+.fauna-tigrillo-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1520px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-tigrillo-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1544px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-trompetero-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -700px -300px;
+    width: 100px;
+    height: 100px;
+  }
+
+.fauna-trompetero-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1568px -0px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-trompetero-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -800px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-tucan-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -0px -400px;
+    width: 100px;
+    height: 100px;
+  }
+
+.fauna-tucan-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -824px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-tucan-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -848px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-venadorojotierrabaja-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -100px -400px;
+    width: 100px;
+    height: 100px;
+  }
+
+.fauna-venadorojotierrabaja-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -872px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.fauna-venadorojotierrabaja-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -896px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-arbolceibo-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -200px -400px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-arbolceibo-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -920px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-arbolceibo-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -944px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-bagamo-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -300px -400px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-bagamo-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -968px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-bagamo-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -992px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-chunchu-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -400px -400px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-chunchu-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1016px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-chunchu-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1040px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-chunta-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -500px -400px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-chunta-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1064px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-chunta-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1088px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-gadua-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -600px -400px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-gadua-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1112px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-gadua-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1136px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-liana-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -700px -400px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-liana-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1160px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-liana-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1184px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-lianaotome-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -0px -500px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-lianaotome-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1208px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-lianaotome-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1232px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-liwe-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -100px -500px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-liwe-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1256px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-liwe-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1280px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-ortiga-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -200px -500px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-ortiga-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1304px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-ortiga-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1328px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-palmeracalipato-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -300px -500px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-palmeracalipato-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1352px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-palmeracalipato-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1376px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-pankabokabo-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -400px -500px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-pankabokabo-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1400px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-pankabokabo-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1424px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-petomo-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -500px -500px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-petomo-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1448px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-petomo-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1472px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-tetemo-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -600px -500px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-tetemo-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1496px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-tetemo-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1520px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-uñadegato-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -700px -500px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-uñadegato-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1544px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-uñadegato-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1568px -100px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-wamomo-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -0px -600px;
+    width: 100px;
+    height: 100px;
+  }
+
+.flora-wamomo-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -800px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.flora-wamomo-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -824px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-camaratrampa-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -100px -600px;
+    width: 100px;
+    height: 100px;
+  }
+
+.otros-camaratrampa24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -848px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-camaratrampa48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -872px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-lago-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -200px -600px;
+    width: 100px;
+    height: 100px;
+  }
+
+.otros-lago-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -896px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-lago-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -920px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-mirador-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -300px -600px;
+    width: 100px;
+    height: 100px;
+  }
+
+.otros-mirador-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -944px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-mirador-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -968px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-pozo-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -400px -600px;
+    width: 100px;
+    height: 100px;
+  }
+
+.otros-pozo-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -992px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-pozo-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1016px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-quebrada {
+    background-image: url(simbolos_wao.png);
+    background-position: -1040px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-quebrada-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -500px -600px;
+    width: 100px;
+    height: 100px;
+  }
+
+.otros-zonadeguerra-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -600px -600px;
+    width: 100px;
+    height: 100px;
+  }
+
+.otros-zonadeguerra-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1064px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.otros-zonadeguerra-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1088px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.peces-bagre-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -700px -600px;
+    width: 100px;
+    height: 100px;
+  }
+
+.peces-bagre-24 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1112px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.peces-bagre-48 {
+    background-image: url(simbolos_wao.png);
+    background-position: -1136px -200px;
+    width: 24px;
+    height: 24px;
+  }
+
+.peces-charapa-100 {
+    background-image: url(simbolos_wao.png);
+    background-position: -0px -700px;
+    width: 100px;
+    height: 100px;
+  }
+
 .peces-charapa-24 {
     background-image: url(simbolos_wao.png);
-    background-position: -264px -424px;
+    background-position: -1160px -200px;
     width: 24px;
     height: 24px;
   }
 
 .peces-charapa-48 {
     background-image: url(simbolos_wao.png);
-    background-position: -288px -424px;
+    background-position: -1184px -200px;
     width: 24px;
     height: 24px;
   }
