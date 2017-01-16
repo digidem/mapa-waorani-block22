@@ -4,9 +4,9 @@
     <meta charset='utf-8' />
     <title></title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
     <script src='https://wzrd.in/standalone/string-template@latest'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
     <link href='simbolos_wao.css' rel='stylesheet' />
     <link href='styles.css' rel='stylesheet' />
     <style>
@@ -24,45 +24,24 @@
 </style>
 <div id='map'></div>
 
-<div class="btn-group">
-  <label class="active">
-    <input type="radio" name="options" id="waorani" autocomplete="off" checked> Waorani
-  </label>
-  <label class="">
-    <input type="radio" name="options" id="espanol" autocomplete="off"> Español
-  </label>
-</div>
-
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ21hY2xlbm5hbiIsImEiOiJSaWVtd2lRIn0.ASYMZE2HhwkAw4Vt7SavEg';
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/gmaclennan/ciq2krib6005acam1ktwdnhvw',
+    style: 'mapbox://styles/gmaclennan/cixyk63v900562sn0s12j5jnu?fresh=true',
     center: [-77.25, -1.24],
-    zoom: 14
+    zoom: 14,
+    minZoom: 14,
+    maxZoom: 14
 });
 
 // Create a popup, but don't add it to the map yet.
 var popup = new mapboxgl.Popup({
     closeButton: false,
-    closeOnClick: false
+    closeOnClick: false,
+    offset: 15
 });
-
-var btns = document.querySelectorAll('.btn-group input')
-
-for (var i = 0; i < btns.length; ++i) {
-    btns[i].addEventListener('change', function () {
-        for (var i = 0; i < btns.length; ++i) {
-            if (btns[i].checked) {
-                btns[i].parentNode.classList.add('active')
-                changeLanguage(btns[i].id)
-            } else {
-                btns[i].parentNode.classList.remove('active')
-            }
-        }
-    })
-}
 
 var blacklistProps = ['id', 'version', 'source:gps', 'raiz_grande']
 
@@ -81,10 +60,8 @@ function translate (key) {
 
 var interactiveLayers = ['actividad', 'comunidad', 'otro', 'lianas', 'palmeras', 'ceibo', 'flora', 'loro', 'danta', 'fauna', 'saladero']
 
-var waoLabelLayers = interactiveLayers.concat(['water-label', 'water-label-sm', 'caminos-de-viajar-label', 'caminos-de-caza-label', 'lago-label', 'areas-label'])
-
 map.on('mousemove', function(e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: interactiveLayers });
+    var features = map.queryRenderedFeatures(e.point);
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 
@@ -117,11 +94,6 @@ map.on('mousemove', function(e) {
         .addTo(map);
 });
 
-function changeLanguage (language) {
-    waoLabelLayers.forEach(function (layerId) {
-        map.setLayoutProperty(layerId, 'text-field', `{name${language === 'espanol' ? ':es' : ''}}`)
-    })
-}
 </script>
 
 </body>
