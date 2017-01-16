@@ -38,29 +38,30 @@ var map = new mapboxgl.Map({
 
 // Create a popup, but don't add it to the map yet.
 var popup = new mapboxgl.Popup({
-    closeButton: false,
+    closeButton: true,
     closeOnClick: false,
     offset: 15
 });
 
-var blacklistProps = ['id', 'version', 'source:gps', 'raiz_grande']
+var blacklistProps = ['id', 'version', 'source:gps', 'raiz_grande', 'icon']
 
 function translate (key) {
     return key
         .replace(/flora|fauna/, '¿Que?')
         .replace(/^name$/, 'Nombre (wao)')
         .replace(/^name$/, 'Nombre (wao)')
-        .replace(/^name:es$/, 'Nombre (esp)')
+        .replace(/^name(:|_)es$/, 'Nombre (esp)')
         .replace(/^especie_palmera$/, 'Especie')
         .replace(/^especie$/, 'Especie')
         .replace(/^stream$/, 'Quebrada')
         .replace(/^river$/, 'Río')
         .replace(/^waterway$/, 'Agua')
+        .replace(/^comunidad_nombre$/, 'Comunidad')
 }
 
 var interactiveLayers = ['actividad', 'comunidad', 'otro', 'lianas', 'palmeras', 'ceibo', 'flora', 'loro', 'danta', 'fauna', 'saladero']
 
-map.on('mousemove', function(e) {
+map.on('click', function(e) {
     var features = map.queryRenderedFeatures(e.point);
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
