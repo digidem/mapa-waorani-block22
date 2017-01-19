@@ -25,11 +25,12 @@
 <div id='map'></div>
 
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ21hY2xlbm5hbiIsImEiOiJSaWVtd2lRIn0.ASYMZE2HhwkAw4Vt7SavEg';
+var qs = querystring(window.location.search)
+mapboxgl.accessToken = qs.accessToken;
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/gmaclennan/cixyk63v900562sn0s12j5jnu?fresh=true',
+    style: 'mapbox://styles/gmaclennan/' + qs.style + '?fresh=true',
     center: [-77.25, -1.24],
     zoom: 14,
     minZoom: 14,
@@ -95,6 +96,19 @@ map.on('mousemove', function (e) {
     var features = map.queryRenderedFeatures(e.point);
     map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 });
+
+function querystring(query) {
+  var parser = /([^=?&]+)=?([^&]*)/g
+    , result = {}
+    , part;
+
+  for (;
+    part = parser.exec(query);
+    result[decodeURIComponent(part[1])] = decodeURIComponent(part[2])
+  );
+
+  return result;
+}
 
 </script>
 
