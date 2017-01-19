@@ -41,11 +41,9 @@ style += '?fresh=true'
 
 var map = new mapboxgl.Map({
     container: 'map',
-    center: [-77.25, -1.24],
-    zoom: 14,
-    minZoom: 14,
-    maxZoom: 14
     style: style,
+    hash: true,
+    scrollZoom: !!qs.zoom
 });
 
 var blacklistProps = ['id', 'version', 'source:gps', 'raiz_grande', 'icon', 'source_gps', 'comunidad']
