@@ -27,13 +27,25 @@
 var qs = querystring(window.location.search)
 mapboxgl.accessToken = qs.accessToken;
 
+var style = qs.style
+
+if (!/^(https?|mapbox):\/\//.exec(style)) {
+    if (style.split('/').length > 1) {
+        style = 'mapbox://styles/' + style
+    } else {
+        style = 'mapbox://styles/gmaclennan/' + style
+    }
+}
+
+style += '?fresh=true'
+
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/gmaclennan/' + qs.style + '?fresh=true',
     center: [-77.25, -1.24],
     zoom: 14,
     minZoom: 14,
     maxZoom: 14
+    style: style,
 });
 
 var blacklistProps = ['id', 'version', 'source:gps', 'raiz_grande', 'icon', 'source_gps', 'comunidad']
