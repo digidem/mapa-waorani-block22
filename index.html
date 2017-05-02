@@ -46,6 +46,11 @@ var map = new mapboxgl.Map({
     scrollZoom: !!qs.zoom
 });
 
+map.addControl(new mapboxgl.ScaleControl({
+    maxWidth: 150,
+    unit: 'metric'
+}));
+
 var blacklistProps = ['id', 'version', 'source:gps', 'raiz_grande', 'icon', 'source_gps', 'comunidad']
 
 function translate (key) {
@@ -76,7 +81,11 @@ map.on('click', function (e) {
     console.log(feature)
     var symbol = feature.properties.icon && feature.properties.icon + '-100px'
 
-    var html = `<div class="${symbol}" style="float: left;"></div><table>`
+    var html = `<div class="${symbol}" style="float: left;"></div><table>
+        <tr>
+            <td style="text-align: right;"><strong>Preset</strong></td>
+            <td>${feature.properties.preset || 'no preset defined'}</td>
+        </tr>`
 
     Object.keys(feature.properties)
         .filter(function (p) {
