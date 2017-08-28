@@ -25,6 +25,7 @@ map.addControl(new mapboxgl.ScaleControl({
 var blacklistProps = ['id', 'version', 'source:gps', 'raiz_grande', 'icon', 'source_gps', 'comunidad']
 
 function translate (key) {
+  if (typeof key !== 'string') return key
   var str = key
   .replace(/:/, '_')
   .replace(/flora|fauna/, '¿Que?')
