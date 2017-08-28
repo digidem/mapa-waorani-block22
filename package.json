@@ -1,0 +1,30 @@
+{
+  "name": "mapa-waorani",
+  "version": "1.0.0",
+  "description": "waorani map",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo src/index.js:bundle.js --live -d static -- -t [ sheetify/transform -u sheetify-nested]"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digidem/mapa-waorani.git"
+  },
+  "keywords": [
+    "map",
+    "waorani"
+  ],
+  "author": "Digital Democracy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digidem/mapa-waorani/issues"
+  },
+  "homepage": "https://github.com/digidem/mapa-waorani#readme",
+  "dependencies": {
+    "alianza-elements": "^2.1.0",
+    "mapbox-gl": "^0.39.1",
+    "sheetify": "^6.1.1",
+    "sheetify-nested": "^1.0.2"
+  }
+}
