@@ -80,6 +80,4 @@ Legend.prototype._getElement = function () {
     el.style.display = 'none'
   }
   return el
-
-
 }
