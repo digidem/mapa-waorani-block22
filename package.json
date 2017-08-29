@@ -1,0 +1,49 @@
+{
+  "name": "mapa-waorani",
+  "version": "1.0.0",
+  "description": "waorani map",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard",
+    "build": "mkdirp dist && npm run build:js && npm run build:static",
+    "build:js": "browserify src/index.js -t [ sheetify/transform -u sheetify-nested ] -t yo-yoify -t es2020 > dist/bundle.js",
+    "build:static": "copyup 'static/**/*' dist && copyfiles data.json dist",
+    "start": "budo src/index.js:bundle.js --live -d static -- -t [ sheetify/transform -u sheetify-nested]",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digidem/mapa-waorani.git"
+  },
+  "keywords": [
+    "map",
+    "waorani"
+  ],
+  "author": "Digital Democracy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digidem/mapa-waorani/issues"
+  },
+  "homepage": "https://github.com/digidem/mapa-waorani#readme",
+  "dependencies": {
+    "alianza-elements": "^2.1.0",
+    "mapbox-gl": "^0.39.1",
+    "sheetify": "^6.1.1",
+    "sheetify-nested": "^1.0.2",
+    "yo-yo": "^1.4.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3",
+    "browserify": "^14.4.0",
+    "budo": "^10.0.3",
+    "copyfiles": "^1.2.0",
+    "es2020": "^1.1.9",
+    "gh-pages": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "sheetify": "^6.1.1",
+    "sheetify-nested": "^1.0.2",
+    "uglify-js": "^3.0.24",
+    "uglifyify": "kristoferjoseph/uglifyify#5881f398ec8b6b5cee2f65e0ee19480bd2db92b1",
+    "yo-yoify": "^3.7.3"
+  }
+}
