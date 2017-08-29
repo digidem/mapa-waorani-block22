@@ -44,25 +44,26 @@ var communityPopup = elements.popup(map)
 var langSelector = elements.language(updateLang, lang)
 document.body.appendChild(langSelector)
 
-var backButton = elements.backButton(map, {stop: 8.5, lang: lang}, function () {
+var backButton = elements.backButton(map, {stop: 9, lang: lang}, function () {
   map.easeTo({center: defaultCenter, zoom: 8, duration: 2500})
 })
 
 // When a click event occurs near a place, open a popup at the location of
 // the feature, with description HTML from its properties.
 map.on('click', function (e) {
-  var areaClicked = map.queryRenderedFeatures(e.point, {layers: ["Territory fill"]})
-  var featureClicked = map.queryRenderedFeatures(e.point)
-  if (featureClicked) {
-    var feature = featureClicked[0]
-    console.log(feature)
+  var _areas = map.queryRenderedFeatures(e.point, {layers: ["Territory fill"]})
+  var _features = map.queryRenderedFeatures(e.point, {filter: ['!=', '$id', 1]})
+  var area = _areas && _areas[0]
+  var feature = _features && _features[0]
+  if (area && map.getZoom() <= 9) {
+    map.easeTo({center: defaultCenter, zoom: 11, duration: 2500})
+    communityPopup.remove()
+    return
+  }
+  if (feature) {
     var coords = feature.geometry.type === 'Point' ? feature.geometry.coordinates : map.unproject(e.point)
     communityPopup.update(communityDOM(feature, {lang: lang}))
     communityPopup.setLngLat(coords)
-    return
-  }
-  if (areaClicked)  {
-    map.easeTo({center: defaultCenter, zoom: 11, duration: 2500})
     return
   }
   communityPopup.remove()
