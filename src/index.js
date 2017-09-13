@@ -10,9 +10,9 @@ var communityDOM = require('./community_popup')
 css('mapbox-gl/dist/mapbox-gl.css')
 css('alianza-elements/style.css')
 
-var qs = querystring.parse(window.location.search.replace('?',''))
+var qs = querystring.parse(window.location.search.replace('?', ''))
 var lang = qs.lang || 'es'
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeWEiLCJhIjoiY2lzZDVhbjM2MDAwcTJ1cGY4YTN6YmY4cSJ9.NxK9jMmYZsA32ol_IZGs5g';
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeWEiLCJhIjoiY2lzZDVhbjM2MDAwcTJ1cGY4YTN6YmY4cSJ9.NxK9jMmYZsA32ol_IZGs5g'
 var defaultCenter = [-77.2593, -1.2322]
 
 var map = window.map = new mapboxgl.Map({
@@ -51,7 +51,7 @@ var backButton = elements.backButton(map, {stop: 9, lang: lang}, function () {
 // When a click event occurs near a place, open a popup at the location of
 // the feature, with description HTML from its properties.
 map.on('click', function (e) {
-  var _areas = map.queryRenderedFeatures(e.point, {layers: ["Territory fill"]})
+  var _areas = map.queryRenderedFeatures(e.point, {layers: ['Territory fill']})
   var _features = map.queryRenderedFeatures(e.point, {filter: ['!=', '$id', 1]})
   var area = _areas && _areas[0]
   var feature = _features && _features[0]
@@ -72,9 +72,9 @@ map.on('click', function (e) {
 // Use the same approach as above to indicate that the symbols are clickable
 // by changing the cursor style to 'pointer'.
 map.on('mousemove', function (e) {
-  var features = map.queryRenderedFeatures(e.point);
-  map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-});
+  var features = map.queryRenderedFeatures(e.point)
+  map.getCanvas().style.cursor = (features.length) ? 'pointer' : ''
+})
 
 function updateLang (_) {
   lang = _
