@@ -31,7 +31,8 @@
             }
           ],
           "Nombre Ingles": "porcupine",
-          "Nombre Wao": "dayamo"
+          "Nombre Wao": "dayamo",
+          "Descripción Español": "Muy peligroso, con un susto se puede botar sus espinas desde lejos al depredador."
         },
         "geometry": null
       },
@@ -225,7 +226,7 @@
             }
           ],
           "Nombre Ingles": "animal path",
-          "Descripción Español": "Las huellas de diferentes animales.",
+          "Descripción Español": "Los senderos de diferentes animales.",
           "Nombre Wao": "öïngairi taaro"
         },
         "geometry": null
@@ -485,7 +486,7 @@
             }
           ],
           "Nombre Ingles": "peccary path",
-          "Descripción Español": "Las huellas de pecarí de collar.",
+          "Descripción Español": "Sendero de  pecarí de collar.",
           "Nombre Wao": "ämö önowä"
         },
         "geometry": null
@@ -519,7 +520,8 @@
             }
           ],
           "Nombre Ingles": "animal salt lick",
-          "Nombre Wao": "önkamone"
+          "Nombre Wao": "önkamone",
+          "Descripción Español": "Es un lugar donde cada animal tiene su comedero o bebedero."
         },
         "geometry": null
       },
@@ -552,7 +554,7 @@
             }
           ],
           "Nombre Ingles": "peccary mud-bath",
-          "Descripción Español": "Es muy importante el charco de lodo para sahino y armadillo, al ensuciar el lodo se sienten bien los animales.",
+          "Descripción Español": "Es muy importante el charco de lodo para sahino y armadillo, al ensuciar el lodo se sienten bien los animales. Elimina mal olor para que no devore jaguar.",
           "Nombre Wao": "amo naime"
         },
         "geometry": null
@@ -657,7 +659,7 @@
             }
           ],
           "Nombre Ingles": "boa",
-          "Descripción Español": "Es una boa muy peligroso, ademas le atrae muchos pescados.",
+          "Descripción Español": "Muy peligroso, ademas le atrae a muchos pescados. Puede atraer con su magia para atrapar a los animales o a las personas.",
           "Nombre Wao": "obe"
         },
         "geometry": null
@@ -691,7 +693,7 @@
             }
           ],
           "Nombre Ingles": "river turtle ",
-          "Descripción Español": "Viven en el rio y en las lagunas.",
+          "Descripción Español": "Viven en el rio y en las lagunas. Y en los temporadas de verano (agosto) ponen huevos en la playa para su reproducción.",
           "Nombre Wao": "pake"
         },
         "geometry": null
@@ -768,7 +770,8 @@
           "Preset": "camino/huangana",
           "Tipo de cosa": "Animales",
           "Nombre Español": "camino de huangana",
-          "Nombre Ingles": "peccary path"
+          "Nombre Ingles": "peccary path",
+          "Descripción Español": "Sendero de pecarí de labio blanco."
         },
         "geometry": null
       },
@@ -1122,7 +1125,8 @@
             }
           ],
           "Nombre Ingles": "anteater",
-          "Nombre Wao": "önke"
+          "Nombre Wao": "önke",
+          "Descripción Español": "Cazan para coger uñas y hacer collares. Cuando matan siempre le atrae luvias hasta que pudre todo su carnada."
         },
         "geometry": null
       },
@@ -1187,7 +1191,8 @@
             }
           ],
           "Nombre Ingles": "wild dog",
-          "Nombre Wao": "babe gïnta"
+          "Nombre Wao": "babe gïnta",
+          "Descripción Español": "Perro de la selva. "
         },
         "geometry": null
       },
@@ -1348,7 +1353,8 @@
             }
           ],
           "Nombre Ingles": "bat",
-          "Nombre Wao": "tonkire"
+          "Nombre Wao": "tonkire",
+          "Descripción Español": "Es peligroso y demonio. Cuando chupa la sangre puede contagiar alguna enfermedad grave."
         },
         "geometry": null
       },
@@ -1450,7 +1456,8 @@
               }
             }
           ],
-          "Nombre Wao": "mïïmo"
+          "Nombre Wao": "mïïmo",
+          "Descripción Español": "Las pesonas cazan y comen, ademas son mascotas favotios."
         },
         "geometry": null
       },
@@ -1483,7 +1490,8 @@
             }
           ],
           "Nombre Ingles": "jaguar",
-          "Nombre Wao": "meñë"
+          "Nombre Wao": "meñë",
+          "Descripción Español": "Muy importante para waorani, es protector de la selva. Las personas que son brujos le convierten con sus poderes como jaguar. Las personas cazadores siempren buscan sus dientes para tener como adornos y elaboran collares."
         },
         "geometry": null
       },
@@ -1548,7 +1556,8 @@
             }
           ],
           "Nombre Ingles": "frogs and toads",
-          "Nombre Wao": "weke"
+          "Nombre Wao": "weke",
+          "Descripción Español": "Sapo canta cuando va a llover y la rana encambio canta por la noche al siguiente día que va a ser buena clima."
         },
         "geometry": null
       },
@@ -1613,7 +1622,7 @@
             }
           ],
           "Nombre Ingles": "tapir",
-          "Descripción Español": "Ancestralmente no era comestible, y actualmente es muy importante para la Nacionalidad, la carne se usa para comer y carnes bien favorita para las personas.",
+          "Descripción Español": "Ancestralmente no era comestible, y actualmente es muy importante para la Nacionalidad, la carne se usa para comer, es favorita para las personas.",
           "Nombre Wao": "tite"
         },
         "geometry": null
@@ -1744,7 +1753,7 @@
             }
           ],
           "Nombre Ingles": "waterfall",
-          "Descripción Español": "Sirve para bañar y diversión.",
+          "Descripción Español": "Cascada donde puede ir a bañar y relajar su cuerpo y mente para atraer mas energias positivas.",
           "Nombre Wao": "teñätaa"
         },
         "geometry": null
@@ -1811,7 +1820,8 @@
             }
           ],
           "Nombre Ingles": "howler monkey",
-          "Nombre Wao": "iwa"
+          "Nombre Wao": "iwa",
+          "Descripción Español": "Carne preferida en tiempos de engordura para wao. Aulla cuando va a llover."
         },
         "geometry": null
       },
@@ -1878,7 +1888,8 @@
             }
           ],
           "Nombre Ingles": "panther",
-          "Nombre Wao": "gögöñë"
+          "Nombre Wao": "gögöñë",
+          "Descripción Español": "Mas peligroso y arisco cuando se encuentra entre juaguares en tiempo de celos. Puede atacar y matar a una persona."
         },
         "geometry": null
       },
@@ -1943,7 +1954,8 @@
             }
           ],
           "Nombre Ingles": "lake",
-          "Nombre Wao": "gawatibe"
+          "Nombre Wao": "gawatibe",
+          "Descripción Español": "Es un lugar amplio de agua, en donde existen varios especies de peces, reptiles y anfibios. La gente tiene miedo porque hay anaconda grande por su magia puede atraer a los animales en vivo directo al estomago."
         },
         "geometry": null
       },
@@ -1975,7 +1987,8 @@
               }
             }
           ],
-          "Nombre Wao": "kogïnkoo"
+          "Nombre Wao": "kogïnkoo",
+          "Descripción Español": "Las personas cazan y comen regularmente, las crias son mascotas para waos."
         },
         "geometry": null
       },
@@ -2039,7 +2052,8 @@
               }
             }
           ],
-          "Nombre Wao": "mëñeremö"
+          "Nombre Wao": "mëñeremö",
+          "Descripción Español": "Trigrillo, es un comunicador todo lo que pasa o alguien llegar."
         },
         "geometry": null
       },
@@ -2136,7 +2150,8 @@
             }
           ],
           "Nombre Ingles": "spectacled bear",
-          "Nombre Wao": "0toye"
+          "Nombre Wao": "0toye",
+          "Descripción Español": "Animal muy peligro, la gente conserva que viva libremente en su habitat."
         },
         "geometry": null
       },
@@ -2234,7 +2249,8 @@
             }
           ],
           "Nombre Ingles": "nocturnal monkey",
-          "Nombre Wao": "gämogä"
+          "Nombre Wao": "gämogä",
+          "Descripción Español": "Cazan y comen las personas regularmente."
         },
         "geometry": null
       },
@@ -2267,7 +2283,8 @@
             }
           ],
           "Nombre Ingles": "deer",
-          "Nombre Wao": "kowäñë"
+          "Nombre Wao": "kowäñë",
+          "Descripción Español": "Antiguamente no consumán la gente su carne, decían que era demonio(diablo). Actualmente consume la ggente la presa."
         },
         "geometry": null
       },
@@ -2437,7 +2454,8 @@
         "properties": {
           "Preset": "fauna/mono",
           "Tipo de cosa": "Animales",
-          "Nombre Español": "otro mono"
+          "Nombre Español": "otro mono",
+          "Descripción Español": "Cualquier mono no identificado."
         },
         "geometry": null
       },
@@ -2503,7 +2521,8 @@
             }
           ],
           "Nombre Ingles": "oxbow lake",
-          "Nombre Wao": "wäätimë"
+          "Nombre Wao": "wäätimë",
+          "Descripción Español": "Un espacio del rio donde se quedó cortado por sus fenomenos naturales."
         },
         "geometry": null
       },
@@ -2536,7 +2555,8 @@
             }
           ],
           "Nombre Ingles": "river or stream",
-          "Nombre Wao": "ömpare - önogä"
+          "Nombre Wao": "ömpare - önogä",
+          "Descripción Español": "Estero, quebrada, rio."
         },
         "geometry": null
       },
@@ -2602,7 +2622,8 @@
             }
           ],
           "Nombre Ingles": "medicinal tree",
-          "Nombre Wao": "biimowë"
+          "Nombre Wao": "biimowë",
+          "Descripción Español": "Se puede encontrar diferentes especies de árboles medicinales."
         },
         "geometry": null
       },
@@ -2668,7 +2689,7 @@
             }
           ],
           "Nombre Ingles": "spider monkey",
-          "Descripción Español": "Es importante para Waorani el mono araña, según historia fue como una personaje que se rapto a una mujer Waorani, hizo como su esposa.",
+          "Descripción Español": "Es importante para Waorani el mono araña, según historia fue como un personaje que se rapto a una mujer, hizo como su esposa.",
           "Nombre Wao": "deye"
         },
         "geometry": null
@@ -2897,7 +2918,8 @@
             }
           ],
           "Nombre Ingles": "Spring",
-          "Nombre Wao": "epe tayomo "
+          "Nombre Wao": "epe tayomo ",
+          "Descripción Español": "Ojo de agua."
         },
         "geometry": null
       },
@@ -2995,7 +3017,7 @@
             }
           ],
           "Nombre Ingles": "capybara",
-          "Descripción Español": "Vive en las orillas y en lagunas.",
+          "Descripción Español": "Vive en las orillas y en lagunas. La gente cazan y comen.",
           "Nombre Wao": "tota"
         },
         "geometry": null
@@ -3127,7 +3149,8 @@
             }
           ],
           "Nombre Ingles": "tree",
-          "Nombre Wao": "awë"
+          "Nombre Wao": "awë",
+          "Descripción Español": "Árbol de cualquier especie."
         },
         "geometry": null
       },
@@ -3289,7 +3312,8 @@
             }
           ],
           "Nombre Ingles": "tree for artesania",
-          "Nombre Wao": "awë dorani kii barongï"
+          "Nombre Wao": "awë dorani kii barongï",
+          "Descripción Español": "Árbol para elaborar artesanías para cualquier uso."
         },
         "geometry": null
       },
@@ -3321,7 +3345,7 @@
               }
             }
           ],
-          "Descripción Español": "En los mitos Waorani dicen, guanta era como camote para jaguar.",
+          "Descripción Español": "Leyenda Waorani cuentan, guanta era como camote para jaguar. Ademas, es rico y sabroso su carne.",
           "Nombre Wao": "panone"
         },
         "geometry": null
@@ -3355,7 +3379,8 @@
             }
           ],
           "Nombre Ingles": "capuchin monkey",
-          "Nombre Wao": "bogï"
+          "Nombre Wao": "bogï",
+          "Descripción Español": "Las personas comen carne de machin y las crias son mascotas para waos, ademas es traviezo."
         },
         "geometry": null
       },
@@ -3549,7 +3574,8 @@
             }
           ],
           "Nombre Ingles": "worms",
-          "Nombre Wao": "ayabecore"
+          "Nombre Wao": "ayabecore",
+          "Descripción Español": "Sirve para pescar. Antiguamente, una chicha enamoraba del lombriz, y a pesar del tiempo se quedaba embarazada, y así su suegra barriendo le encontró en un hueco,mató regando con aguas calientes ,despues salió afuera a morir colgado con su pene. "
         },
         "geometry": null
       },
@@ -3875,7 +3901,8 @@
             }
           ],
           "Nombre Ingles": "collared peccary",
-          "Nombre Wao": "ämö"
+          "Nombre Wao": "ämö",
+          "Descripción Español": "Carne favorito y muy rica para el consumo, ademas sus deintes elaboran collares para artesanias. Tambien es muy peligrosos cuando esta con sus crias recien nacidos."
         },
         "geometry": null
       },
@@ -3973,7 +4000,8 @@
             }
           ],
           "Nombre Ingles": "lake",
-          "Nombre Wao": "gawape"
+          "Nombre Wao": "gawape",
+          "Descripción Español": "En un lugar donde hay pocas cantidades de peces pequeñas como: viejas, sardinas, guanchichis, piranas, etc."
         },
         "geometry": null
       },
@@ -4005,7 +4033,8 @@
               }
             }
           ],
-          "Nombre Wao": "koba"
+          "Nombre Wao": "koba",
+          "Descripción Español": "Sirve para cazar y comer. La gente a las crias tienen como cascotas. Las pieles sirven para elaborar artezanías."
         },
         "geometry": null
       },
@@ -4101,7 +4130,7 @@
               }
             }
           ],
-          "Descripción Español": "Mitos Waorani era como una persona abuela.",
+          "Descripción Español": "Leyenda Waorani cuentan, guatuza era como abuela. Ademas es util para el consumo.",
           "Nombre Wao": "penë"
         },
         "geometry": null
@@ -4237,7 +4266,8 @@
             }
           ],
           "Nombre Ingles": "squirrel monkey",
-          "Nombre Wao": "gekire"
+          "Nombre Wao": "gekire",
+          "Descripción Español": "Las personas las crias barizos le mantienen en casa como mascota, ademas este mono es traviezo."
         },
         "geometry": null
       },
@@ -4270,7 +4300,7 @@
             }
           ],
           "Nombre Ingles": "tapir path",
-          "Descripción Español": "Huella de tapir.",
+          "Descripción Español": "Sendero de tapir terrestre.",
           "Nombre Wao": "tite önowä"
         },
         "geometry": null
@@ -4282,7 +4312,7 @@
           "Preset": "camino/huanta",
           "Tipo de cosa": "Animales",
           "Nombre Español": "camino de huanta",
-          "Descripción Español": "Es importante las huellas de pecarí de labio blanco.",
+          "Descripción Español": "Sendero de guanta",
           "Nombre Wao": "ore önowä"
         },
         "geometry": null
@@ -4359,7 +4389,7 @@
             }
           ],
           "Nombre Ingles": "jaguar path",
-          "Descripción Español": "Muy importante la huella del jaguar para Wao, porque se muestra el poder muy cerca a la persona Shaman.",
+          "Descripción Español": "Sendero de jaguar.",
           "Nombre Wao": "meñë önowä"
         },
         "geometry": null
@@ -4393,7 +4423,8 @@
             }
           ],
           "Nombre Ingles": "peccary",
-          "Nombre Wao": "ore"
+          "Nombre Wao": "ore",
+          "Descripción Español": "Carne es rico y sabroso. Sus dientes elaboran para collares. Ejemplo; Un dia un joven yendo para cazar guangana se fue convirtiendo como ellos en el grupo, se casó y tuvo dos hijos, con el tiempo solo él regreso donde su familia. "
         },
         "geometry": null
       },
@@ -4524,7 +4555,8 @@
             }
           ],
           "Nombre Ingles": "wooly monkey",
-          "Nombre Wao": "gata"
+          "Nombre Wao": "gata",
+          "Descripción Español": "Carne favorito para waorani, en temporada de engordura se cazan bastantes y sus crias son mas queridos para tener como mascotas."
         },
         "geometry": null
       },
@@ -4721,7 +4753,8 @@
             }
           ],
           "Nombre Ingles": "honey",
-          "Nombre Wao": "gëngë"
+          "Nombre Wao": "gëngë",
+          "Descripción Español": "Sirve para desparasitar a los niños que tiene bichos. Tambien usan principalmente las mujeres para enseñarle a las niñas de temparana edad poniendo miel en su lengua. Tambien, es favorito para el animal cabeza de mate."
         },
         "geometry": null
       },
@@ -4852,7 +4885,8 @@
             }
           ],
           "Nombre Ingles": "otter",
-          "Nombre Wao": "ömpore"
+          "Nombre Wao": "ömpore",
+          "Descripción Español": "Busca especialmente para cazar y comer mas a los pescados, siempre en la orilla pasan del rio, estero o quebrada."
         },
         "geometry": null
       },
@@ -4885,7 +4919,7 @@
             }
           ],
           "Nombre Ingles": "squirrel",
-          "Descripción Español": "Es un mono ardilla comestible para waorani.",
+          "Descripción Español": "Mono ardilla, la gente cazan para comer y sacan sus pieles para elaborar corona, en tiempos de fiestas o en eventos se usan.",
           "Nombre Wao": "nene"
         },
         "geometry": null
@@ -4919,7 +4953,8 @@
             }
           ],
           "Nombre Ingles": "alligator",
-          "Nombre Wao": "noma"
+          "Nombre Wao": "noma",
+          "Descripción Español": "Carne de lagarto es favorito para le gente. Ademas es peligroso por la noche, porque sale a buscar presas."
         },
         "geometry": null
       },
@@ -5050,7 +5085,8 @@
             }
           ],
           "Nombre Ingles": "fruit tree",
-          "Nombre Wao": "meñëkawë"
+          "Nombre Wao": "meñëkawë",
+          "Descripción Español": "Árbol frutal de diferente especies que carga pepas para el consumo de personas y animales. "
         },
         "geometry": null
       },
@@ -5159,7 +5195,8 @@
             }
           ],
           "Nombre Ingles": "puma",
-          "Nombre Wao": "ääwë"
+          "Nombre Wao": "ääwë",
+          "Descripción Español": "Es muy engañoso se puede perseguir por atrás. Los dientes son favoritos para waos elaborar collares para adornos."
         },
         "geometry": null
       },
@@ -5263,7 +5300,8 @@
             }
           ],
           "Nombre Ingles": "flying ants",
-          "Nombre Wao": "bore"
+          "Nombre Wao": "bore",
+          "Descripción Español": "En temporadas en cada año vuelan las hormigas que comen las personas. Ademas, antiguamente a los niños le mojaban aguas calientes cocidas con hormigas, para que al azarmente la persona  sopla y que pueda llover."
         },
         "geometry": null
       },
@@ -5329,7 +5367,8 @@
             }
           ],
           "Nombre Ingles": "armadillo ",
-          "Nombre Wao": "okeme / goma"
+          "Nombre Wao": "okeme / goma",
+          "Descripción Español": "Armadillo pequeño/armadillo grande, en algun camino cuando el armadillo grande deja excabando, le gente ya saben  quien abrió el sendero primera vez van morir mas pronto."
         },
         "geometry": null
       },
