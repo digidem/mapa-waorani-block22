@@ -64,7 +64,8 @@
               }
             }
           ],
-          "Nombre Wao": "x"
+          "Nombre Wao": "x",
+          "Descripción Español": "Campamento de la sísmica en tiempo de la exploracion"
         },
         "geometry": null
       },
@@ -96,7 +97,8 @@
               }
             }
           ],
-          "Nombre Wao": "minkayonta akikone"
+          "Nombre Wao": "minkayonta akikone",
+          "Descripción Español": "Aula donde dan la enseñanza a la educación."
         },
         "geometry": null
       },
@@ -128,7 +130,8 @@
               }
             }
           ],
-          "Nombre Wao": "gare"
+          "Nombre Wao": "gare",
+          "Descripción Español": "Es rico y sabroso. Además para los waos ancianos es favorito sacar dientes de piraña para el uso en la flecha."
         },
         "geometry": null
       },
@@ -160,7 +163,8 @@
               }
             }
           ],
-          "Nombre Wao": "ömakawë"
+          "Nombre Wao": "ömakawë",
+          "Descripción Español": "Sirve para la colocación de la vivienda típica encima del techo."
         },
         "geometry": null
       },
@@ -193,7 +197,8 @@
             }
           ],
           "Nombre Ingles": "Hoatzin",
-          "Nombre Wao": "ïwïñä"
+          "Nombre Wao": "ïwïñä",
+          "Descripción Español": "Viven solo en laguas y en pantanos encima de los árboles."
         },
         "geometry": null
       },
@@ -259,7 +264,8 @@
               }
             }
           ],
-          "Nombre Wao": "x"
+          "Nombre Wao": "x",
+          "Descripción Español": "Expresaciones antiguas."
         },
         "geometry": null
       },
@@ -291,7 +297,8 @@
               }
             }
           ],
-          "Nombre Wao": "tentemö"
+          "Nombre Wao": "tentemö",
+          "Descripción Español": "Medicina natural que sirve curar cuando muerde culebra."
         },
         "geometry": null
       },
@@ -357,7 +364,8 @@
               }
             }
           ],
-          "Nombre Wao": "öïngä ëñömö"
+          "Nombre Wao": "öïngä ëñömö",
+          "Descripción Español": "Donde pueden realizar casería de animales."
         },
         "geometry": null
       },
@@ -389,7 +397,8 @@
               }
             }
           ],
-          "Nombre Wao": "oba"
+          "Nombre Wao": "oba",
+          "Descripción Español": "Es rico y sabroso."
         },
         "geometry": null
       },
@@ -421,7 +430,7 @@
               }
             }
           ],
-          "Descripción Español": "sirve, hacer canasta,cervatana,corona y lanza ",
+          "Descripción Español": "Sirve, hacer canasta,cervatana,corona y lanza",
           "Nombre Wao": "otome copy"
         },
         "geometry": null
@@ -453,7 +462,8 @@
               }
             }
           ],
-          "Nombre Wao": "dorani bete waa bai"
+          "Nombre Wao": "dorani bete waa bai",
+          "Descripción Español": "Plantas medicinales de cualquier especies que exste en la selva."
         },
         "geometry": null
       },
@@ -587,7 +597,8 @@
               }
             }
           ],
-          "Nombre Wao": "eboweï"
+          "Nombre Wao": "eboweï",
+          "Descripción Español": "Donde las avionteas aterrizan de diferentes empresas. "
         },
         "geometry": null
       },
@@ -626,7 +637,8 @@
             }
           ],
           "Nombre Ingles": "Caves",
-          "Nombre Wao": "daimonta"
+          "Nombre Wao": "daimonta",
+          "Descripción Español": "En una cueva donde la gente se econdían en tiempos de guerras matanzas entre ellos."
         },
         "geometry": null
       },
@@ -726,7 +738,8 @@
               }
             }
           ],
-          "Nombre Wao": "wëngöngï apeninkone"
+          "Nombre Wao": "wëngöngï apeninkone",
+          "Descripción Español": "Casa de la iglesia."
         },
         "geometry": null
       },
@@ -758,7 +771,7 @@
               }
             }
           ],
-          "Descripción Español": "ago natural,sirve para fiebre dolor ",
+          "Descripción Español": "Ajo natural, sirve para fiebre, dolor del cuerpo y para otros usos necesarios.",
           "Nombre Wao": "wiñagëï"
         },
         "geometry": null
@@ -803,7 +816,7 @@
               }
             }
           ],
-          "Descripción Español": "sirve para curar dolores estomacal ",
+          "Descripción Español": "Sirve para curar dolores estomacales",
           "Nombre Wao": "bagamo"
         },
         "geometry": null
@@ -836,7 +849,8 @@
               }
             }
           ],
-          "Nombre Wao": "barë"
+          "Nombre Wao": "barë",
+          "Descripción Español": "Para wao es favorito su carne para comer, las plumas son para elaborar coronas y adornadar en las lanzas. Las crias son como mascotas tener en casa wao."
         },
         "geometry": null
       },
@@ -866,7 +880,8 @@
                 }
               }
             }
-          ]
+          ],
+          "Descripción Español": "Campamento de la sísmica en tiempo de la exploracion"
         },
         "geometry": null
       },
@@ -898,7 +913,8 @@
               }
             }
           ],
-          "Nombre Wao": "chontilla copy"
+          "Nombre Wao": "chontilla copy",
+          "Descripción Español": "Es familia de guadua muy pequeño, es bueno golpear en la altura de ombliguo a los niños lo que orinan en la cama siempre por la noche."
         },
         "geometry": null
       },
@@ -963,7 +979,7 @@
               }
             }
           ],
-          "Descripción Español": "corteza de chonta sirve,hacer lanza,arpon ",
+          "Descripción Español": "corteza de chonta sirve,hacer lanza,arpon",
           "Nombre Wao": "dagenkawë"
         },
         "geometry": null
@@ -996,7 +1012,8 @@
               }
             }
           ],
-          "Nombre Wao": "egawë"
+          "Nombre Wao": "egawë",
+          "Descripción Español": "Remedio natural que sirve para curar enfermedades. Sus espinos son peligrosos."
         },
         "geometry": null
       },
@@ -1028,7 +1045,8 @@
               }
             }
           ],
-          "Nombre Wao": "gemenewë"
+          "Nombre Wao": "gemenewë",
+          "Descripción Español": "Enorme y gigante, por ejemplo: águila arpia construye armar para posar su nido en las ramas del ceibo."
         },
         "geometry": null
       },
@@ -1060,7 +1078,8 @@
               }
             }
           ],
-          "Nombre Wao": "öïngaïrï kewëñömö"
+          "Nombre Wao": "öïngaïrï kewëñömö",
+          "Descripción Español": "Espacio donde existen diferentes especies de animales. "
         },
         "geometry": null
       },
@@ -1092,7 +1111,8 @@
               }
             }
           ],
-          "Nombre Wao": "awenegïnka"
+          "Nombre Wao": "awenegïnka",
+          "Descripción Español": "Aparato para captar imágenes y videos."
         },
         "geometry": null
       },
@@ -1158,7 +1178,8 @@
               }
             }
           ],
-          "Nombre Wao": "nanikeweñomo"
+          "Nombre Wao": "nanikeweñomo",
+          "Descripción Español": "Lugar en donde que viven bastantes personas."
         },
         "geometry": null
       },
@@ -1224,7 +1245,8 @@
               }
             }
           ],
-          "Nombre Wao": "menka"
+          "Nombre Wao": "menka",
+          "Descripción Español": "Tener como mascota en casa, pero es traviezo lleva las cosas pequeñas de la casa volando."
         },
         "geometry": null
       },
@@ -1256,7 +1278,8 @@
               }
             }
           ],
-          "Nombre Wao": "öönta"
+          "Nombre Wao": "öönta",
+          "Descripción Español": "Veneno silvestre. Por ejemplo, los wao cojen, elaboran y cazan poniendo en la punta de la flecha, soplando matan a los animales para el consumo."
         },
         "geometry": null
       },
@@ -1288,7 +1311,8 @@
               }
             }
           ],
-          "Nombre Wao": "chontilla"
+          "Nombre Wao": "chontilla",
+          "Descripción Español": "Es familia de guadua muy pequeño, es bueno golpear en la altura de ombliguo a los niños lo que orinan en la cama siempre por la noche."
         },
         "geometry": null
       },
@@ -1320,7 +1344,8 @@
               }
             }
           ],
-          "Nombre Wao": "obogenkawe"
+          "Nombre Wao": "obogenkawe",
+          "Descripción Español": "Palmera del coco de la chambira grande. Los cocos comen personas y animales (loros, guanganas, sahinos y gustuzas)."
         },
         "geometry": null
       },
@@ -1392,7 +1417,8 @@
               }
             }
           ],
-          "Nombre Wao": "öko ömëre"
+          "Nombre Wao": "öko ömëre",
+          "Descripción Español": "Chozas que tienen hechos para ir caseria, pesca o aventura en la selva."
         },
         "geometry": null
       },
@@ -1424,7 +1450,8 @@
               }
             }
           ],
-          "Nombre Wao": "Iiwë"
+          "Nombre Wao": "Iiwë",
+          "Descripción Español": "Es muy importante las palmera que sirve para elaborar las flechas."
         },
         "geometry": null
       },
@@ -1523,7 +1550,8 @@
               }
             }
           ],
-          "Nombre Wao": "kowätai"
+          "Nombre Wao": "kowätai",
+          "Descripción Español": "Para wao es favorito su carne para comer, las plumas son para aventar aire en las fogatas. Las crias son como mascotas tener en casa wao."
         },
         "geometry": null
       },
@@ -1589,7 +1617,8 @@
               }
             }
           ],
-          "Nombre Wao": "tarangä"
+          "Nombre Wao": "tarangä",
+          "Descripción Español": "Muy rico y sabroso para comer."
         },
         "geometry": null
       },
@@ -1655,7 +1684,8 @@
               }
             }
           ],
-          "Nombre Wao": "minta"
+          "Nombre Wao": "minta",
+          "Descripción Español": "Sirve para comer y tener como mascotas, sus plumas son importantes para elaborar coronas.( Se visten en mayor parte en los eventos y en las fiestas)."
         },
         "geometry": null
       },
@@ -1688,7 +1718,8 @@
             }
           ],
           "Nombre Ingles": "Mobile signal",
-          "Nombre Wao": "pikiñomo"
+          "Nombre Wao": "pikiñomo",
+          "Descripción Español": "Sitios donde coje señales de comunicación, especialmente celulares."
         },
         "geometry": null
       },
@@ -1720,7 +1751,8 @@
               }
             }
           ],
-          "Nombre Wao": "tewe"
+          "Nombre Wao": "tewe",
+          "Descripción Español": "Palmera de chonta sirve para elaborar lanzas, chuzos y otros usos mas. Las pepas son para alimentos de personas y animales (comen loros coroniazules, guatuzo, guatines y guantas)."
         },
         "geometry": null
       },
@@ -1787,7 +1819,8 @@
             }
           ],
           "Nombre Ingles": "Camp",
-          "Nombre Wao": "ömere moinkone"
+          "Nombre Wao": "ömere moinkone",
+          "Descripción Español": "Lugar donde se acampa realizando cualquier actividad."
         },
         "geometry": null
       },
@@ -1921,7 +1954,8 @@
               }
             }
           ],
-          "Nombre Wao": "ñonenkare"
+          "Nombre Wao": "ñonenkare",
+          "Descripción Español": "Sirve para la construcción de vivienda y otros usos multiples."
         },
         "geometry": null
       },
@@ -2020,7 +2054,8 @@
               }
             }
           ],
-          "Nombre Wao": "karawë"
+          "Nombre Wao": "karawë",
+          "Descripción Español": "Sirve para elaborar techos de vivienda. Se dura bastante tiempo sus hojas."
         },
         "geometry": null
       },
@@ -2085,7 +2120,8 @@
               }
             }
           ],
-          "Nombre Wao": "oyonkabekome"
+          "Nombre Wao": "oyonkabekome",
+          "Descripción Español": "Sitios donde existen tipos de heliconias."
         },
         "geometry": null
       },
@@ -2117,7 +2153,8 @@
               }
             }
           ],
-          "Nombre Wao": "x"
+          "Nombre Wao": "x",
+          "Descripción Español": "Límite ancestral wao que conlinda con otras nacionalidades."
         },
         "geometry": null
       },
@@ -2184,7 +2221,8 @@
             }
           ],
           "Nombre Ingles": "Clay for ceramics",
-          "Nombre Wao": "dai"
+          "Nombre Wao": "dai",
+          "Descripción Español": "Ceramica natural que elaboran vasijas como: ollas, platos, etc."
         },
         "geometry": null
       },
@@ -2216,7 +2254,8 @@
               }
             }
           ],
-          "Nombre Wao": "önewë"
+          "Nombre Wao": "önewë",
+          "Descripción Español": "Palmera de la chambira. Las fibras de las ramas sacan para elaborar flechas."
         },
         "geometry": null
       },
@@ -2316,7 +2355,8 @@
               }
             }
           ],
-          "Nombre Wao": "morete"
+          "Nombre Wao": "morete",
+          "Descripción Español": "Palmera moretal."
         },
         "geometry": null
       },
@@ -2348,7 +2388,8 @@
               }
             }
           ],
-          "Nombre Wao": "möö"
+          "Nombre Wao": "möö",
+          "Descripción Español": "Sirve para tejer techo de la casa tíca wao, además es uso para envolver cualquier cosa."
         },
         "geometry": null
       },
@@ -2380,7 +2421,8 @@
               }
             }
           ],
-          "Nombre Wao": "kewëne"
+          "Nombre Wao": "kewëne",
+          "Descripción Español": "Lugar donde siembra platanos, yucas, maiz, mani, camote, naranjilla, plantas frutales, etc."
         },
         "geometry": null
       },
@@ -2412,7 +2454,8 @@
               }
             }
           ],
-          "Nombre Wao": "miwagowë"
+          "Nombre Wao": "miwagowë",
+          "Descripción Español": "Existen en las orillas del rio o estero, es muy duro y flexibles para quebrar las ramas. Además los colibris encantan chupar en los flores  dulces que tiene chiparro. "
         },
         "geometry": null
       },
@@ -2444,7 +2487,8 @@
               }
             }
           ],
-          "Nombre Wao": "akowë"
+          "Nombre Wao": "akowë",
+          "Descripción Español": "Sirve para realizar la elaboración de canoa y construcción de vivienda. Ademas es favorito para los monos aulladores las ramas que recien crecen le encantan comer. También es util para curar con la corteza a los granos que causan en el piel de las personas."
         },
         "geometry": null
       },
@@ -2488,7 +2532,8 @@
             }
           ],
           "Nombre Ingles": "Wild grapes",
-          "Nombre Wao": "yowe"
+          "Nombre Wao": "yowe",
+          "Descripción Español": "Carga frutas, son de uvas silvestres dulce y ricos, chupan todo tipo de monos, murcielagos y por el suelo comen tinamu, palomas de monte, armadillos pequeños, etc."
         },
         "geometry": null
       },
@@ -2656,7 +2701,8 @@
             }
           ],
           "Nombre Ingles": "Motmot",
-          "Nombre Wao": "meñomo"
+          "Nombre Wao": "meñomo",
+          "Descripción Español": "Despierta y canta muy temprano en cada día, los waos cazan y comen, especialmene los abuelos."
         },
         "geometry": null
       },
@@ -2722,7 +2768,8 @@
               }
             }
           ],
-          "Nombre Wao": "geye daroñömo"
+          "Nombre Wao": "geye daroñömo",
+          "Descripción Español": "Lugar donde puede realizar pesca."
         },
         "geometry": null
       },
@@ -2754,7 +2801,7 @@
               }
             }
           ],
-          "Descripción Español": "alivia dolor, golpe,inchazon.ect.",
+          "Descripción Español": "Alivia dolor, golpe, hinchazon, etc.",
           "Nombre Wao": "wento"
         },
         "geometry": null
@@ -2788,7 +2835,8 @@
             }
           ],
           "Nombre Ingles": "Beach",
-          "Nombre Wao": "emonaiya copy"
+          "Nombre Wao": "emonaiya copy",
+          "Descripción Español": "Es un espacio de playa."
         },
         "geometry": null
       },
@@ -2820,7 +2868,8 @@
               }
             }
           ],
-          "Nombre Wao": "ömë"
+          "Nombre Wao": "ömë",
+          "Descripción Español": "Cualquier especies de lianas."
         },
         "geometry": null
       },
@@ -2852,7 +2901,8 @@
               }
             }
           ],
-          "Nombre Wao": "orokame"
+          "Nombre Wao": "orokame",
+          "Descripción Español": "Es muy importante, la corteza sirve para envolver a la cervatana."
         },
         "geometry": null
       },
@@ -2885,7 +2935,8 @@
             }
           ],
           "Nombre Ingles": "Cedar",
-          "Nombre Wao": "gonewarewë"
+          "Nombre Wao": "gonewarewë",
+          "Descripción Español": "Sirve para realizar la elaboración de canoa y construcción de vivienda."
         },
         "geometry": null
       },
@@ -2952,7 +3003,8 @@
             }
           ],
           "Nombre Ingles": "Hunting path",
-          "Nombre Wao": "öönke goiino"
+          "Nombre Wao": "öönke goiino",
+          "Descripción Español": "Sendero para irse a la casería."
         },
         "geometry": null
       },
@@ -2984,7 +3036,8 @@
               }
             }
           ],
-          "Nombre Wao": "intame"
+          "Nombre Wao": "intame",
+          "Descripción Español": "Es hábil para silvar y es saltarin en cada rato por la ramas."
         },
         "geometry": null
       },
@@ -3051,7 +3104,8 @@
             }
           ],
           "Nombre Ingles": "Travelling path",
-          "Nombre Wao": "ëñäke goro"
+          "Nombre Wao": "ëñäke goro",
+          "Descripción Español": "Camino para la visita a algun lugar."
         },
         "geometry": null
       },
@@ -3083,7 +3137,8 @@
               }
             }
           ],
-          "Nombre Wao": "gemagi taaro"
+          "Nombre Wao": "gemagi taaro",
+          "Descripción Español": "Sendero para aventurarse."
         },
         "geometry": null
       },
@@ -3116,7 +3171,8 @@
             }
           ],
           "Nombre Ingles": "Fishing area",
-          "Nombre Wao": "geyetibe"
+          "Nombre Wao": "geyetibe",
+          "Descripción Español": "Lugares donde pueden pescar de diferentes especies."
         },
         "geometry": null
       },
@@ -3183,7 +3239,8 @@
             }
           ],
           "Nombre Ingles": "Tucan",
-          "Nombre Wao": "yawe"
+          "Nombre Wao": "yawe",
+          "Descripción Español": "Cazan y comen. Las plumas son para elaborar coronas, adornar en las lanzas, etc. Las crias son para mascotas para wao, es traviezo y peligroso puede pinchar en los ojos."
         },
         "geometry": null
       },
@@ -3215,7 +3272,8 @@
               }
             }
           ],
-          "Nombre Wao": "öönta copy"
+          "Nombre Wao": "öönta copy",
+          "Descripción Español": "Veneno silvestre. Por ejemplo, los wao cojen, elaboran y cazan poniendo en la punta de la flecha, soplando matan a los animales para el consumo."
         },
         "geometry": null
       },
@@ -3247,7 +3305,8 @@
               }
             }
           ],
-          "Nombre Wao": "nawäñë"
+          "Nombre Wao": "nawäñë",
+          "Descripción Español": "Carne tiene muy rico. A las crias tienen como mascotas en casas, puede acompañar."
         },
         "geometry": null
       },
@@ -3279,7 +3338,8 @@
               }
             }
           ],
-          "Nombre Wao": "dorani daitakare"
+          "Nombre Wao": "dorani daitakare",
+          "Descripción Español": "Basija de los antepasados."
         },
         "geometry": null
       },
@@ -3412,7 +3472,8 @@
               }
             }
           ],
-          "Nombre Wao": "nampawë"
+          "Nombre Wao": "nampawë",
+          "Descripción Español": "Sirve las ramas para elaborar techos para la vivienda."
         },
         "geometry": null
       },
@@ -3444,7 +3505,8 @@
               }
             }
           ],
-          "Nombre Wao": "kewënkore"
+          "Nombre Wao": "kewënkore",
+          "Descripción Español": "Varios sitio donde siembra platanos, yucas, maiz, mani, camote, naranjilla, plantas frutales, etc."
         },
         "geometry": null
       },
@@ -3477,7 +3539,8 @@
             }
           ],
           "Nombre Ingles": "Macaw",
-          "Nombre Wao": "ëwë"
+          "Nombre Wao": "ëwë",
+          "Descripción Español": "Sirve para comer y tener como mascotas, sus plumas son importantes para elaborar coronas y adornar en las lanzas.( Se visten en mayor parte en los eventos y en las fiestas)."
         },
         "geometry": null
       },
@@ -3509,7 +3572,8 @@
               }
             }
           ],
-          "Nombre Ingles": "Port"
+          "Nombre Ingles": "Port",
+          "Descripción Español": "Paradero de aviones, canoas o de personas."
         },
         "geometry": null
       },
@@ -3541,7 +3605,8 @@
             }
           ],
           "Nombre Ingles": "Palm area",
-          "Nombre Wao": "nontowënë"
+          "Nombre Wao": "nontowënë",
+          "Descripción Español": "Donde existen cantidades de moretales, cargan pepas y comen personas y animales (armadillo, tapir, guanta, sahinos, guanganas, guacamayos rojos y amarillos, loro militar, etc."
         },
         "geometry": null
       },
@@ -3607,7 +3672,7 @@
               }
             }
           ],
-          "Descripción Español": "sirve para artesania,collar, manilla,coleccion",
+          "Descripción Español": "Sirve para elaborar collar, manilla y colección de otro usos.",
           "Nombre Wao": "pantomo"
         },
         "geometry": null
@@ -3640,7 +3705,8 @@
               }
             }
           ],
-          "Nombre Wao": "aboke"
+          "Nombre Wao": "aboke",
+          "Descripción Español": "Es favorito para tener en casa como mascota, es muy hábil y mansito, puede silvar y hablar con las imitaciones de las personas."
         },
         "geometry": null
       },
@@ -3672,7 +3738,7 @@
               }
             }
           ],
-          "Descripción Español": "sirve, hacer canasta,cervatana,corona y lanza ",
+          "Descripción Español": "Con esto se elaboran canasta, y es muy flexible para cualquier actividad.",
           "Nombre Wao": "otome"
         },
         "geometry": null
@@ -3705,7 +3771,8 @@
               }
             }
           ],
-          "Nombre Wao": "gontiwä"
+          "Nombre Wao": "gontiwä",
+          "Descripción Español": "Para wao es favorito su carne para comer, las plumas son para aventar aire en las fogatas. Las crias son como mascotas tener en casa wao."
         },
         "geometry": null
       },
@@ -3738,7 +3805,8 @@
             }
           ],
           "Nombre Ingles": "Harpy eagle",
-          "Nombre Wao": "gïgamowë "
+          "Nombre Wao": "gïgamowë ",
+          "Descripción Español": "Importante para wao, ave como simbolo representativo de la selva virgen, sus plumas son favoritos para elaborar coronas. Antiguamente al nido criaban como mascota y era como guardia, le avisaba cuando alguien llegaba de otro lugar. Es bravo y peligroso."
         },
         "geometry": null
       },
@@ -3770,7 +3838,8 @@
               }
             }
           ],
-          "Nombre Wao": "önenta"
+          "Nombre Wao": "önenta",
+          "Descripción Español": "Árbol envuelto llenos de lianas en su alrededor de la corteza de cualquier especie."
         },
         "geometry": null
       },
@@ -3802,7 +3871,8 @@
               }
             }
           ],
-          "Nombre Wao": "meñeka"
+          "Nombre Wao": "meñeka",
+          "Descripción Español": "Fruta comestible."
         },
         "geometry": null
       },
@@ -3835,7 +3905,8 @@
             }
           ],
           "Nombre Ingles": "Eagle",
-          "Nombre Wao": "kegïnwë"
+          "Nombre Wao": "kegïnwë",
+          "Descripción Español": "Aguila de cualquier especies."
         },
         "geometry": null
       },
@@ -3868,7 +3939,8 @@
             }
           ],
           "Nombre Ingles": "Hummingbird",
-          "Nombre Wao": "mingo"
+          "Nombre Wao": "mingo",
+          "Descripción Español": "Es importante saber cuando cruza un colibrí dentro de la casa, interpreta que alguien van llegar en casa.( Tambien puede ser algun pajaro)."
         },
         "geometry": null
       },
@@ -3967,7 +4039,8 @@
               }
             }
           ],
-          "Nombre Wao": "dorani tënonte wëgäïñömö"
+          "Nombre Wao": "dorani tënonte wëgäïñömö",
+          "Descripción Español": "Sitio donde hubo guerras de muerte."
         },
         "geometry": null
       },
@@ -4066,7 +4139,8 @@
               }
             }
           ],
-          "Nombre Wao": "boyotai"
+          "Nombre Wao": "boyotai",
+          "Descripción Español": "Pez peligroso cuando pisan la gente puede pichar por su cola que tiene como espino con veneno, su carne es rico y sabroso."
         },
         "geometry": null
       },
@@ -4098,7 +4172,8 @@
               }
             }
           ],
-          "Nombre Wao": "koniwë"
+          "Nombre Wao": "koniwë",
+          "Descripción Español": "Sirve para comer y algunos camarones son para curar a las personas que tienen mal de corazón y asmas."
         },
         "geometry": null
       },
@@ -4163,7 +4238,8 @@
               }
             }
           ],
-          "Nombre Wao": "goibe"
+          "Nombre Wao": "goibe",
+          "Descripción Español": "Vive en cierto lugar en la selva, es saltarin y sus plumas son para elaborar coronas de color rojo."
         },
         "geometry": null
       },
@@ -4201,7 +4277,8 @@
               }
             }
           ],
-          "Nombre Wao": "öwëyaro"
+          "Nombre Wao": "öwëyaro",
+          "Descripción Español": "Camino donde se puede ir por las lomas y valles naturalmente."
         },
         "geometry": null
       },
@@ -4233,7 +4310,8 @@
               }
             }
           ],
-          "Nombre Wao": "x"
+          "Nombre Wao": "x",
+          "Descripción Español": "Linea de la sísmica que había abierto antes."
         },
         "geometry": null
       },
@@ -4324,7 +4402,8 @@
           "Preset": "palmera/toketibo",
           "Tipo de cosa": "Palmeras",
           "Nombre Español": "toketibo",
-          "Categoria leyenda": "palmera"
+          "Categoria leyenda": "palmera",
+          "Descripción Español": "Las raices que tienen árboles grande y enormes."
         },
         "geometry": null
       },
@@ -4356,7 +4435,8 @@
               }
             }
           ],
-          "Nombre Wao": "petowe"
+          "Nombre Wao": "petowe",
+          "Descripción Español": "Palmera util que tiene para multiples uso: para construcción de vivienda típica wao, canasto natural, pepas para comer y hacer jugos y  las fibras para elaborar flechas."
         },
         "geometry": null
       },
@@ -4457,7 +4537,8 @@
             }
           ],
           "Nombre Ingles": "Parrot",
-          "Nombre Wao": "ganke"
+          "Nombre Wao": "ganke",
+          "Descripción Español": "Es favorito para tener en casa como mascota, es muy mansito y puede silvar y hablar con las imitaciones de las personas."
         },
         "geometry": null
       },
@@ -4490,7 +4571,8 @@
             }
           ],
           "Nombre Ingles": "Owl",
-          "Nombre Wao": "mögatapo"
+          "Nombre Wao": "mögatapo",
+          "Descripción Español": "Ave noturno, se alimenta a los insectos por la noche y de día duerme."
         },
         "geometry": null
       },
@@ -4522,7 +4604,8 @@
               }
             }
           ],
-          "Nombre Wao": "pogö"
+          "Nombre Wao": "pogö",
+          "Descripción Español": "Pez eléctrico y peligroso, ademas es rico y sabroso, donde exiten este pez hay otros peces bastantes."
         },
         "geometry": null
       },
@@ -4589,7 +4672,8 @@
             }
           ],
           "Nombre Ingles": "Palm area",
-          "Nombre Wao": "wamontape"
+          "Nombre Wao": "wamontape",
+          "Descripción Español": "Lugar donde hay bastante palma de fibras. Tiene buenas fibras para elaborar escobas. Tambien es rico comer lo que carga pepas( se alimentan personas y animales ( guanta, guatuza y guanta)."
         },
         "geometry": null
       },
@@ -4621,7 +4705,7 @@
               }
             }
           ],
-          "Descripción Español": "sirve,contruccion de casa tipica ",
+          "Descripción Español": "Sirve, para la contruccion de casa tipica.",
           "Nombre Wao": "pagöman"
         },
         "geometry": null
@@ -4654,7 +4738,7 @@
               }
             }
           ],
-          "Descripción Español": "Sirve para pintar cuerpo, para mostra la cultura Waorani.",
+          "Descripción Español": "Sirve para pintar cuerpo, especialmente en los brazos, espalda y en la rodillas para mostrar la cultura Waorani. (pintan para eventos y en las fiestas).",
           "Nombre Wao": "wënka"
         },
         "geometry": null
@@ -4687,7 +4771,8 @@
               }
             }
           ],
-          "Nombre Wao": "gemenewë copy"
+          "Nombre Wao": "gemenewë copy",
+          "Descripción Español": "Parecido como ceibo, en épocas de verano las pepas revientan  algodones de color café."
         },
         "geometry": null
       },
@@ -4720,7 +4805,8 @@
             }
           ],
           "Nombre Ingles": "Beach",
-          "Nombre Wao": "emonaiya"
+          "Nombre Wao": "emonaiya",
+          "Descripción Español": "Es un espacio de playa."
         },
         "geometry": null
       },
@@ -4787,7 +4873,8 @@
             }
           ],
           "Nombre Ingles": "Special zone",
-          "Nombre Wao": "gamporamai ïgïñömo"
+          "Nombre Wao": "gamporamai ïgïñömo",
+          "Descripción Español": "Nadie puede tocar o ingresar a realizar cualquier actividad."
         },
         "geometry": null
       },
@@ -4820,7 +4907,8 @@
             }
           ],
           "Nombre Ingles": "Old cemetary",
-          "Nombre Wao": "doranï wegaiñömö"
+          "Nombre Wao": "doranï wegaiñömö",
+          "Descripción Español": "Lugar de muertes de los antepasados."
         },
         "geometry": null
       },
@@ -4852,7 +4940,8 @@
               }
             }
           ],
-          "Nombre Wao": "bokawe"
+          "Nombre Wao": "bokawe",
+          "Descripción Español": "Es comestible para personas y animales (machines, monos arañas, monos noturnos y guantas). Tradición wao es enseñar a los niños, para que aprenda a lanzear la pepa de zapote, cuando botan en un terreno inclinado. "
         },
         "geometry": null
       },
@@ -4986,7 +5075,8 @@
               }
             }
           ],
-          "Nombre Wao": "okiyenani gote ëïñömö"
+          "Nombre Wao": "okiyenani gote ëïñömö",
+          "Descripción Español": "Lugares donde las mujeres realizan diferentes tipos de recolección en la selva."
         },
         "geometry": null
       },
@@ -5019,7 +5109,8 @@
             }
           ],
           "Nombre Ingles": "Mountains / view point",
-          "Nombre Wao": "goma akiñömo"
+          "Nombre Wao": "goma akiñömo",
+          "Descripción Español": "Lugar donde se pude mirar desde muy lejos."
         },
         "geometry": null
       },
@@ -5052,7 +5143,8 @@
             }
           ],
           "Nombre Ingles": "Mountains / view point",
-          "Nombre Wao": "goma akiñömo copy"
+          "Nombre Wao": "goma akiñömo copy",
+          "Descripción Español": "Lugar donde se pude mirar desde muy lejos."
         },
         "geometry": null
       },
@@ -5118,7 +5210,8 @@
               }
             }
           ],
-          "Nombre Wao": "koyiwë"
+          "Nombre Wao": "koyiwë",
+          "Descripción Español": "Sirve para comer. Además, es para curar, especialmente a la tempana edad a los niños que tiene mal de corazon y gripes con asmas."
         },
         "geometry": null
       },
@@ -5129,7 +5222,8 @@
           "Preset": "palmera/palmera",
           "Tipo de cosa": "Palmeras",
           "Nombre Español": "otras palmeras",
-          "Categoria leyenda": "palmera"
+          "Categoria leyenda": "palmera",
+          "Descripción Español": "Diferentes especie de las palmas."
         },
         "geometry": null
       },
@@ -5162,7 +5256,8 @@
             }
           ],
           "Nombre Ingles": "Heron",
-          "Nombre Wao": "nawäñä"
+          "Nombre Wao": "nawäñä",
+          "Descripción Español": "Ave que tiene plumas de color blanco, comen pescado en las orillas del rio o en lagunas."
         },
         "geometry": null
       },
@@ -5228,7 +5323,8 @@
               }
             }
           ],
-          "Nombre Wao": "wamomo"
+          "Nombre Wao": "wamomo",
+          "Descripción Español": "Pepa que carga de la palma comen personas y animales."
         },
         "geometry": null
       },
@@ -5267,7 +5363,8 @@
             }
           ],
           "Nombre Ingles": "Partridge",
-          "Nombre Wao": "abamo"
+          "Nombre Wao": "abamo",
+          "Descripción Español": "Carne muy rico. Al anochecer cuando va llover canta."
         },
         "geometry": null
       },
@@ -5334,7 +5431,8 @@
             }
           ],
           "Nombre Ingles": "tree for construction",
-          "Nombre Wao": "awë öko menöngïnwë"
+          "Nombre Wao": "awë öko menöngïnwë",
+          "Descripción Español": "Principalmente árboles para las construcciones de vivienda de diferentes especies que sean buenas y resistentes."
         },
         "geometry": null
       },
@@ -5400,7 +5498,8 @@
               }
             }
           ],
-          "Nombre Wao": "dorani bete waa bai"
+          "Nombre Wao": "dorani bete waa bai",
+          "Descripción Español": "Las plantas mediciales que curaban antiguamente."
         },
         "geometry": null
       },
@@ -5432,7 +5531,8 @@
               }
             }
           ],
-          "Nombre Wao": "tepawë"
+          "Nombre Wao": "tepawë",
+          "Descripción Español": "Muy util para elaborar lanzas, cerbatanas, chuzos y postes para la construcción de vvivienda."
         },
         "geometry": null
       },
@@ -5442,7 +5542,8 @@
         "properties": {
           "Preset": "flora/planta",
           "Tipo de cosa": "Plantas",
-          "Nombre Español": "otras plantas"
+          "Nombre Español": "otras plantas",
+          "Descripción Español": "Diferentes especies o tipos de plantas."
         },
         "geometry": null
       },
@@ -5474,7 +5575,8 @@
               }
             }
           ],
-          "Nombre Wao": "mënëko"
+          "Nombre Wao": "mënëko",
+          "Descripción Español": "Barbasco silvestre que existen en la selva, mata a los pescados."
         },
         "geometry": null
       },
@@ -5506,7 +5608,8 @@
               }
             }
           ],
-          "Nombre Wao": "ömare"
+          "Nombre Wao": "ömare",
+          "Descripción Español": "Pescado grande de cualquier especie."
         },
         "geometry": null
       }
