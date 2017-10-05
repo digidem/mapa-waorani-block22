@@ -1,3 +1,4 @@
+const d3 = require('d3-request')
 const css = require('sheetify')
 const elements = require('alianza-elements')
 const mapboxgl = require('mapbox-gl')
@@ -6,6 +7,8 @@ const querystring = require('querystring')
 
 var Legend = require('./legend')
 var communityDOM = require('./community_popup')
+var data = {}
+var dataIndex = {}
 
 css('mapbox-gl/dist/mapbox-gl.css')
 css('alianza-elements/style.css')
@@ -22,7 +25,24 @@ var map = window.map = new mapboxgl.Map({
   maxBounds: [-87, -9, -70, 6],
   style: 'mapbox://styles/aliya/cj5i9q1lb4wnx2rnxmldrtjvt?fresh=true',
   hash: true
+}).on('load', onLoad)
+
+d3.json(window.location.origin + '/data.json', function (err, _data) {
+  if (err) console.error(err)
+  data = _data
+  Object.keys(data).forEach(function (key) {
+    data[key].features.forEach(function (feature) {
+      dataIndex[feature.properties.Preset] = feature
+    })
+  })
+  onLoad()
 })
+
+function updateLang (_) {
+  lang = _
+  backButton.updateLang(lang)
+  legend.updateLang(lang)
+}
 
 map.addControl(new mapboxgl.ScaleControl({
   maxWidth: 150,
@@ -45,30 +65,38 @@ var backButton = elements.backButton(map, {stop: 9, language: lang}, function ()
   map.easeTo({center: defaultCenter, zoom: 8, duration: 2500})
 })
 
-// When a click event occurs near a place, open a popup at the location of
-// the feature, with description HTML from its properties.
-map.on('click', function (e) {
-  var _areas = map.queryRenderedFeatures(e.point, {layers: ['Territory fill']})
-  var _features = map.queryRenderedFeatures(e.point, {filter: ['!=', '$id', 1]})
-  var area = _areas && _areas[0]
-  var feature = _features && _features[0]
-  if (area && map.getZoom() <= 9) {
-    map.easeTo({center: defaultCenter, zoom: 11, duration: 2500})
+function onLoad () {
+  // When a click event occurs near a place, open a popup at the location of
+  // the feature, with description HTML from its properties.
+  map.on('click', function (e) {
+    var _areas = map.queryRenderedFeatures(e.point, {layers: ['Territory fill']})
+    var _features = map.queryRenderedFeatures(e.point, {filter: ['!=', '$id', 1]})
+    var area = _areas && _areas[0]
+    var feature = _features && _features[0]
+    if (area && map.getZoom() <= 9) {
+      map.easeTo({center: defaultCenter, zoom: 11, duration: 2500})
+      communityPopup.remove()
+      return
+    }
+    if (feature) {
+      var coords = feature.geometry.type === 'Point' ? feature.geometry.coordinates : map.unproject(e.point)
+      var opts = {feature, lang}
+      var preset = feature.properties.preset
+      if (preset) {
+        var airtable = dataIndex[preset.toLowerCase()]
+        opts.data = airtable.properties
+      }
+      communityPopup.update(communityDOM(opts))
+      communityPopup.setLngLat(coords)
+      return
+    }
     communityPopup.remove()
-    return
-  }
-  if (feature) {
-    var coords = feature.geometry.type === 'Point' ? feature.geometry.coordinates : map.unproject(e.point)
-    communityPopup.update(communityDOM(feature, {lang: lang}))
-    communityPopup.setLngLat(coords)
-    return
-  }
-  communityPopup.remove()
-})
+  })
 
-// Use the same approach as above to indicate that the symbols are clickable
-// by changing the cursor style to 'pointer'.
-map.on('mousemove', function (e) {
-  var features = map.queryRenderedFeatures(e.point)
-  map.getCanvas().style.cursor = (features.length) ? 'pointer' : ''
-})
+  // Use the same approach as above to indicate that the symbols are clickable
+  // by changing the cursor style to 'pointer'.
+  map.on('mousemove', function (e) {
+    var features = map.queryRenderedFeatures(e.point)
+    map.getCanvas().style.cursor = (features.length) ? 'pointer' : ''
+  })
+}
