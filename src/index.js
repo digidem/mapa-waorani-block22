@@ -73,8 +73,3 @@ map.on('mousemove', function (e) {
   map.getCanvas().style.cursor = (features.length) ? 'pointer' : ''
 })
 
-function updateLang (_) {
-  lang = _
-  backButton.updateLang(lang)
-  legend.updateLang(lang)
-}

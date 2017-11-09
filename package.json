@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/digidem/mapa-waorani#readme",
   "dependencies": {
-    "alianza-elements": "^2.1.0",
+    "alianza-elements": "^3.0.0",
     "mapbox-gl": "^0.39.1",
     "sheetify": "^6.1.1",
     "sheetify-nested": "^1.0.2",
