@@ -41,9 +41,6 @@ legendCtrl._toggleButton.setAttribute('aria-label', 'Toggle Legend')
 
 var communityPopup = elements.popup(map)
 
-var langSelector = elements.language(updateLang, lang)
-document.body.appendChild(langSelector)
-
 var backButton = elements.backButton(map, {stop: 9, lang: lang}, function () {
   map.easeTo({center: defaultCenter, zoom: 8, duration: 2500})
 })
