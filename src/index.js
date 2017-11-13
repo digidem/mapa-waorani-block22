@@ -41,7 +41,7 @@ legendCtrl._toggleButton.setAttribute('aria-label', 'Toggle Legend')
 
 var communityPopup = elements.popup(map)
 
-var backButton = elements.backButton(map, {stop: 9, lang: lang}, function () {
+var backButton = elements.backButton(map, {stop: 9, language: lang}, function () {
   map.easeTo({center: defaultCenter, zoom: 8, duration: 2500})
 })
 
@@ -72,4 +72,3 @@ map.on('mousemove', function (e) {
   var features = map.queryRenderedFeatures(e.point)
   map.getCanvas().style.cursor = (features.length) ? 'pointer' : ''
 })
-
