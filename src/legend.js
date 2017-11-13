@@ -9,8 +9,10 @@ const translations = {
     'en': 'EXPLORE'
   },
   'text': {
-    'es': 'Aqui se puede poner información sobre cómo se hizo el mapa, y el contexto del territorio Waorani.',
-    'en': 'Here you can put information about how the map was made and other context about Waorani territory.'
+    'es': yo`<div>Este mapa muestra parte del territorio ancestral de los waorani en el sudeste de Ecuador. Fue realizado por las comunidades con el apoyo técnico de la Alianza Ceibo para demostrar todos los recursos y lugares de importancia cultural dentro del territorio. Es parte de un proyecto continuo para crear un mapa de todo el territorio waorani.
+    <br><br> Toda la información en este mapa es propiedad cultural e intelectual de los waorani y deben ser consultados antes de cualquier reproducción o publicación.</div>`,
+    'en': yo`<div>This map shows part of the ancestral territory of the Waorani in South Eastern Ecuador. It was made was made by the communities, with technical support from Alianza Ceibo, in order to show all the resources and important cultural sites that lie within their land. It is part of an ongoing project to map the whole of Waorani territory.
+    <br><br>All the information on the map is the cultural and intellectual property of the Waorani and they should be consulted before any reproduction or publication.</div>`
   }
 }
 
@@ -49,7 +51,6 @@ Legend.prototype._getElement = function () {
         border-radius: 10px;
         width: 50%;
         min-width: 700px;
-        text-align: center;
         background: rgb(255, 255, 255);
       }
 
