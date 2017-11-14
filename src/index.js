@@ -1,4 +1,4 @@
-const d3 = require('d3-request')
+const xhr = require('xhr')
 const css = require('sheetify')
 const elements = require('alianza-elements')
 const mapboxgl = require('mapbox-gl')
@@ -27,9 +27,11 @@ var map = window.map = new mapboxgl.Map({
   hash: true
 }).on('load', onLoad)
 
-d3.json(window.location.origin + '/data.json', function (err, _data) {
+xhr('data.json', {header: {
+  'Content-Type': 'application/json'
+}}, function (err, resp, body) {
   if (err) console.error(err)
-  data = _data
+  data = JSON.parse(body)
   Object.keys(data).forEach(function (key) {
     data[key].features.forEach(function (feature) {
       dataIndex[feature.properties.Preset] = feature

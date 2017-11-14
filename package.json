@@ -31,6 +31,7 @@
     "mapbox-gl-toggle-control": "^1.0.5",
     "sheetify": "^6.1.1",
     "sheetify-nested": "^1.0.2",
+    "xhr": "^2.4.0",
     "yo-yo": "^1.4.1"
   },
   "devDependencies": {
