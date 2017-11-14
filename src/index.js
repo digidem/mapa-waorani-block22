@@ -86,7 +86,7 @@ function onLoad () {
       var preset = feature.properties.preset
       if (preset) {
         var airtable = dataIndex[preset.toLowerCase()]
-        opts.data = airtable.properties
+        opts.data = airtable ? airtable.properties : {}
       }
       communityPopup.update(communityDOM(opts))
       communityPopup.setLngLat(coords)
