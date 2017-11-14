@@ -15,6 +15,9 @@ css('alianza-elements/style.css')
 
 var qs = querystring.parse(window.location.search.replace('?', ''))
 var lang = qs.lang || 'es'
+var body = document.querySelector('body')
+if (lang === 'en') body.style = "font-family: 'Montserrat' !important;"
+else if (lang === 'es') body.style = "font-family: 'Helvetica' !important;"
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeWEiLCJhIjoiY2lzZDVhbjM2MDAwcTJ1cGY4YTN6YmY4cSJ9.NxK9jMmYZsA32ol_IZGs5g'
 var defaultCenter = [-77.2593, -1.2322]
 
