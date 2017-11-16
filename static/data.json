@@ -830,7 +830,8 @@
             }
           ],
           "Descripción Español": "Sirve para curar dolores estomacales",
-          "Nombre Wao": "bagamo"
+          "Nombre Wao": "bagamo",
+          "Nombre Ingles": "Medicinal plant"
         },
         "geometry": null
       },
@@ -929,7 +930,7 @@
           ],
           "Descripción Español": "Es familia de guadua muy pequeño, es bueno golpear en la altura de ombliguo a los niños lo que orinan en la cama siempre por la noche.",
           "Nombre Wao": "chontilla copy",
-          "Nombre Ingles": "˜"
+          "Nombre Ingles": "Ñemego"
         },
         "geometry": null
       },
@@ -1029,7 +1030,8 @@
             }
           ],
           "Descripción Español": "Remedio natural que sirve para curar enfermedades. Sus espinos son peligrosos.",
-          "Nombre Wao": "egawë"
+          "Nombre Wao": "egawë",
+          "Nombre Ingles": "Cats claw"
         },
         "geometry": null
       },
@@ -1095,7 +1097,8 @@
             }
           ],
           "Descripción Español": "Espacio donde existen diferentes especies de animales. ",
-          "Nombre Wao": "öïngaïrï kewëñömö"
+          "Nombre Wao": "öïngaïrï kewëñömö",
+          "Nombre Ingles": "Area with many animals"
         },
         "geometry": null
       },
@@ -2124,7 +2127,6 @@
         "properties": {
           "Preset": "flora/oyonkabekore",
           "Tipo de cosa": "Plantas",
-          "Nombre Español": "x",
           "Symbol": [
             {
               "id": "attTC6lfCckSAuZcV",
@@ -2147,7 +2149,8 @@
             }
           ],
           "Descripción Español": "Sitios donde existen tipos de heliconias.",
-          "Nombre Wao": "oyonkabekome"
+          "Nombre Wao": "oyonkabekome",
+          "Nombre Ingles": "Heliconia"
         },
         "geometry": null
       },
@@ -2834,7 +2837,8 @@
             }
           ],
           "Descripción Español": "Alivia dolor, golpe, hinchazon, etc.",
-          "Nombre Wao": "wento"
+          "Nombre Wao": "wento",
+          "Nombre Ingles": "Stinging nettle"
         },
         "geometry": null
       },
@@ -3137,7 +3141,7 @@
               }
             }
           ],
-          "Nombre Ingles": "Travelling path",
+          "Nombre Ingles": "Path between villages",
           "Descripción Español": "Camino para la visita a algun lugar.",
           "Nombre Wao": "ëñäke goro"
         },
@@ -3172,7 +3176,8 @@
             }
           ],
           "Descripción Español": "Sendero para aventurarse.",
-          "Nombre Wao": "gemagi taaro"
+          "Nombre Wao": "gemagi taaro",
+          "Nombre Ingles": "Small path"
         },
         "geometry": null
       },
@@ -3543,7 +3548,8 @@
             }
           ],
           "Descripción Español": "Varios sitio donde siembra platanos, yucas, maiz, mani, camote, naranjilla, plantas frutales, etc.",
-          "Nombre Wao": "kewënkore"
+          "Nombre Wao": "kewënkore",
+          "Nombre Ingles": "Farming area"
         },
         "geometry": null
       },
@@ -3710,7 +3716,8 @@
             }
           ],
           "Descripción Español": "Sirve para elaborar collar, manilla y colección de otro usos.",
-          "Nombre Wao": "pantomo"
+          "Nombre Wao": "pantomo",
+          "Nombre Ingles": "Wayruru"
         },
         "geometry": null
       },
@@ -3743,7 +3750,8 @@
             }
           ],
           "Descripción Español": "Es favorito para tener en casa como mascota, es muy hábil y mansito, puede silvar y hablar con las imitaciones de las personas.",
-          "Nombre Wao": "aboke"
+          "Nombre Wao": "aboke",
+          "Nombre Ingles": "Parakeet"
         },
         "geometry": null
       },
@@ -3911,7 +3919,8 @@
             }
           ],
           "Descripción Español": "Fruta comestible.",
-          "Nombre Wao": "meñeka"
+          "Nombre Wao": "meñeka",
+          "Nombre Ingles": "Tree tomato"
         },
         "geometry": null
       },
@@ -4258,7 +4267,6 @@
         "properties": {
           "Preset": "fauna/goibe",
           "Tipo de cosa": "Aves",
-          "Nombre Español": "x",
           "Symbol": [
             {
               "id": "att0Xbn4Lc9YUAAbS",
@@ -4320,7 +4328,8 @@
             }
           ],
           "Descripción Español": "Camino donde se puede ir por las lomas y valles naturalmente.",
-          "Nombre Wao": "öwëyaro"
+          "Nombre Wao": "öwëyaro",
+          "Nombre Ingles": "Small path"
         },
         "geometry": null
       },
@@ -4752,7 +4761,8 @@
             }
           ],
           "Descripción Español": "Sirve, para la contruccion de casa tipica.",
-          "Nombre Wao": "pagöman"
+          "Nombre Wao": "pagöman",
+          "Nombre Ingles": "Paja"
         },
         "geometry": null
       },
@@ -4987,7 +4997,8 @@
             }
           ],
           "Descripción Español": "Es comestible para personas y animales (machines, monos arañas, monos noturnos y guantas). Tradición wao es enseñar a los niños, para que aprenda a lanzear la pepa de zapote, cuando botan en un terreno inclinado. ",
-          "Nombre Wao": "bokawe"
+          "Nombre Wao": "bokawe",
+          "Nombre Ingles": "Zapote fruit"
         },
         "geometry": null
       },
@@ -5548,7 +5559,8 @@
             }
           ],
           "Descripción Español": "Las plantas mediciales que curaban antiguamente.",
-          "Nombre Wao": "dorani bete waa bai"
+          "Nombre Wao": "dorani bete waa bai",
+          "Nombre Ingles": "Medicinal plant"
         },
         "geometry": null
       },
@@ -5581,7 +5593,8 @@
             }
           ],
           "Descripción Español": "Muy util para elaborar lanzas, cerbatanas, chuzos y postes para la construcción de vvivienda.",
-          "Nombre Wao": "tepawë"
+          "Nombre Wao": "tepawë",
+          "Nombre Ingles": "Pambil palm"
         },
         "geometry": null
       },
