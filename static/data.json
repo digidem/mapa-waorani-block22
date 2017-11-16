@@ -3447,7 +3447,8 @@
             }
           ],
           "Descripción Español": "Leyenda Waorani cuentan, guanta era como camote para jaguar. Ademas, es rico y sabroso su carne.",
-          "Nombre Wao": "panone"
+          "Nombre Wao": "panone",
+          "Nombre Ingles": "paca"
         },
         "geometry": null
       },
@@ -4055,7 +4056,8 @@
             }
           ],
           "Descripción Español": "Es útil para Waorani, usan para la artesanía en la bodoquera.",
-          "Nombre Wao": "gogätawë"
+          "Nombre Wao": "gogätawë",
+          "Nombre Ingles": "bees wax"
         },
         "geometry": null
       },
@@ -4156,7 +4158,8 @@
             }
           ],
           "Descripción Español": "Sirve para cazar y comer. La gente a las crias tienen como cascotas. Las pieles sirven para elaborar artezanías.",
-          "Nombre Wao": "koba"
+          "Nombre Wao": "koba",
+          "Nombre Ingles": "coati"
         },
         "geometry": null
       },
@@ -4257,7 +4260,8 @@
             }
           ],
           "Descripción Español": "Leyenda Waorani cuentan, guatuza era como abuela. Ademas es util para el consumo.",
-          "Nombre Wao": "penë"
+          "Nombre Wao": "penë",
+          "Nombre Ingles": "agouti"
         },
         "geometry": null
       },
@@ -4443,7 +4447,8 @@
           "Tipo de cosa": "Animales",
           "Nombre Español": "camino de huanta",
           "Descripción Español": "Sendero de guanta",
-          "Nombre Wao": "ore önowä"
+          "Nombre Wao": "ore önowä",
+          "Nombre Ingles": "paca path"
         },
         "geometry": null
       },
