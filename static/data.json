@@ -1133,7 +1133,8 @@
             }
           ],
           "Descripción Español": "Aparato para captar imágenes y videos.",
-          "Nombre Wao": "awenegïnka"
+          "Nombre Wao": "awenegïnka",
+          "Nombre Ingles": "Camera traps"
         },
         "geometry": null
       },
@@ -1580,7 +1581,8 @@
             }
           ],
           "Descripción Español": "Para wao es favorito su carne para comer, las plumas son para aventar aire en las fogatas. Las crias son como mascotas tener en casa wao.",
-          "Nombre Wao": "kowätai"
+          "Nombre Wao": "kowätai",
+          "Nombre Ingles": "Guan"
         },
         "geometry": null
       },
@@ -3085,7 +3087,8 @@
             }
           ],
           "Descripción Español": "Es hábil para silvar y es saltarin en cada rato por la ramas.",
-          "Nombre Wao": "intame"
+          "Nombre Wao": "intame",
+          "Nombre Ingles": "Golden Headed Manakin"
         },
         "geometry": null
       },
@@ -3356,7 +3359,8 @@
             }
           ],
           "Descripción Español": "Carne tiene muy rico. A las crias tienen como mascotas en casas, puede acompañar.",
-          "Nombre Wao": "nawäñë"
+          "Nombre Wao": "nawäñë",
+          "Nombre Ingles": "Trumpeter birds"
         },
         "geometry": null
       },
@@ -4304,7 +4308,8 @@
             }
           ],
           "Descripción Español": "Vive en cierto lugar en la selva, es saltarin y sus plumas son para elaborar coronas de color rojo.",
-          "Nombre Wao": "goibe"
+          "Nombre Wao": "goibe",
+          "Nombre Ingles": "Goibe bird"
         },
         "geometry": null
       },
@@ -5624,7 +5629,8 @@
           "Preset": "flora/planta",
           "Tipo de cosa": "Plantas",
           "Nombre Español": "otras plantas",
-          "Descripción Español": "Diferentes especies o tipos de plantas."
+          "Descripción Español": "Diferentes especies o tipos de plantas.",
+          "Nombre Ingles": "Other plants"
         },
         "geometry": null
       },
