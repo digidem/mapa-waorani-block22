@@ -864,7 +864,8 @@
             }
           ],
           "Descripción Español": "Para wao es favorito su carne para comer, las plumas son para elaborar coronas y adornadar en las lanzas. Las crias son como mascotas tener en casa wao.",
-          "Nombre Wao": "barë"
+          "Nombre Wao": "barë",
+          "Nombre Ingles": "Wattled Currasow"
         },
         "geometry": null
       },
@@ -1063,9 +1064,9 @@
               }
             }
           ],
+          "Nombre Ingles": "Ceibo tree",
           "Descripción Español": "Enorme y gigante, por ejemplo: águila arpia construye armar para posar su nido en las ramas del ceibo.",
-          "Nombre Wao": "gemenewë",
-          "Nombre Ingles": "Ceibo tree"
+          "Nombre Wao": "gemenewë"
         },
         "geometry": null
       },
@@ -1267,7 +1268,8 @@
             }
           ],
           "Descripción Español": "Tener como mascota en casa, pero es traviezo lleva las cosas pequeñas de la casa volando.",
-          "Nombre Wao": "menka"
+          "Nombre Wao": "menka",
+          "Nombre Ingles": "Oropendola"
         },
         "geometry": null
       },
@@ -1510,7 +1512,8 @@
             }
           ],
           "Descripción Español": "Las pesonas cazan y comen, ademas son mascotas favotios.",
-          "Nombre Wao": "mïïmo"
+          "Nombre Wao": "mïïmo",
+          "Nombre Ingles": "monkey"
         },
         "geometry": null
       },
@@ -1712,7 +1715,8 @@
             }
           ],
           "Descripción Español": "Sirve para comer y tener como mascotas, sus plumas son importantes para elaborar coronas.( Se visten en mayor parte en los eventos y en las fiestas).",
-          "Nombre Wao": "minta"
+          "Nombre Wao": "minta",
+          "Nombre Ingles": "Blue and yellow macaw"
         },
         "geometry": null
       },
@@ -2051,7 +2055,8 @@
             }
           ],
           "Descripción Español": "Las personas cazan y comen regularmente, las crias son mascotas para waos.",
-          "Nombre Wao": "kogïnkoo"
+          "Nombre Wao": "kogïnkoo",
+          "Nombre Ingles": "monkey"
         },
         "geometry": null
       },
@@ -2118,7 +2123,8 @@
             }
           ],
           "Descripción Español": "Trigrillo, es un comunicador todo lo que pasa o alguien llegar.",
-          "Nombre Wao": "mëñeremö"
+          "Nombre Wao": "mëñeremö",
+          "Nombre Ingles": "ocelot"
         },
         "geometry": null
       },
@@ -2489,9 +2495,9 @@
               }
             }
           ],
+          "Nombre Ingles": "Chiparro bush",
           "Descripción Español": "Existen en las orillas del rio o estero, es muy duro y flexibles para quebrar las ramas. Además los colibris encantan chupar en los flores  dulces que tiene chiparro. ",
-          "Nombre Wao": "miwagowë",
-          "Nombre Ingles": "Chiparro bush"
+          "Nombre Wao": "miwagowë"
         },
         "geometry": null
       },
@@ -2523,9 +2529,9 @@
               }
             }
           ],
+          "Nombre Ingles": "Chuncho tree",
           "Descripción Español": "Sirve para realizar la elaboración de canoa y construcción de vivienda. Ademas es favorito para los monos aulladores las ramas que recien crecen le encantan comer. También es util para curar con la corteza a los granos que causan en el piel de las personas.",
-          "Nombre Wao": "akowë",
-          "Nombre Ingles": "Chuncho tree"
+          "Nombre Wao": "akowë"
         },
         "geometry": null
       },
@@ -2536,7 +2542,8 @@
           "Preset": "fauna/mono",
           "Tipo de cosa": "Animales",
           "Nombre Español": "otro mono",
-          "Descripción Español": "Cualquier mono no identificado."
+          "Descripción Español": "Cualquier mono no identificado.",
+          "Nombre Ingles": "monkey"
         },
         "geometry": null
       },
@@ -3191,9 +3198,6 @@
           "Preset": "fauna/area-de-pesca",
           "Tipo de cosa": "Áreas/zonas",
           "Nombre Español": "zona de pesca",
-          "Nombre Ingles": "Fishing area",
-          "Descripción Español": "Lugares donde pueden pescar de diferentes especies.",
-          "Nombre Wao": "geyetibe",
           "Symbol": [
             {
               "id": "attEhNV9gTsuhycVM",
@@ -3214,7 +3218,10 @@
                 }
               }
             }
-          ]
+          ],
+          "Nombre Ingles": "Fishing area",
+          "Descripción Español": "Lugares donde pueden pescar de diferentes especies.",
+          "Nombre Wao": "geyetibe"
         },
         "geometry": null
       },
@@ -3822,7 +3829,8 @@
             }
           ],
           "Descripción Español": "Para wao es favorito su carne para comer, las plumas son para aventar aire en las fogatas. Las crias son como mascotas tener en casa wao.",
-          "Nombre Wao": "gontiwä"
+          "Nombre Wao": "gontiwä",
+          "Nombre Ingles": "Nocturnal Currasow"
         },
         "geometry": null
       },
@@ -4700,7 +4708,7 @@
               }
             }
           ],
-          "Nombre Ingles": "wooly monkey",
+          "Nombre Ingles": "woolly monkey",
           "Descripción Español": "Carne favorito para waorani, en temporada de engordura se cazan bastantes y sus crias son mas queridos para tener como mascotas.",
           "Nombre Wao": "gata"
         },
@@ -4802,9 +4810,9 @@
               }
             }
           ],
+          "Nombre Ingles": "Huito tree",
           "Descripción Español": "Sirve para pintar cuerpo, especialmente en los brazos, espalda y en la rodillas para mostrar la cultura Waorani. (pintan para eventos y en las fiestas).",
-          "Nombre Wao": "wënka",
-          "Nombre Ingles": "Huito tree"
+          "Nombre Wao": "wënka"
         },
         "geometry": null
       },
@@ -4836,9 +4844,9 @@
               }
             }
           ],
+          "Nombre Ingles": "Ceibo tree",
           "Descripción Español": "Parecido como ceibo, en épocas de verano las pepas revientan  algodones de color café.",
-          "Nombre Wao": "gemenewë copy",
-          "Nombre Ingles": "Ceibo tree"
+          "Nombre Wao": "gemenewë copy"
         },
         "geometry": null
       },
@@ -5278,9 +5286,9 @@
               }
             }
           ],
+          "Nombre Ingles": "Sangre de grado tree",
           "Descripción Español": "Sirve para comer. Además, es para curar, especialmente a la tempana edad a los niños que tiene mal de corazon y gripes con asmas.",
-          "Nombre Wao": "koyiwë",
-          "Nombre Ingles": "Sangre de grado tree"
+          "Nombre Wao": "koyiwë"
         },
         "geometry": null
       },
