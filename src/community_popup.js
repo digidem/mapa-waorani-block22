@@ -10,8 +10,8 @@ var lookup = {
 module.exports = function (opts) {
   if (!opts.feature) throw new Error('need feature')
   if (!opts.lang) opts.lang = 'es'
-  var symbol = opts.data && opts.data.Symbol && opts.data.Symbol[0]
-  var name = (opts.data && opts.data[lookup[opts.lang]]) || opts.feature.properties.Nombre
+  var symbol = opts.data && opts.data.Symbol && opts.data.Symbol[0] || opts.symbol
+  var name = (opts.data && opts.data[lookup[opts.lang]]) || opts.feature.properties.Nombre || opts.data.name || opts.data.arbol_especie
   var style = css`
     :host {
       margin: 10px;
