@@ -5,6 +5,10 @@ const mapboxgl = require('mapbox-gl')
 const ToggleControl = require('mapbox-gl-toggle-control')
 const querystring = require('querystring')
 
+if (process.env.NODE_ENV === 'production') {
+  require('./service-worker')
+}
+
 var Legend = require('./legend')
 var communityDOM = require('./community_popup')
 var data = {}
