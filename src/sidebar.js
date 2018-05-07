@@ -46,8 +46,8 @@ module.exports = function (map) {
     }
     @media only screen and (min-width: 601px) {
       :host {
-        width: 30%;
-        max-width: 500px;
+        width: 40%;
+        max-width: 700px;
         min-width: 300px;
         &::-webkit-scrollbar {
           display: none;
