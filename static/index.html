@@ -13,8 +13,10 @@
     src: url('/FuturaPassata-DISPLAY.woff2') format('woff2'),
          url('/FuturaPassata-DISPLAY.woff') format('woff');
   }
-  #map @media only screen and (max-width: 600px) {
-    display: none;
+  @media only screen and (max-width: 600px) {
+    #map {
+      display: none;
+    }
   }
   body {
     margin:0;

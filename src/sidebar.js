@@ -19,22 +19,45 @@ var lastActiveItem = null
 module.exports = function (map) {
   var style = css`
     :host {
-      width: 30%;
-      max-width: 500px;
-      z-index: 999;
-      background-color: #161616;
-      color: white;
-      max-height: 100%;
+      padding: 20px;
       position: fixed;
+      z-index: 999;
+      background-color: rgba(22, 22, 22, .90);
+      color: white;
       overflow-y: scroll;
+      max-height: 100%;
+      .scroller {
+        padding-bottom: 40px;
+        overflow-y: scroll;
+        max-height: 100%;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      h1 {
+        line-height: 2rem;
+        padding-top: 20px;
+      }
     }
-    :host::-webkit-scrollbar {
-      display: none;
+    @media only screen and (max-width: 600px) {
+      :host {
+        width: 100%;
+      }
+    }
+    @media only screen and (min-width: 601px) {
+      :host {
+        width: 30%;
+        max-width: 500px;
+        min-width: 300px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
     }
   `
 
-  var el = html`
-    <div class=${style}>
+  var wrapper = html`<div id="sidebar" class=${style}></div>`
+  var el = html`<div class="scroller">
       <section id="section-1">
         <h1>IN DEFENSE OF A FOREST HOMELAND</h1>
         <p>
@@ -45,15 +68,15 @@ module.exports = function (map) {
         </p>
       </section>
       <section id="section-2">
-        <h2>THE OIL RUSH</h2>
+        <h1>THE OIL RUSH</h1>
         <p>Over the last half-century the oil industry (multinationals and the Ecuadorian state oil company) have opened roads for oil platforms and pipelines into the heart of the Waorani people’s ancestral lands.  Now, the government wants to sell rights to exploit oil in the headwaters of the Curaray River, one of the last remaining oil-free roadless areas in Waorani territory. </p>
       </section>
       <section id="section-3">
-        <h3>MAPS AND RESISTANCE</h3>
+        <h1>MAPS AND RESISTANCE</h1>
         <p>The Waorani communities of the Curaray river-basin (now known as Block 22 by the Government) are creating territorial maps of their lands that document the historic and actual uses of their territory, and demonstrate that their homelands are not up for grabs.
           Whereas the maps of oil companies show petrol deposits and major rivers, the maps that the Waorani peoples are creating identify historic battle sites, ancient cave-carvings, jaguar trails, medicinal plants, animal reproductive zones, important fishing holes, creek-crossings, sacred waterfalls.</p>
       </section>
-    </div>
+  </div>
   `
   var navigationItems = []
   Object.keys(zoomPoints).forEach(function (selector) {
@@ -63,7 +86,7 @@ module.exports = function (map) {
     navigationItems.push({element, onScroll})
   })
 
-  el.addEventListener('scroll', function (event) {
+  wrapper.addEventListener('scroll', function (event) {
     var currentItem
     navigationItems.forEach(function (item) {
       if (event.target.scrollTop >= item.element.offsetTop - OFFSET_Y) currentItem = item
@@ -73,5 +96,7 @@ module.exports = function (map) {
       currentItem.onScroll(map)
     }
   })
-  return el
+
+  wrapper.appendChild(el)
+  return wrapper
 }
