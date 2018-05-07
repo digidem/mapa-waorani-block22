@@ -8,19 +8,21 @@
   <link href='iconos_wao.css' rel='stylesheet' />
   <style>
   @font-face {
-    font-family: 'FuturaPassata';
-    src: url('/static/FuturaPassata-DISPLAY.eot'); /* IE9 Compat Modes */
-    src: url('/static/FuturaPassata-DISPLAY.woff2') format('woff2'),
-         url('/static/FuturaPassata-DISPLAY.woff') format('woff');
+    font-family: FuturaPassata;
+    src: url('/FuturaPassata-DISPLAY.eot'); /* IE9 Compat Modes */
+    src: url('/FuturaPassata-DISPLAY.woff2') format('woff2'),
+         url('/FuturaPassata-DISPLAY.woff') format('woff');
   }
-
+  #map @media only screen and (max-width: 600px) {
+    display: none;
+  }
   body {
     margin:0;
     font-family: 'Nunito Sans', Helvetica, sans-serif;
     padding:0;
   }
   h1, h2, h3, h4, h5, h6 {
-
+    font-family: FuturaPassata, Helvetica, sans-serif;
   }
   #map { position:absolute; top:0; bottom:0; width:100%; }
   .mapboxgl-popup {
