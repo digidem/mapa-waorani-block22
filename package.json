@@ -29,6 +29,7 @@
     "alianza-elements": "^3.0.0",
     "mapbox-gl": "^0.39.1",
     "mapbox-gl-toggle-control": "^1.0.5",
+    "nanohtml": "^1.2.4",
     "sheetify": "^6.1.1",
     "sheetify-nested": "^1.0.2",
     "workbox-cli": "^2.1.3",

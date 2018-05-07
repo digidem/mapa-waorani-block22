@@ -2,15 +2,15 @@ const xhr = require('xhr')
 const css = require('sheetify')
 const elements = require('alianza-elements')
 const mapboxgl = require('mapbox-gl')
-const ToggleControl = require('mapbox-gl-toggle-control')
 const querystring = require('querystring')
+
+const sidebarDOM = require('./sidebar')
+const communityDOM = require('./community_popup')
 
 if (process.env.NODE_ENV === 'production') {
   require('./service-worker')
 }
 
-var Legend = require('./legend')
-var communityDOM = require('./community_popup')
 var data = {}
 var dataIndex = {}
 
@@ -23,14 +23,17 @@ var body = document.querySelector('body')
 if (lang === 'en') body.style = "font-family: 'Montserrat' !important;"
 else if (lang === 'es') body.style = "font-family: 'Helvetica' !important;"
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeWEiLCJhIjoiY2lzZDVhbjM2MDAwcTJ1cGY4YTN6YmY4cSJ9.NxK9jMmYZsA32ol_IZGs5g'
-var defaultCenter = [-77.2593, -1.2322]
+var nemonpareCenter = [-77.2593, -1.2322]
+var defaultCenter = [
+  -79.656232, -0.489971
+]
 
 var map = window.map = new mapboxgl.Map({
   container: 'map',
   center: defaultCenter,
   zoom: 8,
   maxBounds: [-87, -9, -70, 6],
-  style: 'mapbox://styles/aliya/cj5i9q1lb4wnx2rnxmldrtjvt?fresh=true',
+  style: 'mapbox://styles/aliya/cjgowcgqq00a62spkeo922ik6?fresh=true',
   hash: true,
   attributionControl: false
 }).on('load', onLoad)
@@ -48,33 +51,18 @@ xhr('data.json', {header: {
   onLoad()
 })
 
-function updateLang (_) {
-  lang = _
-  backButton.updateLang(lang)
-  legend.updateLang(lang)
-}
-
 map.addControl(new mapboxgl.ScaleControl({
   maxWidth: 150,
   unit: 'metric'
-}))
+}), 'bottom-right')
 
-var nav = new mapboxgl.NavigationControl()
+map.addControl(new mapboxgl.NavigationControl(), 'top-right')
+map.addControl(new mapboxgl.FullscreenControl(), 'top-right')
 map.addControl(new mapboxgl.AttributionControl({compact: true}))
-map.addControl(nav, 'top-left')
-map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
-
-var legend = Legend({lang: lang})
-var legendCtrl = new ToggleControl(legend.el)
-legendCtrl.show()
-map.addControl(legendCtrl, 'top-left')
-legendCtrl._toggleButton.setAttribute('aria-label', 'Toggle Legend')
 
 var communityPopup = elements.popup(map)
-
-var backButton = elements.backButton(map, {stop: 9, language: lang}, function () {
-  map.easeTo({center: defaultCenter, zoom: 8, duration: 2500})
-})
+var sidebar = sidebarDOM(map)
+document.body.appendChild(sidebar)
 
 function onLoad () {
   // When a click event occurs near a place, open a popup at the location of
@@ -85,7 +73,7 @@ function onLoad () {
     var area = _areas && _areas[0]
     var feature = _features && _features[0]
     if (area && map.getZoom() <= 9) {
-      map.easeTo({center: defaultCenter, zoom: 11, duration: 2500})
+      map.easeTo({center: nemonpareCenter, zoom: 11, duration: 2500})
       communityPopup.remove()
       return
     }
