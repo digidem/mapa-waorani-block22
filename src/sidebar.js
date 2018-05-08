@@ -9,10 +9,7 @@ var zoomPoints = {
     map.easeTo({center: [-79.656232, -0.489971], zoom: 6, duration: 2500})
   },
   '#section-2': function (map) {
-    map.fitBounds([
-      [-80.23003732, -2.40478800],
-      [-75.54174808525755, 0.14320485]
-    ])
+    map.easeTo({center: [-77.3355, -1.2127], zoom: 8, duration: 2500})
   },
   '#section-3': function (map) {
     map.fitBounds([
@@ -38,6 +35,9 @@ module.exports = function (map) {
       h1 {
         line-height: 2rem;
         padding-top: 20px;
+      }
+      p {
+        line-height: 1.75rem;
       }
     }
     @media only screen and (max-width: 600px) {

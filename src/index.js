@@ -27,15 +27,11 @@ var map = window.map = new mapboxgl.Map({
   container: 'map',
   center: defaultCenter,
   zoom: 8,
-  maxBounds: [-87, -9, -70, 6],
+  maxBounds: [-87, -9, -70, 3],
   style: 'mapbox://styles/aliya/cjgowcgqq00a62spkeo922ik6?fresh=true',
   hash: true,
   attributionControl: false
 }).on('load', onLoad)
-
-map.on('zoom', function () {
-  console.log(map.getBounds())
-})
 
 xhr('data.json', {header: {
   'Content-Type': 'application/json'
