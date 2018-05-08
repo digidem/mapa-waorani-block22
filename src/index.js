@@ -20,10 +20,8 @@ css('alianza-elements/style.css')
 var qs = querystring.parse(window.location.search.replace('?', ''))
 var lang = qs.lang || 'es'
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeWEiLCJhIjoiY2lzZDVhbjM2MDAwcTJ1cGY4YTN6YmY4cSJ9.NxK9jMmYZsA32ol_IZGs5g'
-var nemonpareCenter = [-77.2593, -1.2322]
-var defaultCenter = [
-  -79.656232, -0.489971
-]
+var nemonpareCenter = [ -77.2593, -1.2322 ]
+var defaultCenter = [ -79.656232, -0.489971 ]
 
 var map = window.map = new mapboxgl.Map({
   container: 'map',
@@ -34,6 +32,10 @@ var map = window.map = new mapboxgl.Map({
   hash: true,
   attributionControl: false
 }).on('load', onLoad)
+
+map.on('zoom', function () {
+  console.log(map.getBounds())
+})
 
 xhr('data.json', {header: {
   'Content-Type': 'application/json'
