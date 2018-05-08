@@ -27,10 +27,10 @@ module.exports = function (map) {
       overflow-y: scroll;
       max-height: 100%;
       margin-right: -16px;
+      background: linear-gradient(to right, rgba(22,22,22.7), rgba(22,22,22,.1));
       #sidebar {
         padding: 20px;
         z-index: 999;
-        background-color: rgba(22, 22, 22, .7);
         color: white;
         img {
           max-width: 100%;
