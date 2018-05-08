@@ -37,8 +37,8 @@ module.exports = function (map) {
         }
         .caption {
           text-align: left;
-          margin: 5px;
-          font-size: .8rem;
+          margin-top: 10px;
+          color: #ccc;
         }
         &::-webkit-scrollbar {
           display: none;
