@@ -9,7 +9,7 @@ var zoomPoints = {
     map.easeTo({center: [-79.656232, -0.489971], zoom: 6, duration: 2500})
   },
   '#section-2': function (map) {
-    map.easeTo({center: [-77.3355, -1.2127], zoom: 8, duration: 2500})
+    map.easeTo({center: [-78, -1.204], zoom: 7.5, duration: 2500})
   },
   '#section-3': function (map) {
     map.fitBounds([
@@ -22,39 +22,56 @@ var zoomPoints = {
 module.exports = function (map) {
   var style = css`
     :host {
-      padding: 20px;
+      width: 100%;
       position: fixed;
-      z-index: 999;
-      background-color: rgba(22, 22, 22, .7);
-      color: white;
       overflow-y: scroll;
       max-height: 100%;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-      h1 {
-        line-height: 2rem;
-        padding-top: 20px;
-      }
-      p {
-        line-height: 1.75rem;
+      margin-right: -16px;
+      #sidebar {
+        padding: 20px;
+        z-index: 999;
+        background-color: rgba(22, 22, 22, .7);
+        color: white;
+        img {
+          max-width: 100%;
+        }
+        .caption {
+          text-align: left;
+          margin: 5px;
+          font-size: .8rem;
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        h1 {
+          line-height: 2rem;
+          padding-top: 20px;
+        }
+        p {
+          line-height: 1.75rem;
+        }
       }
     }
     @media only screen and (max-width: 600px) {
       :host {
-        width: 100%;
+        #sidebar {
+          width: 100%;
+        }
       }
     }
     @media only screen and (min-width: 601px) {
       :host {
-        width: 50%;
-        max-width: 700px;
-        min-width: 300px;
+        #sidebar {
+          width: 50%;
+          max-width: 700px;
+          min-width: 300px;
+        }
       }
     }
   `
 
-  var el = html`<div id="sidebar" class=${style}>
+  var el = html`<div id="sidebar-wrapper" class=${style}>
+  <div id="sidebar">
       <section id="section-1">
         <h1>IN DEFENSE OF A FOREST HOMELAND</h1>
         <p>
@@ -63,6 +80,8 @@ module.exports = function (map) {
         <p>
           Before the oil companies, the loggers, the rubber tappers, and even before the Spanish conquistadors, the Waorani were known to the Incas and others as fierce defenders of the mountainous forests south of the mighty Napo River and north of the snaking Curaray.
         </p>
+        <img src="/img/ecuador-flooded-forest.jpg" />
+        <div class="caption">Ecuadorian amazon, man in a boat. 2017 </div>
       </section>
       <section id="section-2">
         <h1>THE OIL RUSH</h1>
@@ -76,7 +95,6 @@ module.exports = function (map) {
           Whereas the maps of oil companies show petrol deposits and major rivers, the maps that the Waorani peoples are creating identify historic battle sites, ancient cave-carvings, jaguar trails, medicinal plants, animal reproductive zones, important fishing holes, creek-crossings, sacred waterfalls.
           </p>
       </section>
-
       <section id="section-4">
         <h1>Wildlife</h1>
         <p>(There will probably be a couple word Header here...maybe just Wildlife...or maybe something additional like AMAZING AND MIRACULOUS WILDLIFE (HAHA!).  Text will be about about the richness of wildlife in the primary forests of Waorani land, and then a couple lines about the intense knowledge that the Waorani have of the wildlife…as legendary hunters, etc….how in making their maps they identified xxx kilometers of jaguar and peccary trails...and how animals play an important role in their spirituality, health, etc. I Will try to keep it to how many sentences?  3-4 good?
@@ -111,6 +129,7 @@ module.exports = function (map) {
         <h1>Join</h1>
         <p>Sidebar:  Here will be video testimonies...with audio.</p>
       </section>
+  </div>
   </div>
   `
   var navigationItems = []
