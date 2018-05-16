@@ -1,6 +1,7 @@
 var css = require('sheetify')
 var html = require('nanohtml')
 
+const RESIZE_URL = 'https://resizer.digital-democracy.org/800/'
 const CONTENT_URL = 'https://s3.amazonaws.com/images.digital-democracy.org/waorani-images/'
 const OFFSET_Y = 300
 var lastActiveItem = null
@@ -10,7 +11,7 @@ function video (path) {
 }
 
 function image (path) {
-  return html`<img class='lozad' data-src=${CONTENT_URL + path + '.jpg'} />`
+  return html`<img class='lozad' data-src=${RESIZE_URL + CONTENT_URL + path + '.jpg'} />`
 }
 
 var zoomPoints = {
@@ -41,6 +42,9 @@ module.exports = function (map) {
         padding: 20px;
         z-index: 999;
         color: white;
+        section {
+          padding-top: 100px;
+        }
         img {
           max-width: 100%;
         }
@@ -116,7 +120,7 @@ module.exports = function (map) {
         ${image('3c')}
       </section>
       <section id="section-4">
-        <h1>What are they Protecting? </h1>
+        <h1>What is at stake? </h1>
         <h1>Wildlife</h1>
         ${video('4wildlifeA')}
         <p>The Waorani territory protects one of the most biodiverse regions of the world, housing over 200 species of mammals, 600 bird species, nearly 300 fish species, and thousands of insect species. It remains one of the upper Amazon’s last intact wildlife sanctuaries amidst industrial-scale agriculture, oil and mining exploitation and incessant colonial invasion. </p>

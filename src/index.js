@@ -31,8 +31,12 @@ var map = window.map = new mapboxgl.Map({
   zoom: 8,
   maxBounds: [-87, -9, -70, 3],
   style: 'mapbox://styles/aliya/cjgowcgqq00a62spkeo922ik6?fresh=true',
-  hash: true,
-  attributionControl: false
+  hash: false,
+  zoomControl: false,
+  attributionControl: false,
+  scrollZoom: false,
+  boxZoom: false,
+  doubleClickZoom: false
 }).on('load', onLoad)
 
 xhr('data.json', {header: {
@@ -48,7 +52,7 @@ xhr('data.json', {header: {
   onLoad()
 })
 
-map.addControl(new mapboxgl.FullscreenControl(), 'top-right')
+map.addControl(new mapboxgl.ScaleControl(), 'top-right')
 map.addControl(new mapboxgl.AttributionControl({compact: true}), 'top-right')
 map.addControl(new DigidemAttrib(), 'bottom-right')
 
