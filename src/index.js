@@ -3,6 +3,7 @@ const css = require('sheetify')
 const elements = require('alianza-elements')
 const mapboxgl = require('mapbox-gl')
 const querystring = require('querystring')
+const lozad = require('lozad')()
 
 const sidebarDOM = require('./sidebar')
 const communityDOM = require('./community_popup')
@@ -58,6 +59,7 @@ map.addControl(new mapboxgl.AttributionControl({compact: true}))
 var communityPopup = elements.popup(map)
 var sidebar = sidebarDOM(map)
 document.body.appendChild(sidebar)
+lozad.observe()
 
 function onLoad () {
   // When a click event occurs near a place, open a popup at the location of
