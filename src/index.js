@@ -4,7 +4,7 @@ const elements = require('alianza-elements')
 const mapboxgl = require('mapbox-gl')
 const querystring = require('querystring')
 
-const sidebarDOM = require('./sidebar')
+const renderSidebar = require('./sidebar')
 const communityDOM = require('./community_popup')
 
 if (process.env.NODE_ENV === 'production') {
@@ -54,10 +54,9 @@ map.addControl(new mapboxgl.ScaleControl({
 map.addControl(new mapboxgl.NavigationControl(), 'top-right')
 map.addControl(new mapboxgl.FullscreenControl(), 'top-right')
 map.addControl(new mapboxgl.AttributionControl({compact: true}))
+renderSidebar(map, document.querySelector('#sidebar'))
 
 var communityPopup = elements.popup(map)
-var sidebar = sidebarDOM(map)
-document.body.appendChild(sidebar)
 
 function onLoad () {
   // When a click event occurs near a place, open a popup at the location of
