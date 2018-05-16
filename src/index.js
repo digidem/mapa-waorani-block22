@@ -4,6 +4,7 @@ const elements = require('alianza-elements')
 const mapboxgl = require('mapbox-gl')
 const querystring = require('querystring')
 const lozad = require('lozad')()
+const DigidemAttrib = require('@digidem/attribution-control')
 
 const sidebarDOM = require('./sidebar')
 const communityDOM = require('./community_popup')
@@ -47,14 +48,9 @@ xhr('data.json', {header: {
   onLoad()
 })
 
-map.addControl(new mapboxgl.ScaleControl({
-  maxWidth: 150,
-  unit: 'metric'
-}), 'bottom-right')
-
-map.addControl(new mapboxgl.NavigationControl(), 'top-right')
 map.addControl(new mapboxgl.FullscreenControl(), 'top-right')
-map.addControl(new mapboxgl.AttributionControl({compact: true}))
+map.addControl(new mapboxgl.AttributionControl({compact: true}), 'top-right')
+map.addControl(new DigidemAttrib(), 'bottom-right')
 
 var communityPopup = elements.popup(map)
 var sidebar = sidebarDOM(map)
