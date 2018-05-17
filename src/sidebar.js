@@ -97,7 +97,7 @@ module.exports = function (map, _layers) {
       overflow-y: scroll;
       max-height: 100%;
       margin-right: -16px;
-      background: linear-gradient(to right, rgba(44,44,44, .7), rgba(44,44,44,.1));
+      background: linear-gradient(to right, rgba(44,44,44, .7), rgba(22,22,22,.1));
       #sidebar {
         margin-left: 20px;
         padding: 20px;

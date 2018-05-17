@@ -23,7 +23,7 @@ var defaultCenter = [ -79.656232, -0.489971 ]
 var map = window.map = new mapboxgl.Map({
   container: 'map',
   center: defaultCenter,
-  zoom: 8,
+  zoom: 6,
   maxBounds: [-87, -9, -70, 3],
   style: 'mapbox://styles/aliya/cjgowcgqq00a62spkeo922ik6?fresh=true',
   hash: false,
