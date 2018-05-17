@@ -1,18 +1,29 @@
 var css = require('sheetify')
+var Player = require('@vimeo/player')
 var html = require('nanohtml')
 
 const RESIZE_URL = 'https://resizer.digital-democracy.org/600/'
-const CONTENT_URL = 'https://s3.amazonaws.com/images.digital-democracy.org/waorani-images/'
-const OFFSET_Y = 300
+const IMAGE_URL = 'https://s3.amazonaws.com/images.digital-democracy.org/waorani-images/'
+const OFFSET_Y = 500
 const ZOOM_DURATION = 5000
 var lastActiveItem = null
 
-function video (path) {
-  return html`<video class='lozad' data-src=${path} />`
+function video (url) {
+  var options = {
+    url: url,
+    width: 560,
+    title: false,
+    loop: false,
+    portrait: false,
+    byline: false
+  }
+  var iframePlayer = new Player(document.createElement('div'), options)
+  iframePlayer.className = 'lozad'
+  return iframePlayer.element
 }
 
 function image (path) {
-  return html`<img class='lozad' data-src=${RESIZE_URL + CONTENT_URL + path + '.jpg'} />`
+  return html`<img class='lozad' data-src=${RESIZE_URL + IMAGE_URL + path + '.jpg'} />`
 }
 
 var wildlifeLayers = [
@@ -86,13 +97,15 @@ module.exports = function (map, _layers) {
       overflow-y: scroll;
       max-height: 100%;
       margin-right: -16px;
-      background: linear-gradient(to right, rgba(22,22,22.7), rgba(22,22,22,.1));
+      background: linear-gradient(to right, rgba(44,44,44, .7), rgba(44,44,44,.1));
       #sidebar {
+        margin-left: 20px;
         padding: 20px;
         z-index: 999;
         color: white;
         section {
           padding-top: 100px;
+          min-height: 100vh;
         }
         img {
           max-width: 100%;
@@ -127,8 +140,8 @@ module.exports = function (map, _layers) {
     @media only screen and (min-width: 601px) {
       :host {
         #sidebar {
-          width: 50%;
-          max-width: 700px;
+          width: 45%;
+          max-width: 600px;
           min-width: 300px;
         }
       }
@@ -139,7 +152,7 @@ module.exports = function (map, _layers) {
   <div id="sidebar">
       <section id="section-1">
         <h1>IN DEFENSE OF A FOREST HOMELAND</h1>
-        ${video('https://vimeo.com/270209852')}
+        ${video('https://vimeo.com/270209852/d857a916b5')}
         <p>
           The Waorani people live in the upper headwaters of the Amazon river in Ecuador, one of the most biodiverse rainforests on earth. Their territory is 2.5 million acres, roughly the size of Yellowstone National Park.
         </p>
@@ -154,7 +167,7 @@ module.exports = function (map, _layers) {
         <p>
         Over the last half-century the oil industry (multinationals and the Ecuadorian state oil company) have opened roads for oil platforms and pipelines into the heart of the Waorani people’s ancestral lands.  Now, the government wants to sell rights to exploit oil in the headwaters of the Curaray River, one of the last remaining oil-free roadless areas in Waorani territory.
         </p>
-        ${video('https://vimeo.com/270208622')}
+        ${video('https://vimeo.com/270208622/ee7d7a12cc')}
       </section>
       <section id="maps-and-resistance">
       <h1>MAPS AND RESISTANCE</h1>
@@ -171,25 +184,29 @@ module.exports = function (map, _layers) {
       <section id="section-4">
         <h1>What is at stake? </h1>
         <h1 id="wildlife">Wildlife</h1>
-        ${video('https://vimeo.com/270211119')}
+        ${video('https://vimeo.com/270211119/a857892d50')}
         <p>The Waorani territory protects one of the most biodiverse regions of the world, housing over 200 species of mammals, 600 bird species, nearly 300 fish species, and thousands of insect species. It remains one of the upper Amazon’s last intact wildlife sanctuaries amidst industrial-scale agriculture, oil and mining exploitation and incessant colonial invasion. </p>
         ${image('4WildlifeB')}
       </section>
       <section id="section-5">
         <h1>A Natural Pharmacy</h1>
+        ${image('5MedicineA')}
         <p>
         Over millennia of keen observation and experimentation the Waorani people have accumulated knowledge and honed techniques that employ plants, and other peculiar forest items, to heal and cure a host of ailments, such as snake bites, gaping wounds, and even psychological illness. One of their discoveries, <em>curare</em>, used conventionally as a blowgun dart poison, has been employed as the primary muscle relaxant in nearly every surgical operation in the world.
         </p>
+        ${image('5MedicineB')}
       </section>
       <section id="section-6">
         <h1>A Culture in balance with Nature</h1>
+        ${video('https://vimeo.com/270211741/575052a044')}
         <p>
         Waorani culture embraces the secrets of living a healthy, vibrant, and fearless life within a pristine forested environment and without the need for massive deforestation, resource extraction and irresponsible contamination.  Their way of life uses songs to teach life’s lessons, rear children, memorize history, and to comprehend the complexities of the forest. The Waorani dance to promote family ties and healthy social structure.  Their culture also bears an incredible repertoire of cultural-identifying crafts and iconic weaponry such as chonta wood blowguns and feather-laden spears.
         </p>
-        ${video('https://vimeo.com/270211741')}
+        ${image('6CultureB')}
       </section>
       <section id="conflict-visions">
         <h1>A Conflict of Visions</h1>
+        ${image('7Conflictvisions')}
         <p>
         The Waorani way of life requires a healthy living forest. Oil operations in their lands will require the cutting of hundreds of kilometers of dynamite-laden seismic lines, the opening up of oil roads, and the building of pipelines and platforms.  For short-term economic gain, the Ecuadorian Government and the international oil industry are prepared to cause irreparable harm to a millenary indigenous culture, threatening the forest and the rivers that the Waorani depend on for survival.
         </p>
@@ -199,7 +216,7 @@ module.exports = function (map, _layers) {
         <p>
         Armed with 500 years of experience fighting invasions, the Waorani are challenging the government’s plans to exploit oil in their rainforest. They have produced territorial maps documenting the rich biodiversity of their lands, and demonstrating their people’s historical and present-day connection to their forests.  They have organized dozens of community assemblies, building strategies to resist the imminent auctioning of their ancestral territory to the oil industry.
         </p>
-        ${video('https://vimeo.com/270212698')}
+        ${image('8a')}
       </section>
       <section id="section-9">
         <h1>Join</h1>
