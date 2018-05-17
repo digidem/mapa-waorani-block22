@@ -1,35 +1,84 @@
 var css = require('sheetify')
 var html = require('nanohtml')
 
-const RESIZE_URL = 'https://resizer.digital-democracy.org/800/'
+const RESIZE_URL = 'https://resizer.digital-democracy.org/600/'
 const CONTENT_URL = 'https://s3.amazonaws.com/images.digital-democracy.org/waorani-images/'
 const OFFSET_Y = 300
+const ZOOM_DURATION = 5000
 var lastActiveItem = null
 
 function video (path) {
-  return html`<video class='lozad' data-src=${CONTENT_URL + path + '.mp4'} autoplay loop />`
+  return html`<video class='lozad' data-src=${path} />`
 }
 
 function image (path) {
   return html`<img class='lozad' data-src=${RESIZE_URL + CONTENT_URL + path + '.jpg'} />`
 }
 
+var wildlifeLayers = [
+  'background', 'territory-outline', 'zona-peces', 'zona-animales', 'zona-moretal', 'zona-palmera', 'rivers-large', 'rivers-small',
+  'rivers-large-highlight', 'rivers-large-shadow', 'lagos', 'rivers-peru-ecuador-colo', 'rivers-areas-peru-ecuador-colo',
+  'country-peru-ecuador-colombia', 'country-peru-ecuador-colombia-dark'
+]
+
+var pharmacyLayers = [
+  'background', 'territory-outline', 'zona-palmera', 'zona-miwago', 'zona-moretal',
+  'zona-animales', 'rivers-large', 'rivers-small', 'rivers-large-highlight',
+  'rivers-large-shadow', 'plant-view', 'plant-view-curare', 'rivers-area-per-ecuador-colo',
+  'rivers-peru-ecuador-colombia', 'country-peru-ecuador-colombia',
+  'country-peru-ecuador-colombia-dark'
+]
+
+var layers
+
+function showLayers (map, visibleLayers, defaultVisible) {
+  layers.forEach(function (layer) {
+    var visibility = defaultVisible || (layer.layout && layer.layout.visibility) || 'visible'
+    if (visibleLayers) {
+      var visible = wildlifeLayers.indexOf(layer.id) > -1 || layer.id.indexOf('wildlife-view') === 0
+      visibility = visible ? 'visible' : 'none'
+    }
+    map.setLayoutProperty(layer.id, 'visibility', visibility)
+  })
+}
+
 var zoomPoints = {
   '#section-1': function (map) {
-    map.easeTo({center: [-79.656232, -0.489971], zoom: 6, duration: 2500})
+    map.easeTo({center: [-79.656232, -0.489971], zoom: 6, duration: ZOOM_DURATION})
+    showLayers(map)
   },
-  '#section-2': function (map) {
-    map.easeTo({center: [-78, -1.204], zoom: 7.5, duration: 2500})
+  '#oil-rush': function (map) {
+    map.easeTo({center: [-78, -1.204], zoom: 7.5, duration: ZOOM_DURATION})
+    showLayers(map)
   },
-  '#section-3': function (map) {
-    map.fitBounds([
-      [-77.34213519210502, -1.2811817333545292],
-      [-77.23773043187386, -1.1856354675856693]
-    ])
+  '#maps-and-resistance': function (map) {
+    map.easeTo({center: [ -77.27, -1.2322 ], zoom: 14, duration: ZOOM_DURATION})
+    showLayers(map)
+  },
+  '#wildlife': function (map) {
+    map.easeTo({center: [-77.331, -1.282], zoom: 13, duration: ZOOM_DURATION})
+    showLayers(map, wildlifeLayers, 'none')
+  },
+  '#section-5': function (map) {
+    map.easeTo({center: [-77.278, -1.404], zoom: 13, duration: ZOOM_DURATION})
+    showLayers(map, pharmacyLayers, 'none')
+  },
+  '#section-6': function (map) {
+    map.easeTo({center: [-77.535, -1.177], zoom: 14, duration: ZOOM_DURATION})
+  },
+  '#conflict-visions': function (map) {
+    map.easeTo({center: [-77.335, -1.310], zoom: 11.5, duration: ZOOM_DURATION})
+    showLayers(map, ['for-conflict-layer-block', 'for-conflict-layer-petrol'])
+  },
+  '#resistance': function (map) {
+    map.easeTo({center: [-77.392, -1.273], zoom: 10.6, duration: ZOOM_DURATION})
+    showLayers(map, ['final-flora', 'final-comunidades', 'final-water',
+      'final-fauna', 'for-conflict-layer-block', 'for-conflict-layer-petrol'])
   }
 }
 
-module.exports = function (map) {
+module.exports = function (map, _layers) {
+  layers = _layers
   var style = css`
     :host {
       width: 100%;
@@ -90,7 +139,7 @@ module.exports = function (map) {
   <div id="sidebar">
       <section id="section-1">
         <h1>IN DEFENSE OF A FOREST HOMELAND</h1>
-        ${video('1a')}
+        ${video('https://vimeo.com/270209852')}
         <p>
           The Waorani people live in the upper headwaters of the Amazon river in Ecuador, one of the most biodiverse rainforests on earth. Their territory is 2.5 million acres, roughly the size of Yellowstone National Park.
         </p>
@@ -99,15 +148,15 @@ module.exports = function (map) {
           Before the oil companies, the loggers, the rubber tappers, and even before the Spanish conquistadors, the Waorani were known to the Incas and others as fierce defenders of the mountainous forests south of the mighty Napo River and north of the snaking Curaray.
         </p>
         </section>
-      <section id="section-2">
+      <section id="oil-rush">
         <h1>THE OIL RUSH</h1>
         ${image('2a')}
         <p>
         Over the last half-century the oil industry (multinationals and the Ecuadorian state oil company) have opened roads for oil platforms and pipelines into the heart of the Waorani people’s ancestral lands.  Now, the government wants to sell rights to exploit oil in the headwaters of the Curaray River, one of the last remaining oil-free roadless areas in Waorani territory.
         </p>
-        ${video('2b')}
+        ${video('https://vimeo.com/270208622')}
       </section>
-      <section id="section-3">
+      <section id="maps-and-resistance">
       <h1>MAPS AND RESISTANCE</h1>
         ${image('3a')}
         <p>
@@ -121,8 +170,8 @@ module.exports = function (map) {
       </section>
       <section id="section-4">
         <h1>What is at stake? </h1>
-        <h1>Wildlife</h1>
-        ${video('4wildlifeA')}
+        <h1 id="wildlife">Wildlife</h1>
+        ${video('https://vimeo.com/270211119')}
         <p>The Waorani territory protects one of the most biodiverse regions of the world, housing over 200 species of mammals, 600 bird species, nearly 300 fish species, and thousands of insect species. It remains one of the upper Amazon’s last intact wildlife sanctuaries amidst industrial-scale agriculture, oil and mining exploitation and incessant colonial invasion. </p>
         ${image('4WildlifeB')}
       </section>
@@ -137,17 +186,20 @@ module.exports = function (map) {
         <p>
         Waorani culture embraces the secrets of living a healthy, vibrant, and fearless life within a pristine forested environment and without the need for massive deforestation, resource extraction and irresponsible contamination.  Their way of life uses songs to teach life’s lessons, rear children, memorize history, and to comprehend the complexities of the forest. The Waorani dance to promote family ties and healthy social structure.  Their culture also bears an incredible repertoire of cultural-identifying crafts and iconic weaponry such as chonta wood blowguns and feather-laden spears.
         </p>
+        ${video('https://vimeo.com/270211741')}
       </section>
-      <section id="section-7">
+      <section id="conflict-visions">
         <h1>A Conflict of Visions</h1>
         <p>
-        (This text might say something about how the gov’t and oil industry only see beneath the natural pharmacy at the reservoirs below, etc….and how they are capable, for only x years of oil, threatening millenary cultures, biodiversity, and the most important tropical rainforest on the planet, etc.
-          </p>
-      </section>
-      <section id="section-8">
-        <p>This text will be about how the Waorani wont let that happen...how the map demonstrates that their territory is not up for grabs)
-        Sidebar:  Here will be video testimonies...with audio.
+        The Waorani way of life requires a healthy living forest. Oil operations in their lands will require the cutting of hundreds of kilometers of dynamite-laden seismic lines, the opening up of oil roads, and the building of pipelines and platforms.  For short-term economic gain, the Ecuadorian Government and the international oil industry are prepared to cause irreparable harm to a millenary indigenous culture, threatening the forest and the rivers that the Waorani depend on for survival.
         </p>
+      </section>
+      <section id="resistance">
+      <h1>The Resistance</h1>
+        <p>
+        Armed with 500 years of experience fighting invasions, the Waorani are challenging the government’s plans to exploit oil in their rainforest. They have produced territorial maps documenting the rich biodiversity of their lands, and demonstrating their people’s historical and present-day connection to their forests.  They have organized dozens of community assemblies, building strategies to resist the imminent auctioning of their ancestral territory to the oil industry.
+        </p>
+        ${video('https://vimeo.com/270212698')}
       </section>
       <section id="section-9">
         <h1>Join</h1>
@@ -170,8 +222,10 @@ module.exports = function (map) {
       if (event.target.scrollTop >= item.element.offsetTop - OFFSET_Y) currentItem = item
     })
     if (currentItem) {
-      if (!lastActiveItem || (currentItem.element !== lastActiveItem.element)) lastActiveItem = currentItem
-      currentItem.onScroll(map)
+      if (!lastActiveItem || (currentItem.element !== lastActiveItem.element)) {
+        lastActiveItem = currentItem
+        currentItem.onScroll(map)
+      }
     }
   })
 
