@@ -5,9 +5,19 @@ const lozad = require('lozad')()
 const DigidemAttrib = require('@digidem/attribution-control')
 
 const sidebarDOM = require('./sidebar')
+const urls = require('../static/urls.json')
 
 if (process.env.NODE_ENV === 'production') {
   require('./service-worker')
+  var prefetched = localStorage.getItem('prefetched-waorani-assets')
+  if (!prefeteched) {
+    localStorage.setItem('prefetched-waorani-assets', true)
+    urls.forEach(function (url) {
+      xhr(url, function (err, resp, body) {
+        if (err) console.error(err)
+      })
+    })
+  }
 }
 
 var data = {}
