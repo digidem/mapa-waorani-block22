@@ -6,7 +6,7 @@
   "scripts": {
     "test": "standard",
     "build": "mkdirp dist && npm run build:js && npm run build:static && workbox generate:sw",
-    "build:js": "NODE_ENV=production browserify src/index.js -t [ sheetify/transform -u sheetify-nested ] -t yo-yoify -t es2020 > dist/bundle.js",
+    "build:js": "NODE_ENV=production browserify src/index.js -t [ sheetify/transform -u sheetify-nested ] -t envify -t yo-yoify -t es2020 > dist/bundle.js",
     "build:static": "copyup 'static/**/*' dist && copyfiles data.json dist",
     "start": "budo src/index.js:bundle.js -d static -- -t [ sheetify/transform -u sheetify-nested]",
     "deploy": "npm run build && gh-pages -d dist"
@@ -44,6 +44,7 @@
     "browserify": "^14.4.0",
     "budo": "^10.0.3",
     "copyfiles": "^1.2.0",
+    "envify": "^4.1.0",
     "es2020": "^1.1.9",
     "gh-pages": "^1.0.0",
     "mkdirp": "^0.5.1",
