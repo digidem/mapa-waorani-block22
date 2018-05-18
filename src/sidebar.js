@@ -5,8 +5,8 @@ var html = require('nanohtml')
 const RESIZE_URL = 'https://resizer.digital-democracy.org/600/'
 const IMAGE_URL = 'https://s3.amazonaws.com/images.digital-democracy.org/waorani-images/'
 const OFFSET_Y = 500
-const ZOOM_DURATION = 5000
 var lastActiveItem = null
+var mapDirty = false
 
 function video (url) {
   var options = {
@@ -43,6 +43,8 @@ var pharmacyLayers = [
 var layers
 
 function showLayers (map, visibleLayers, defaultVisible) {
+  if (!mapDirty) return
+  if (!visibleLayers && !defaultVisible) mapDirty = false
   layers.forEach(function (layer) {
     var visibility = defaultVisible || (layer.layout && layer.layout.visibility) || 'visible'
     if (visibleLayers) {
@@ -53,38 +55,48 @@ function showLayers (map, visibleLayers, defaultVisible) {
   })
 }
 
+function zoom (map, opts) {
+  opts.speed = 0.15
+  map.flyTo(opts)
+}
+
 var zoomPoints = {
   '#section-1': function (map) {
-    map.easeTo({center: [-79.656232, -0.489971], zoom: 6, duration: ZOOM_DURATION})
     showLayers(map)
+    zoom(map, {center: [-79.656232, -0.489971], zoom: 6})
   },
   '#oil-rush': function (map) {
-    map.easeTo({center: [-78, -1.204], zoom: 7.5, duration: ZOOM_DURATION})
     showLayers(map)
+    zoom(map, {center: [-78, -1.204], zoom: 7.5})
   },
   '#maps-and-resistance': function (map) {
-    map.easeTo({center: [ -77.27, -1.2322 ], zoom: 14, duration: ZOOM_DURATION})
     showLayers(map)
+    zoom(map, {center: [ -77.27, -1.2322 ], zoom: 14})
   },
   '#wildlife': function (map) {
-    map.easeTo({center: [-77.331, -1.282], zoom: 13, duration: ZOOM_DURATION})
+    mapDirty = true
     showLayers(map, wildlifeLayers, 'none')
+    zoom(map, {center: [-77.331, -1.282], zoom: 13})
   },
   '#section-5': function (map) {
-    map.easeTo({center: [-77.278, -1.404], zoom: 13, duration: ZOOM_DURATION})
+    mapDirty = true
     showLayers(map, pharmacyLayers, 'none')
+    zoom(map, {center: [-77.278, -1.404], zoom: 13})
   },
   '#section-6': function (map) {
-    map.easeTo({center: [-77.535, -1.177], zoom: 14, duration: ZOOM_DURATION})
+    showLayers(map)
+    zoom(map, {center: [-77.535, -1.177], zoom: 14})
   },
   '#conflict-visions': function (map) {
-    map.easeTo({center: [-77.335, -1.310], zoom: 11.5, duration: ZOOM_DURATION})
+    mapDirty = true
     showLayers(map, ['for-conflict-layer-block', 'for-conflict-layer-petrol'])
+    zoom(map, {center: [-77.335, -1.310], zoom: 11.5})
   },
   '#resistance': function (map) {
-    map.easeTo({center: [-77.392, -1.273], zoom: 10.6, duration: ZOOM_DURATION})
+    mapDirty = true
     showLayers(map, ['final-flora', 'final-comunidades', 'final-water',
       'final-fauna', 'for-conflict-layer-block', 'for-conflict-layer-petrol'])
+    zoom(map, {center: [-77.392, -1.273], zoom: 10.6})
   }
 }
 
@@ -97,7 +109,7 @@ module.exports = function (map, _layers) {
       overflow-y: scroll;
       max-height: 100%;
       margin-right: -16px;
-      background: linear-gradient(to right, rgba(44,44,44, .7), rgba(22,22,22,.1));
+      background: linear-gradient(to right, rgba(22,22,22, .7), transparent);
       #sidebar {
         margin-left: 20px;
         padding: 20px;
@@ -111,6 +123,9 @@ module.exports = function (map, _layers) {
           max-width: 100%;
         }
         video {
+          max-width: 100%;
+        }
+        iframe {
           max-width: 100%;
         }
         .caption {
@@ -206,10 +221,11 @@ module.exports = function (map, _layers) {
       </section>
       <section id="conflict-visions">
         <h1>A Conflict of Visions</h1>
-        ${image('7Conflictvisions')}
+        ${image('IMG_4881')}
         <p>
         The Waorani way of life requires a healthy living forest. Oil operations in their lands will require the cutting of hundreds of kilometers of dynamite-laden seismic lines, the opening up of oil roads, and the building of pipelines and platforms.  For short-term economic gain, the Ecuadorian Government and the international oil industry are prepared to cause irreparable harm to a millenary indigenous culture, threatening the forest and the rivers that the Waorani depend on for survival.
         </p>
+        ${image('7Conflictvisions')}
       </section>
       <section id="resistance">
       <h1>The Resistance</h1>
