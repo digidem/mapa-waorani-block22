@@ -13,14 +13,21 @@ const urls = require('../static/urls.json')
 if (process.env.NODE_ENV === 'production') {
   require('./service-worker')
   var prefetched = localStorage.getItem('prefetched-waorani-assets')
-  if (!prefeteched) {
-    localStorage.setItem('prefetched-waorani-assets', true)
-    urls.forEach(function (url) {
+  try {
+    prefetched = JSON.parse(prefetched || '[]')
+  } catch (err) {
+    prefetched = []
+  }
+  // only grab ones we've not prefetched previously
+  localStorage.setItem('prefetched-waorani-assets', JSON.stringify(urls))
+  urls.forEach(function (url) {
+    if (prefetched.indexOf(url) === -1) {
+      console.log('fetching', url)
       xhr(url, function (err, resp, body) {
         if (err) console.error(err)
       })
-    })
-  }
+    }
+  })
 }
 var data = {}
 var dataIndex = {}
