@@ -1,0 +1,107 @@
+{
+  "section-1": {
+    "center": [
+      -79.656232,
+      -0.489971
+    ],
+    "zoom": 6,
+    "layers": []
+  },
+  "oil-rush": {
+    "center": [
+      -78,
+      -1.204
+    ],
+    "zoom": 7.5,
+    "layers": []
+  },
+  "maps-and-resistance": {
+    "center": [
+      -77.27,
+      -1.2322
+    ],
+    "zoom": 14,
+    "layers": []
+  },
+  "wildlife": {
+    "center": [
+      -77.331,
+      -1.282
+    ],
+    "zoom": 13,
+    "layers": [
+      "territory-outline",
+      "zona-peces",
+      "zona-animales",
+      "zona-moretal",
+      "zona-palmera",
+      "rivers-large",
+      "rivers-small",
+      "rivers-large-highlight",
+      "rivers-large-shadow",
+      "lagos",
+      "rivers-peru-ecuador-colo",
+      "rivers-area-peru-ecuador-colo",
+      "country-peru-ecuador-colombia",
+      "country-peru-ecuador-colombia-dark"
+    ]
+  },
+  "section-5": {
+    "center": [
+      -77.278,
+      -1.404
+    ],
+    "zoom": 13,
+    "layers": [
+      "territory-outline",
+      "zona-palmera",
+      "zona-miwago",
+      "zona-moretal",
+      "zona-animales",
+      "rivers-large",
+      "rivers-small",
+      "rivers-large-highlight",
+      "rivers-large-shadow",
+      "plant-view",
+      "plant-view-curare",
+      "rivers-area-peru-ecuador-colo",
+      "rivers-peru-ecuador-colo",
+      "country-peru-ecuador-colombia",
+      "country-peru-ecuador-colombia-dark"
+    ]
+  },
+  "section-6": {
+    "center": [
+      -77.535,
+      -1.177
+    ],
+    "zoom": 14,
+    "layers": []
+  },
+  "conflict-visions": {
+    "center": [
+      -77.335,
+      -1.31
+    ],
+    "zoom": 11.5,
+    "layers": [
+      "for-conflict-layer-block",
+      "for-conflict-layer-petrol"
+    ]
+  },
+  "resistance": {
+    "center": [
+      -77.392,
+      -1.273
+    ],
+    "zoom": 10.6,
+    "layers": [
+      "final-flora",
+      "final-comunidades",
+      "final-water",
+      "final-fauna",
+      "for-conflict-layer-block",
+      "for-conflict-layer-petrol"
+    ]
+  }
+}

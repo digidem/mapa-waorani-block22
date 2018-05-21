@@ -3,9 +3,10 @@ var Player = require('@vimeo/player')
 var html = require('nanohtml')
 var onIntersect = require('on-intersect')
 
+var mapTransition = require('./map_transition')
+
 const RESIZE_URL = 'https://resizer.digital-democracy.org/'
 const IMAGE_URL = 'https://s3.amazonaws.com/images.digital-democracy.org/waorani-images/'
-var mapDirty = false
 
 var dim = getViewport()
 
@@ -55,7 +56,7 @@ function section (id, onenter, el) {
   return el
 }
 
-function video (url, placeholderImg) {
+function video (url, placeholderImgUrl) {
   // TODO: create placeholder images for videos
   var options = {
     url: url,
@@ -67,7 +68,7 @@ function video (url, placeholderImg) {
     byline: false
   }
   var el = html`
-  <div class=${videoDivStyle} style="background-url: url(${placeholderImg})">
+  <div class=${videoDivStyle} style="background-url: url(${placeholderImgUrl})">
   </div>`
   var player
   // var muted = true
@@ -109,40 +110,6 @@ function image (path) {
   return aspectDiv('3x2', el)
 }
 
-var wildlifeLayers = [
-  'background', 'territory-outline', 'zona-peces', 'zona-animales', 'zona-moretal', 'zona-palmera', 'rivers-large', 'rivers-small',
-  'rivers-large-highlight', 'rivers-large-shadow', 'lagos', 'rivers-peru-ecuador-colo', 'rivers-areas-peru-ecuador-colo',
-  'country-peru-ecuador-colombia', 'country-peru-ecuador-colombia-dark'
-]
-
-var pharmacyLayers = [
-  'background', 'territory-outline', 'zona-palmera', 'zona-miwago', 'zona-moretal',
-  'zona-animales', 'rivers-large', 'rivers-small', 'rivers-large-highlight',
-  'rivers-large-shadow', 'plant-view', 'plant-view-curare', 'rivers-area-per-ecuador-colo',
-  'rivers-peru-ecuador-colombia', 'country-peru-ecuador-colombia',
-  'country-peru-ecuador-colombia-dark'
-]
-
-var layers
-
-function showLayers (map, visibleLayers, defaultVisible) {
-  if (!mapDirty) return
-  if (!visibleLayers && !defaultVisible) mapDirty = false
-  layers.forEach(function (layer) {
-    var visibility = defaultVisible || (layer.layout && layer.layout.visibility) || 'visible'
-    if (visibleLayers) {
-      var visible = wildlifeLayers.indexOf(layer.id) > -1 || layer.id.indexOf('wildlife-view') === 0
-      visibility = visible ? 'visible' : 'none'
-    }
-    map.setLayoutProperty(layer.id, 'visibility', visibility)
-  })
-}
-
-function zoom (map, opts) {
-  opts.speed = 0.2
-  map.flyTo(opts)
-}
-
 var style = css`
   :host {
     width: 100%;
@@ -169,7 +136,8 @@ var style = css`
         max-width: 100%;
       }
       iframe {
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
       }
       .caption {
         text-align: left;
@@ -206,60 +174,10 @@ var style = css`
   }
 `
 
-var zoomPoints = {
-  'section-1': function (map) {
-    showLayers(map)
-    zoom(map, {center: [-79.656232, -0.489971], zoom: 6})
-  },
-  'oil-rush': function (map) {
-    showLayers(map)
-    zoom(map, {center: [-78, -1.204], zoom: 7.5})
-  },
-  'maps-and-resistance': function (map) {
-    showLayers(map)
-    zoom(map, {center: [ -77.27, -1.2322 ], zoom: 14})
-  },
-  'wildlife': function (map) {
-    mapDirty = true
-    showLayers(map, wildlifeLayers, 'none')
-    zoom(map, {center: [-77.331, -1.282], zoom: 13})
-  },
-  'section-5': function (map) {
-    mapDirty = true
-    showLayers(map, pharmacyLayers, 'none')
-    zoom(map, {center: [-77.278, -1.404], zoom: 13})
-  },
-  'section-6': function (map) {
-    showLayers(map)
-    zoom(map, {center: [-77.535, -1.177], zoom: 14})
-  },
-  'conflict-visions': function (map) {
-    mapDirty = true
-    showLayers(map, ['for-conflict-layer-block', 'for-conflict-layer-petrol'])
-    zoom(map, {center: [-77.335, -1.310], zoom: 11.5})
-  },
-  'resistance': function (map) {
-    mapDirty = true
-    showLayers(map, ['final-flora', 'final-comunidades', 'final-water',
-      'final-fauna', 'for-conflict-layer-block', 'for-conflict-layer-petrol'])
-    zoom(map, {center: [-77.392, -1.273], zoom: 10.6})
-  }
-}
-
 module.exports = function (map) {
   function onsection (id) {
-    map.stop()
-    if (typeof zoomPoints[id] !== 'function') {
-      return console.log('not a function', id)
-    }
-    if (map.isStyleLoaded()) {
-      zoomPoints[id](map)
-    }
+    mapTransition(id, map)
   }
-
-  map.on('style.load', function () {
-    layers = map.getStyle().layers
-  })
 
   return html`<div id="sidebar-wrapper" class=${style}>
   <div id="sidebar">
@@ -298,7 +216,7 @@ module.exports = function (map) {
         ${image('3c')}
       </section>
       <section>
-        ${section('section-4', onsection, html`
+        ${section('wildlife', onsection, html`
           <h1>What is at stake? </h1>`)}
         <h1 id="wildlife">Wildlife</h1>
         ${video('https://vimeo.com/270211119/a857892d50')}
