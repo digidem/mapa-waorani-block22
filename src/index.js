@@ -7,6 +7,7 @@ const DigidemAttrib = require('@digidem/attribution-control')
 const sidebarDOM = require('./sidebar')
 const urls = require('../static/urls.json')
 const mapViews = require('./map_views.json')
+// const territory = require('../static/territory-wao-simplified.json')
 
 if (process.env.NODE_ENV === 'production') {
   require('./service-worker')
@@ -87,10 +88,31 @@ const bing = {
   }
 }
 
-map.once('style.load', function () {
+map.once('styledata', function () {
   map.addSource('bing', bingSource)
   map.addLayer(bing, 'territory-outline')
 })
+
+// Attempt at bootstrapping Wao territory to improve initial load speed
+// map.once('styledata', function () {
+//   map.addSource('territory-bootstrapped', {
+//     type: 'geojson',
+//     data: territory
+//   })
+//   var layers = map.getStyle().layers
+//   var territoryFill = layers.find(function (l) {
+//     return l.id === 'territory-fill'
+//   })
+//   var territoryOutline = layers.find(function (l) {
+//     return l.id === 'territory-outline'
+//   })
+//   territoryFill.id = 'territory-fill-bootstrapped'
+//   territoryOutline.id = 'territory-outline-bootstrapped'
+//   territoryFill.source = territoryOutline.source = 'territory-bootstrapped'
+//   territoryFill['source-layer'] = territoryOutline['source-layer'] = ''
+//   map.addLayer(territoryFill, 'territory-fill')
+//   map.addLayer(territoryOutline, 'territory-fill')
+// })
 
 map.addControl(new DigidemAttrib(), 'bottom-right')
 map.addControl(new mapboxgl.ScaleControl(), 'bottom-right')
