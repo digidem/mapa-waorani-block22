@@ -2,6 +2,7 @@ var views = require('./map_views.json')
 
 var timeoutId
 var FADE_DURATION = 1000
+var loaded = false
 
 var overlays = [
   'for-conflict-layer-block',
@@ -43,20 +44,27 @@ module.exports = mapTransition
 
 function mapTransition (viewId, map) {
   var view = views[viewId]
+  console.log('Transition view:', viewId)
   if (!view) return console.log('undefined view', viewId)
-  if (!map.loaded()) return console.log('not loaded', viewId)
 
   map.stop()
+  map.off('styledata', retry)
   map.off('moveend', showOverlays)
+
+  if (!(loaded || map.isStyleLoaded())) {
+    map.once('styledata', retry)
+    return
+  }
+
   if (timeoutId) clearTimeout(timeoutId)
 
-  fadeOverlays(0)
+  fadeOverlays(false)
   timeoutId = setTimeout(function () {
     hideOverlays()
     moveMap()
   }, FADE_DURATION)
 
-  map.on('moveend', showOverlays)
+  map.once('moveend', showOverlays)
 
   function showOverlays () {
     Object.keys(view.layerVisibility).forEach(function (layerId) {
@@ -64,23 +72,23 @@ function mapTransition (viewId, map) {
       var currentVisibility = map.getLayoutProperty(layerId, 'visibility')
       var targetVisibility = view.layerVisibility[layerId]
       if (currentVisibility === 'none' && targetVisibility === 'visible') {
-        console.log('opacity 0', layerId)
-        setLayerOpacity(map, layerId, 0, 0)
+        setLayerOpacity(map, layerId, false, 0)
       }
       map.setLayoutProperty(layerId, 'visibility', targetVisibility)
     })
-    fadeOverlays(1)
+    fadeOverlays(true)
   }
 
-  function fadeOverlays (opacity) {
+  function fadeOverlays (opaque) {
     overlays.forEach(function (layerId) {
       if (!map.getLayer(layerId)) return console.log('no layer', layerId)
       // if (map.getLayoutProperty(layerId, 'visibility') === 'none') return
-      setLayerOpacity(map, layerId, opacity)
+      setLayerOpacity(map, layerId, opaque)
     })
   }
 
   function moveMap () {
+    console.log('moving map', view.center, view.zoom)
     map.flyTo({
       center: view.center,
       zoom: view.zoom,
@@ -94,12 +102,27 @@ function mapTransition (viewId, map) {
       map.setLayoutProperty(layerId, 'visibility', 'none')
     })
   }
+
+  // We define this here so we can set it to run on map load, but then
+  // turn off the event if needed if another map transition is called
+  // before the map loads.
+  function retry () {
+    loaded = true
+    mapTransition(viewId, map)
+  }
 }
 
-function setLayerOpacity (map, layerId, opacity, duration) {
+var originalOpacities = {}
+
+function setLayerOpacity (map, layerId, opaque, duration) {
   if (typeof duration === 'undefined') duration = FADE_DURATION
   var layer = map.getLayer(layerId)
   var propName = layer.type === 'symbol' ? 'icon-opacity' : layer.type + '-opacity'
-  map.setPaintProperty(layerId, propName + '-transition', {duration: duration, delay: 0})
+  // Original layer opacity might not be `1`, so save what it was
+  var originalOpacity = originalOpacities[layerId] || map.getPaintProperty(layerId, propName)
+  var opacity = opaque ? originalOpacity : 0
+  // Workaround for https://github.com/mapbox/mapbox-gl-js/issues/6706
+  // Need to call `setPaintProperty()` on the layer, not `map`
+  layer.setPaintProperty(propName + '-transition', {duration: duration, delay: 0})
   map.setPaintProperty(layerId, propName, opacity)
 }
