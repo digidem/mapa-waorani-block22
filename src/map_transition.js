@@ -6,7 +6,7 @@ var views = require('./map_views.json')
 
 var FADEIN_DURATION = 1000
 var FADEOUT_DURATION = 250
-var FLY_SPEED = 0.3
+var FLY_SPEED = 0.5
 
 // These layers are complex to draw (calculating collisions) so we always
 // hide them when transitioning between map views to avoid animation jitter
