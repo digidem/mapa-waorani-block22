@@ -132,7 +132,7 @@ var style = css`
       section {
         min-height: 100vh;
         padding-bottom: 30vh;
-        padding-top: 2rem;
+        padding-top: 1.5rem;
         box-sizing: border-box;
       }
       section:first-child {
