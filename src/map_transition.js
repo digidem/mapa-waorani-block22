@@ -161,6 +161,9 @@ function expandLayerGlobs (map) {
   var mapLayers = map.getStyle().layers.map(function (l) {
     return l.id
   })
+  // Race condition: somtimes this is called before the bing satellite layer
+  // is added to the map
+  mapLayers.push('bing-satellite')
   hiddenLayersExpanded = mm(mapLayers, HIDDEN_TRANSITION_LAYERS)
   Object.keys(views).forEach(function (key) {
     var expandedLayerOpacity = {}
