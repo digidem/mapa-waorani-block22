@@ -2,6 +2,7 @@ var views = require('./map_views.json')
 
 var timeoutId
 var FADE_DURATION = 1000
+var FLY_SPEED = 0.3
 var loaded = false
 
 var overlays = [
@@ -88,12 +89,23 @@ function mapTransition (viewId, map) {
   }
 
   function moveMap () {
-    console.log('moving map', view.center, view.zoom)
-    map.flyTo({
-      center: view.center,
-      zoom: view.zoom,
-      speed: 0.3
-    })
+    if (view.bounds) {
+      map.fitBounds(view.bounds, {
+        padding: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 600
+        },
+        speed: FLY_SPEED
+      })
+    } else {
+      map.flyTo({
+        center: view.center,
+        zoom: view.zoom,
+        speed: FLY_SPEED
+      })
+    }
   }
 
   function hideOverlays () {

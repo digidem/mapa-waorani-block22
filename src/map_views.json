@@ -8,11 +8,7 @@
     "layers": []
   },
   "oil-rush": {
-    "center": [
-      -78,
-      -1.204
-    ],
-    "zoom": 7.5,
+    "bounds": [-78.3155,-3.3493,-74.9871,0.6275],
     "layers": []
   },
   "maps-and-resistance": {
