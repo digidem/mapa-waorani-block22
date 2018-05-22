@@ -32,6 +32,7 @@
     "lozad": "^1.4.0",
     "mapbox-gl": "^0.45.0",
     "mapbox-gl-toggle-control": "^1.0.5",
+    "micromatch": "^3.1.10",
     "nanocomponent": "^6.5.2",
     "nanohtml": "^1.2.4",
     "on-intersect": "^2.0.0",

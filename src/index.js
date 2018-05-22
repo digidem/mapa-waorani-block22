@@ -67,7 +67,7 @@ const bingSource = {
 }
 
 const bing = {
-  id: 'bing',
+  id: 'bing-satellite',
   type: 'raster',
   source: 'bing',
   layout: {

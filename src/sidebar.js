@@ -249,7 +249,7 @@ module.exports = function (map) {
         ${image('4WildlifeB')}
       </section>
       <section>
-        ${mapView('section-5', onview, html`<h2>A Natural Pharmacy</h2>`)}
+        ${mapView('pharmacy', onview, html`<h2>A Natural Pharmacy</h2>`)}
         ${image('5MedicineA')}
         <p>
         Over millennia of keen observation and experimentation the Waorani people have accumulated knowledge and honed techniques that employ plants, and other peculiar forest items, to heal and cure a host of ailments, such as snake bites, gaping wounds, and even psychological illness. One of their discoveries, <em>curare</em>, used conventionally as a blowgun dart poison, has been employed as the primary muscle relaxant in nearly every surgical operation in the world.
@@ -257,7 +257,7 @@ module.exports = function (map) {
         ${image('5MedicineB')}
       </section>
       <section>
-        ${mapView('section-6', onview, html`<h3>A Culture in balance with Nature</h3>`)}
+        ${mapView('culture', onview, html`<h3>A Culture in balance with Nature</h3>`)}
         ${video('https://vimeo.com/270211741/575052a044')}
         <p>
         Waorani culture embraces the secrets of living a healthy, vibrant, and fearless life within a pristine forested environment and without the need for massive deforestation, resource extraction and irresponsible contamination.  Their way of life uses songs to teach life’s lessons, rear children, memorize history, and to comprehend the complexities of the forest. The Waorani dance to promote family ties and healthy social structure.  Their culture also bears an incredible repertoire of cultural-identifying crafts and iconic weaponry such as chonta wood blowguns and feather-laden spears.

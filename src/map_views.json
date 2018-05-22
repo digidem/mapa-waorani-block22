@@ -5,11 +5,20 @@
       -0.489971
     ],
     "zoom": 6,
-    "layers": []
+    "layerOpacity": {
+      "bing-satellite": 1,
+      "petrol-blocks-*": 0,
+      "rivers-peru-ecuador-colo": 0
+    }
   },
   "oil-rush": {
     "bounds": [-78.3155,-3.3493,-74.9871,0.6275],
-    "layers": []
+    "layerOpacity": {
+      "bing-satellite": 0.4,
+      "petrol-blocks-label": 1,
+      "petrol-blocks-line": 0.7,
+      "rivers-peru-ecuador-colo": 1
+    }
   },
   "maps-and-resistance": {
     "center": [
@@ -17,7 +26,11 @@
       -1.2322
     ],
     "zoom": 14,
-    "layers": []
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-*": 0,
+      "rivers-peru-ecuador-colo": 1
+    }
   },
   "wildlife": {
     "center": [
@@ -25,54 +38,35 @@
       -1.282
     ],
     "zoom": 13,
-    "layers": [
-      "territory-outline",
-      "zona-peces",
-      "zona-animales",
-      "zona-moretal",
-      "zona-palmera",
-      "rivers-large",
-      "rivers-small",
-      "rivers-large-highlight",
-      "rivers-large-shadow",
-      "lagos",
-      "rivers-peru-ecuador-colo",
-      "rivers-area-peru-ecuador-colo",
-      "country-peru-ecuador-colombia",
-      "country-peru-ecuador-colombia-dark"
-    ]
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-*": 0,
+      "wildlife-view*": 1
+    }
   },
-  "section-5": {
+  "pharmacy": {
     "center": [
       -77.278,
       -1.404
     ],
     "zoom": 13,
-    "layers": [
-      "territory-outline",
-      "zona-palmera",
-      "zona-miwago",
-      "zona-moretal",
-      "zona-animales",
-      "rivers-large",
-      "rivers-small",
-      "rivers-large-highlight",
-      "rivers-large-shadow",
-      "plant-view",
-      "plant-view-curare",
-      "rivers-area-peru-ecuador-colo",
-      "rivers-peru-ecuador-colo",
-      "country-peru-ecuador-colombia",
-      "country-peru-ecuador-colombia-dark"
-    ]
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-*": 0,
+      "wildlife-view*": 0,
+      "plant-view*": 1
+    }
   },
-  "section-6": {
+  "culture": {
     "center": [
       -77.535,
       -1.177
     ],
     "zoom": 14,
-    "layers": []
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-*": 0
+    }
   },
   "conflict-visions": {
     "center": [
@@ -80,10 +74,12 @@
       -1.31
     ],
     "zoom": 11.5,
-    "layers": [
-      "for-conflict-layer-block",
-      "for-conflict-layer-petrol"
-    ]
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-label": 1,
+      "petrol-blocks-line": 0.5,
+      "petrol-blocks-fill": 0.6
+    }
   },
   "resistance": {
     "center": [
@@ -91,13 +87,12 @@
       -1.273
     ],
     "zoom": 10.6,
-    "layers": [
-      "final-flora",
-      "final-comunidades",
-      "final-water",
-      "final-fauna",
-      "for-conflict-layer-block",
-      "for-conflict-layer-petrol"
-    ]
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-label": 0,
+      "petrol-blocks-line": 0.3,
+      "petrol-blocks-fill": 0,
+      "final-*": 1
+    }
   }
 }

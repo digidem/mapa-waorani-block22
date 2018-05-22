@@ -1,34 +1,28 @@
+var mm = require('micromatch')
+var EventEmitter = require('events')
 var views = require('./map_views.json')
 
-var timeoutId
 var FADEIN_DURATION = 1000
 var FADEOUT_DURATION = 250
 var FLY_SPEED = 0.3
-var loaded = false
 
 // These layers are complex to draw (calculating collisions) so we always
 // hide them when transitioning between map views to avoid animation jitter
-var layersHiddenDuringTransitions = [
-  'rivers-small',
+var HIDDEN_TRANSITION_LAYERS = [
   'rivers-large-highlight',
   'rivers-large-shadow',
-  'plant-view',
-  'plant-view-curare',
-  'final-flora',
-  'final-comunidades',
-  'final-water',
-  'final-fauna',
+  'plant-view*',
+  'final-*',
+  'wildlife-view-*',
   'flora',
   'fauna',
   'other'
 ]
 
-Object.keys(views).forEach(function (key) {
-  views[key].layerVisibility = layersHiddenDuringTransitions.reduce(function (acc, id) {
-    acc[id] = views[key].layers.indexOf(id) > -1 ? 'visible' : 'none'
-    return acc
-  }, {})
-})
+var timeoutId
+var hiddenLayersExpanded
+var loaded = false
+var events = new EventEmitter()
 
 module.exports = mapTransition
 
@@ -37,19 +31,29 @@ function mapTransition (viewId, map) {
   console.log('Transition view:', viewId)
   if (!view) return console.log('undefined view', viewId)
 
-  map.stop()
-  map.off('styledata', retry)
-  map.off('moveend', showOverlays)
+  // It's a little tricky to cancel other transition events, because each
+  // call to mapTransition() creates a new instance of the functions that we
+  // call, so we use a global event emitter to stop all other transitions
+  events.emit('stop')
+  events.once('stop', function () {
+    map.stop()
+    map.off('sourcedata', onsourcedata)
+    map.off('styledata', retry)
+    map.off('moveend', showOverlays)
+  })
+  if (timeoutId) clearTimeout(timeoutId)
 
   if (!(loaded || map.isStyleLoaded())) {
     map.once('styledata', retry)
     return
   }
 
-  if (timeoutId) clearTimeout(timeoutId)
+  if (!hiddenLayersExpanded) expandLayerGlobs(map)
 
-  fadeOverlays(false)
+  fadeoutLayers()
+  console.log(viewId, 'fadeout layers')
   timeoutId = setTimeout(function () {
+    console.log(viewId, 'move map')
     hideOverlays()
     moveMap()
   }, FADEOUT_DURATION)
@@ -57,23 +61,51 @@ function mapTransition (viewId, map) {
   map.once('moveend', showOverlays)
 
   function showOverlays () {
-    Object.keys(view.layerVisibility).forEach(function (layerId) {
+    Object.keys(view.layerOpacity).forEach(function (layerId) {
       if (!map.getLayer(layerId)) return console.log('no layer', layerId)
       var currentVisibility = map.getLayoutProperty(layerId, 'visibility')
-      var targetVisibility = view.layerVisibility[layerId]
-      if (currentVisibility === 'none' && targetVisibility === 'visible') {
-        setLayerOpacity(map, layerId, false, 0)
+      var targetOpacity = view.layerOpacity[layerId]
+      if (currentVisibility === 'none' && targetOpacity > 0) {
+        setLayerOpacity(map, layerId, 0, 0)
+        map.setLayoutProperty(layerId, 'visibility', 'visible')
       }
-      map.setLayoutProperty(layerId, 'visibility', targetVisibility)
     })
-    fadeOverlays(true)
+    // Don't fadein until tiles are loaded, avoid sudden transition
+    if (map.areTilesLoaded()) {
+      console.log(viewId, 'tiles were loaded, fading in')
+      return fadeinLayers()
+    }
+    console.log(viewId, 'tiles were not loaded, setting tiledata listener')
+    map.on('sourcedata', onsourcedata)
   }
 
-  function fadeOverlays (opaque) {
-    layersHiddenDuringTransitions.forEach(function (layerId) {
-      if (!map.getLayer(layerId)) return console.log('no layer', layerId)
-      // if (map.getLayoutProperty(layerId, 'visibility') === 'none') return
-      setLayerOpacity(map, layerId, opaque, opaque ? FADEOUT_DURATION : FADEIN_DURATION)
+  function onsourcedata () {
+    console.log(viewId, 'tiledata')
+    if (!map.areTilesLoaded()) return
+    console.log(viewId, 'fading in tiles after load')
+    map.off('sourcedata', onsourcedata)
+    fadeinLayers()
+  }
+
+  function fadeoutLayers () {
+    // Fadeout layers that we need to hide during transitions for perf
+    hiddenLayersExpanded.forEach(function (layerId) {
+      if (!map.getLayer(layerId)) return console.warn('no layer', layerId)
+      setLayerOpacity(map, layerId, 0, FADEOUT_DURATION)
+    })
+    // Fadeout layers that do not appear in the target view
+    Object.keys(view.layerOpacity).forEach(function (layerId) {
+      if (view.layerOpacity[layerId] > 0) return
+      // console.log('fadeout', layerId)
+      setLayerOpacity(map, layerId, 0, FADEOUT_DURATION)
+    })
+  }
+
+  function fadeinLayers () {
+    // Fadein layers in target view
+    Object.keys(view.layerOpacity).forEach(function (layerId) {
+      console.log('fadein', layerId)
+      setLayerOpacity(map, layerId, view.layerOpacity[layerId], FADEIN_DURATION)
     })
   }
 
@@ -98,7 +130,7 @@ function mapTransition (viewId, map) {
   }
 
   function hideOverlays () {
-    layersHiddenDuringTransitions.forEach(function (layerId) {
+    hiddenLayersExpanded.forEach(function (layerId) {
       if (!map.getLayer(layerId)) return console.log('no layer', layerId)
       map.setLayoutProperty(layerId, 'visibility', 'none')
     })
@@ -113,17 +145,40 @@ function mapTransition (viewId, map) {
   }
 }
 
-var originalOpacities = {}
-
-function setLayerOpacity (map, layerId, opaque, duration) {
+function setLayerOpacity (map, layerId, opacity, duration) {
   if (typeof duration === 'undefined') duration = FADEIN_DURATION
   var layer = map.getLayer(layerId)
-  var propName = layer.type === 'symbol' ? 'icon-opacity' : layer.type + '-opacity'
-  // Original layer opacity might not be `1`, so save what it was
-  var originalOpacity = originalOpacities[layerId] || map.getPaintProperty(layerId, propName)
-  var opacity = opaque ? originalOpacity : 0
+  var propNames = getOpacityPropNames(layer)
   // Workaround for https://github.com/mapbox/mapbox-gl-js/issues/6706
   // Need to call `setPaintProperty()` on the layer, not `map`
-  layer.setPaintProperty(propName + '-transition', {duration: duration, delay: 0})
-  map.setPaintProperty(layerId, propName, opacity)
+  propNames.forEach(function (propName) {
+    layer.setPaintProperty(propName + '-transition', {duration: duration, delay: 0})
+    map.setPaintProperty(layerId, propName, opacity)
+  })
+}
+
+function expandLayerGlobs (map) {
+  var mapLayers = map.getStyle().layers.map(function (l) {
+    return l.id
+  })
+  hiddenLayersExpanded = mm(mapLayers, HIDDEN_TRANSITION_LAYERS)
+  Object.keys(views).forEach(function (key) {
+    var expandedLayerOpacity = {}
+    var layerMatchPatterns = Object.keys(views[key].layerOpacity)
+    layerMatchPatterns.forEach(function (pattern) {
+      var matchedLayers = mm(mapLayers, pattern)
+      matchedLayers.forEach(function (layerId) {
+        expandedLayerOpacity[layerId] = views[key].layerOpacity[pattern]
+      })
+    })
+    views[key].layerOpacity = expandedLayerOpacity
+  })
+}
+
+function getOpacityPropNames (layer) {
+  if (layer.type !== 'symbol') return [layer.type + '-opacity']
+  var propNames = []
+  if (layer.getLayoutProperty('icon-image')) propNames.push('icon-opacity')
+  if (layer.getLayoutProperty('text-field')) propNames.push('text-opacity')
+  return propNames
 }
