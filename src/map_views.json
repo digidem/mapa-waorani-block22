@@ -10,7 +10,9 @@
       "rivers-area-peru-ecuador-colo": 0,
       "caminos-caseria": 0,
       "caminos-viajar": 0,
-      "community": 0
+      "community": 0,
+      "rivers-large": 0,
+      "rivers-small": 0
     }
   },
   "oil-rush": {
@@ -24,7 +26,9 @@
       "rivers-peru-ecuador-colo": 1,
       "caminos-caseria": 0,
       "caminos-viajar": 0,
-      "community": 0
+      "community": 0,
+      "rivers-large": 0,
+      "rivers-small": 0
     }
   },
   "maps-and-resistance": {
