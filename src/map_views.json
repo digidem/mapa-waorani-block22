@@ -17,11 +17,7 @@
     }
   },
   "maps-and-resistance": {
-    "center": [
-      -77.27,
-      -1.2322
-    ],
-    "zoom": 14,
+    "bounds": [-77.2757, -1.2483, -77.2156, -1.2044],
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
@@ -29,11 +25,7 @@
     }
   },
   "wildlife": {
-    "center": [
-      -77.331,
-      -1.282
-    ],
-    "zoom": 13,
+    "bounds": [-77.339, -1.3037, -77.2718, -1.2505],
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
@@ -41,11 +33,7 @@
     }
   },
   "pharmacy": {
-    "center": [
-      -77.278,
-      -1.404
-    ],
-    "zoom": 13,
+    "bounds": [-77.2851, -1.4407, -77.1949, -1.3693],
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
@@ -54,11 +42,7 @@
     }
   },
   "culture": {
-    "center": [
-      -77.535,
-      -1.177
-    ],
-    "zoom": 14,
+    "bounds": [-77.5504, -1.2109, -77.4813, -1.1562],
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0
