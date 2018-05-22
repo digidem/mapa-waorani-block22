@@ -49,7 +49,8 @@ var map = window.map = new mapboxgl.Map({
   scrollZoom: false,
   boxZoom: false,
   doubleClickZoom: false,
-  interactive: false
+  interactive: false,
+  logoPosition: 'top-right'
 })
 
 // xhr('data.json', {header: {
@@ -64,8 +65,8 @@ var map = window.map = new mapboxgl.Map({
 //   })
 // })
 
-map.addControl(new mapboxgl.ScaleControl(), 'top-right')
-map.addControl(new mapboxgl.AttributionControl({compact: true}), 'top-right')
 map.addControl(new DigidemAttrib(), 'bottom-right')
+map.addControl(new mapboxgl.ScaleControl(), 'bottom-right')
+map.addControl(new mapboxgl.AttributionControl({compact: true}), 'bottom-right')
 
 document.body.appendChild(sidebarDOM(map))
