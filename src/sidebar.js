@@ -207,7 +207,7 @@ module.exports = function (map) {
   return html`<div id="sidebar-wrapper" class=${style}>
   <div id="sidebar">
       <section>
-        ${mapView('section-1', onview, html`<h1>IN DEFENSE OF A FOREST HOMELAND</h1>`)}
+        ${mapView('start', onview, html`<h1>IN DEFENSE OF A FOREST HOMELAND</h1>`)}
         ${video('https://vimeo.com/270209852/d857a916b5')}
         <p>
           The Waorani people live in the upper headwaters of the Amazon river in Ecuador, one of the most biodiverse rainforests on earth. Their territory is 2.5 million acres, roughly the size of Yellowstone National Park.
@@ -233,8 +233,6 @@ module.exports = function (map) {
         <p>
           The Waorani communities of the Curaray river-basin (now known as Block 22 by the Government) are creating territorial maps of their lands that document the historic and actual uses of their territory, and demonstrate that their homelands are not up for grabs.
         </p>
-      </section>
-      <section>
         ${image('3b')}
         <p>
           Whereas the maps of oil companies show petrol deposits and major rivers, the maps that the Waorani peoples are creating identify historic battle sites, ancient cave-carvings, jaguar trails, medicinal plants, animal reproductive zones, important fishing holes, creek-crossings, sacred waterfalls.

@@ -6,6 +6,7 @@ const DigidemAttrib = require('@digidem/attribution-control')
 
 const sidebarDOM = require('./sidebar')
 const urls = require('../static/urls.json')
+const mapViews = require('./map_views.json')
 
 if (process.env.NODE_ENV === 'production') {
   require('./service-worker')
@@ -51,6 +52,16 @@ var map = window.map = new mapboxgl.Map({
   doubleClickZoom: false,
   interactive: false,
   logoPosition: 'top-right'
+})
+
+map.fitBounds(mapViews.start.bounds, {
+  padding: {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 600
+  },
+  duration: 0
 })
 
 const bingSource = {

@@ -1,10 +1,6 @@
 {
-  "section-1": {
-    "center": [
-      -79.656232,
-      -0.489971
-    ],
-    "zoom": 6,
+  "start": {
+    "bounds": [-81.94, -5.79, -73.15, 2.65],
     "layerOpacity": {
       "bing-satellite": 1,
       "petrol-blocks-*": 0,
@@ -12,7 +8,7 @@
     }
   },
   "oil-rush": {
-    "bounds": [-78.3155,-3.3493,-74.9871,0.6275],
+    "bounds": [-78.3155, -3.3493, -74.9871, 0.6275],
     "layerOpacity": {
       "bing-satellite": 0.4,
       "petrol-blocks-label": 1,
@@ -69,11 +65,7 @@
     }
   },
   "conflict-visions": {
-    "center": [
-      -77.335,
-      -1.31
-    ],
-    "zoom": 11.5,
+    "bounds": [-77.4195, -1.4229, -77.0865, -1.1671],
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-label": 1,
@@ -82,11 +74,7 @@
     }
   },
   "resistance": {
-    "center": [
-      -77.392,
-      -1.273
-    ],
-    "zoom": 10.6,
+    "bounds": [-77.581, -1.4577, -77.0242, -1.0969],
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-label": 0,
