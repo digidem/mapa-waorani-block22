@@ -4,7 +4,13 @@
     "layerOpacity": {
       "bing-satellite": 1,
       "petrol-blocks-*": 0,
-      "rivers-peru-ecuador-colo": 0
+      "wildlife-view*": 0,
+      "rivers-peru-ecuador-colo": 0,
+      "territory-points-*": 0,
+      "rivers-area-peru-ecuador-colo": 0,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0
     }
   },
   "oil-rush": {
@@ -13,7 +19,12 @@
       "bing-satellite": 0.4,
       "petrol-blocks-label": 1,
       "petrol-blocks-line": 0.7,
-      "rivers-peru-ecuador-colo": 1
+      "wildlife-view*": 0,
+      "territory-points-*": 0,
+      "rivers-peru-ecuador-colo": 1,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0
     }
   },
   "maps-and-resistance": {
@@ -21,7 +32,13 @@
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
-      "rivers-peru-ecuador-colo": 1
+      "territory-points-*": 1,
+      "wildlife-view*": 0,
+      "rivers-peru-ecuador-colo": 1,
+      "caminos-caseria": 1,
+      "caminos-viajar": 1,
+      "community": 1,
+      "rivers-label-*": 1
     }
   },
   "wildlife": {
@@ -29,7 +46,12 @@
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
-      "wildlife-view*": 1
+      "territory-points-*": 0,
+      "wildlife-view*": 1,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0,
+      "rivers-label-*": 0
     }
   },
   "pharmacy": {
@@ -38,14 +60,23 @@
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
       "wildlife-view*": 0,
-      "plant-view*": 1
+      "territory-points-*": 0,
+      "plant-view*": 1,
+      "rivers-label-*": 0
     }
   },
   "culture": {
     "bounds": [-77.5504, -1.2109, -77.4813, -1.1562],
-    "layerOpacity": {
+    "layerOpacity":  {
       "bing-satellite": 0,
-      "petrol-blocks-*": 0
+      "petrol-blocks-*": 0,
+      "territory-points-*": 1,
+      "wildlife-view*": 0,
+      "rivers-peru-ecuador-colo": 0,
+      "caminos-caseria": 1,
+      "caminos-viajar": 1,
+      "community": 1,
+      "rivers-label-*": 1
     }
   },
   "conflict-visions": {
@@ -54,7 +85,11 @@
       "bing-satellite": 0,
       "petrol-blocks-label": 1,
       "petrol-blocks-line": 0.5,
-      "petrol-blocks-fill": 0.6
+      "petrol-blocks-fill": 0.6,
+      "territory-points-*": 1,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0
     }
   },
   "resistance": {
@@ -64,7 +99,13 @@
       "petrol-blocks-label": 0,
       "petrol-blocks-line": 0.3,
       "petrol-blocks-fill": 0,
-      "final-*": 1
+      "territory-points-*": 1,
+      "final-*": 1,
+      "rivers-large": 0,
+      "rivers-small": 0,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0
     }
   }
 }

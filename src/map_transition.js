@@ -16,9 +16,8 @@ var HIDDEN_TRANSITION_LAYERS = [
   'plant-view*',
   'final-*',
   'wildlife-view-*',
-  'flora',
-  'fauna',
-  'other'
+  'territory-points-*',
+  'rivers-label-*'
 ]
 
 var timeoutId
