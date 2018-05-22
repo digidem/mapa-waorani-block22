@@ -1,7 +1,7 @@
 const xhr = require('xhr')
 const css = require('sheetify')
 const querystring = require('querystring')
-const mapboxgl = require('mapbox-gl')
+const mapboxgl = require('mapbox-gl/dist/mapbox-gl-dev')
 const DigidemAttrib = require('@digidem/attribution-control')
 
 const sidebarDOM = require('./sidebar')
@@ -53,17 +53,33 @@ var map = window.map = new mapboxgl.Map({
   logoPosition: 'top-right'
 })
 
-// xhr('data.json', {header: {
-//   'Content-Type': 'application/json'
-// }}, function (err, resp, body) {
-//   if (err) console.error(err)
-//   data = JSON.parse(body)
-//   Object.keys(data).forEach(function (key) {
-//     data[key].features.forEach(function (feature) {
-//       dataIndex[feature.properties.Preset] = feature
-//     })
-//   })
-// })
+const bingSource = {
+  type: 'raster',
+  tiles: [
+    'https://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=5869',
+    'https://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=5869',
+    'https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=5869',
+    'https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=5869'
+  ],
+  minzoom: 1,
+  maxzoom: 8,
+  tileSize: 256
+}
+
+const bing = {
+  id: 'bing',
+  type: 'raster',
+  source: 'bing',
+  layout: {
+  },
+  paint: {
+  }
+}
+
+map.once('style.load', function () {
+  map.addSource('bing', bingSource)
+  map.addLayer(bing, 'territory-outline')
+})
 
 map.addControl(new DigidemAttrib(), 'bottom-right')
 map.addControl(new mapboxgl.ScaleControl(), 'bottom-right')
