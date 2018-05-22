@@ -65,8 +65,8 @@ function video (url, placeholderImgUrl) {
   // TODO: create placeholder images for videos
   var options = {
     url: url,
-    background: true,
-    muted: false,
+    background: false,
+    autoplay: true,
     loop: true,
     title: false,
     portrait: false,
