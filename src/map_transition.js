@@ -1,30 +1,19 @@
 var views = require('./map_views.json')
 
 var timeoutId
-var FADE_DURATION = 1000
+var FADEIN_DURATION = 1000
+var FADEOUT_DURATION = 250
 var FLY_SPEED = 0.3
 var loaded = false
 
-var overlays = [
-  'for-conflict-layer-block',
-  'for-conflict-layer-petrol',
-  'territory-outline',
-  'zona-peces',
-  'zona-animales',
-  'zona-moretal',
-  'zona-palmera',
-  'rivers-large',
+// These layers are complex to draw (calculating collisions) so we always
+// hide them when transitioning between map views to avoid animation jitter
+var layersHiddenDuringTransitions = [
   'rivers-small',
   'rivers-large-highlight',
   'rivers-large-shadow',
-  'lagos',
-  'rivers-peru-ecuador-colo',
-  'country-peru-ecuador-colombia',
-  'country-peru-ecuador-colombia-dark',
-  'zona-miwago',
   'plant-view',
   'plant-view-curare',
-  'rivers-area-peru-ecuador-colo',
   'final-flora',
   'final-comunidades',
   'final-water',
@@ -35,7 +24,7 @@ var overlays = [
 ]
 
 Object.keys(views).forEach(function (key) {
-  views[key].layerVisibility = overlays.reduce(function (acc, id) {
+  views[key].layerVisibility = layersHiddenDuringTransitions.reduce(function (acc, id) {
     acc[id] = views[key].layers.indexOf(id) > -1 ? 'visible' : 'none'
     return acc
   }, {})
@@ -63,7 +52,7 @@ function mapTransition (viewId, map) {
   timeoutId = setTimeout(function () {
     hideOverlays()
     moveMap()
-  }, FADE_DURATION)
+  }, FADEOUT_DURATION)
 
   map.once('moveend', showOverlays)
 
@@ -81,10 +70,10 @@ function mapTransition (viewId, map) {
   }
 
   function fadeOverlays (opaque) {
-    overlays.forEach(function (layerId) {
+    layersHiddenDuringTransitions.forEach(function (layerId) {
       if (!map.getLayer(layerId)) return console.log('no layer', layerId)
       // if (map.getLayoutProperty(layerId, 'visibility') === 'none') return
-      setLayerOpacity(map, layerId, opaque)
+      setLayerOpacity(map, layerId, opaque, opaque ? FADEOUT_DURATION : FADEIN_DURATION)
     })
   }
 
@@ -109,7 +98,7 @@ function mapTransition (viewId, map) {
   }
 
   function hideOverlays () {
-    overlays.forEach(function (layerId) {
+    layersHiddenDuringTransitions.forEach(function (layerId) {
       if (!map.getLayer(layerId)) return console.log('no layer', layerId)
       map.setLayoutProperty(layerId, 'visibility', 'none')
     })
@@ -127,7 +116,7 @@ function mapTransition (viewId, map) {
 var originalOpacities = {}
 
 function setLayerOpacity (map, layerId, opaque, duration) {
-  if (typeof duration === 'undefined') duration = FADE_DURATION
+  if (typeof duration === 'undefined') duration = FADEIN_DURATION
   var layer = map.getLayer(layerId)
   var propName = layer.type === 'symbol' ? 'icon-opacity' : layer.type + '-opacity'
   // Original layer opacity might not be `1`, so save what it was
