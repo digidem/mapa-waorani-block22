@@ -29,6 +29,7 @@
     "@digidem/attribution-control": "^1.0.0",
     "@vimeo/player": "^2.6.1",
     "alianza-elements": "^3.0.0",
+    "debug": "^3.1.0",
     "lozad": "^1.4.0",
     "mapbox-gl": "^0.45.0",
     "mapbox-gl-toggle-control": "^1.0.5",

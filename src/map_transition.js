@@ -1,5 +1,7 @@
 var mm = require('micromatch')
 var EventEmitter = require('events')
+var debug = require('debug')('mapa-waorani')
+
 var views = require('./map_views.json')
 
 var FADEIN_DURATION = 1000
@@ -28,8 +30,8 @@ module.exports = mapTransition
 
 function mapTransition (viewId, map) {
   var view = views[viewId]
-  console.log('Transition view:', viewId)
-  if (!view) return console.log('undefined view', viewId)
+  debug('Transition view:', viewId)
+  if (!view) return console.warn('undefined view', viewId)
 
   // It's a little tricky to cancel other transition events, because each
   // call to mapTransition() creates a new instance of the functions that we
@@ -51,9 +53,9 @@ function mapTransition (viewId, map) {
   if (!hiddenLayersExpanded) expandLayerGlobs(map)
 
   fadeoutLayers()
-  console.log(viewId, 'fadeout layers')
+  debug(viewId + ':', 'fadeout layers')
   timeoutId = setTimeout(function () {
-    console.log(viewId, 'move map')
+    debug(viewId + ':', 'move map')
     hideOverlays()
     moveMap()
   }, FADEOUT_DURATION)
@@ -62,7 +64,7 @@ function mapTransition (viewId, map) {
 
   function showOverlays () {
     Object.keys(view.layerOpacity).forEach(function (layerId) {
-      if (!map.getLayer(layerId)) return console.log('no layer', layerId)
+      if (!map.getLayer(layerId)) return debug('no layer', layerId)
       var currentVisibility = map.getLayoutProperty(layerId, 'visibility')
       var targetOpacity = view.layerOpacity[layerId]
       if (currentVisibility === 'none' && targetOpacity > 0) {
@@ -72,17 +74,17 @@ function mapTransition (viewId, map) {
     })
     // Don't fadein until tiles are loaded, avoid sudden transition
     if (map.areTilesLoaded()) {
-      console.log(viewId, 'tiles were loaded, fading in')
+      debug(viewId + ':', 'tiles were loaded, fading in')
       return fadeinLayers()
     }
-    console.log(viewId, 'tiles were not loaded, setting tiledata listener')
+    debug(viewId + ':', 'tiles were not loaded, setting tiledata listener')
     map.on('sourcedata', onsourcedata)
   }
 
   function onsourcedata () {
-    console.log(viewId, 'tiledata')
+    debug(viewId + ':', 'tiledata')
     if (!map.areTilesLoaded()) return
-    console.log(viewId, 'fading in tiles after load')
+    debug(viewId + ':', 'fading in tiles after load')
     map.off('sourcedata', onsourcedata)
     fadeinLayers()
   }
@@ -96,7 +98,7 @@ function mapTransition (viewId, map) {
     // Fadeout layers that do not appear in the target view
     Object.keys(view.layerOpacity).forEach(function (layerId) {
       if (view.layerOpacity[layerId] > 0) return
-      // console.log('fadeout', layerId)
+      // debug('fadeout', layerId)
       setLayerOpacity(map, layerId, 0, FADEOUT_DURATION)
     })
   }
@@ -104,7 +106,7 @@ function mapTransition (viewId, map) {
   function fadeinLayers () {
     // Fadein layers in target view
     Object.keys(view.layerOpacity).forEach(function (layerId) {
-      console.log('fadein', layerId)
+      debug(viewId + ': fadein', layerId)
       setLayerOpacity(map, layerId, view.layerOpacity[layerId], FADEIN_DURATION)
     })
   }
@@ -131,7 +133,7 @@ function mapTransition (viewId, map) {
 
   function hideOverlays () {
     hiddenLayersExpanded.forEach(function (layerId) {
-      if (!map.getLayer(layerId)) return console.log('no layer', layerId)
+      if (!map.getLayer(layerId)) return console.warn('no layer', layerId)
       map.setLayoutProperty(layerId, 'visibility', 'none')
     })
   }
