@@ -38,7 +38,9 @@
       "caminos-caseria": 1,
       "caminos-viajar": 1,
       "community": 1,
-      "rivers-label-*": 1
+      "rivers-label-*": 1,
+      "rivers-large": 1,
+      "rivers-small": 1
     }
   },
   "wildlife": {
@@ -51,7 +53,9 @@
       "caminos-caseria": 0,
       "caminos-viajar": 0,
       "community": 0,
-      "rivers-label-*": 0
+      "rivers-label-*": 0,
+      "rivers-large": 1,
+      "rivers-small": 1
     }
   },
   "pharmacy": {
@@ -62,7 +66,9 @@
       "wildlife-view*": 0,
       "territory-points-*": 0,
       "plant-view*": 1,
-      "rivers-label-*": 0
+      "rivers-label-*": 0,
+      "rivers-large": 1,
+      "rivers-small": 1
     }
   },
   "culture": {
@@ -76,7 +82,9 @@
       "caminos-caseria": 1,
       "caminos-viajar": 1,
       "community": 1,
-      "rivers-label-*": 1
+      "rivers-label-*": 1,
+      "rivers-large": 1,
+      "rivers-small": 1
     }
   },
   "conflict-visions": {
@@ -89,7 +97,10 @@
       "territory-points-*": 1,
       "caminos-caseria": 0,
       "caminos-viajar": 0,
-      "community": 0
+      "community": 0,
+      "rivers-large": 1,
+      "rivers-small": 1,
+      "rivers-peru-ecuador-colo": 1
     }
   },
   "resistance": {
@@ -105,7 +116,8 @@
       "rivers-small": 0,
       "caminos-caseria": 0,
       "caminos-viajar": 0,
-      "community": 0
+      "community": 0,
+      "rivers-peru-ecuador-colo": 1
     }
   }
 }
