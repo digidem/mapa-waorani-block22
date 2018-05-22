@@ -257,10 +257,10 @@ module.exports = function (map) {
         ${image('5MedicineB')}
       </section>
       <section>
-        ${mapView('culture', onview, html`<h3>A Culture in balance with Nature</h3>`)}
+        ${mapView('culture', onview, html`<h3>Living with the Forest</h3>`)}
         ${video('https://vimeo.com/270211741/575052a044')}
         <p>
-        Waorani culture embraces the secrets of living a healthy, vibrant, and fearless life within a pristine forested environment and without the need for massive deforestation, resource extraction and irresponsible contamination.  Their way of life uses songs to teach life’s lessons, rear children, memorize history, and to comprehend the complexities of the forest. The Waorani dance to promote family ties and healthy social structure.  Their culture also bears an incredible repertoire of cultural-identifying crafts and iconic weaponry such as chonta wood blowguns and feather-laden spears.
+        Waorani culture embraces the secrets of living a healthy, vibrant, and fearless life within a their bountiful forest home without the need for massive deforestation, resource extraction and irresponsible contamination.  Their way of life uses songs to teach life’s lessons, rear children, memorize history, and to comprehend the complexities of the forest. The Waorani dance to promote family ties and healthy social structure.  Their culture also bears an incredible repertoire of cultural-identifying crafts and iconic weaponry such as chonta wood blowguns and feather-laden spears.
         </p>
         ${image('6CultureB')}
       </section>
