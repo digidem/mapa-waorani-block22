@@ -45,7 +45,6 @@
     "yo-yo": "^1.4.1"
   },
   "devDependencies": {
-    "brfs": "^1.6.1",
     "browser-pack-flat": "^3.0.9",
     "browserify": "^14.4.0",
     "budo": "^10.0.3",
