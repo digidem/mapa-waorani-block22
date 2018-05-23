@@ -1,35 +1,16 @@
-const xhr = require('xhr')
 const css = require('sheetify')
 const querystring = require('querystring')
-const mapboxgl = require('mapbox-gl/dist/mapbox-gl-dev')
+const mapboxgl = require('mapbox-gl')
 const DigidemAttrib = require('@digidem/attribution-control')
 
 const sidebarDOM = require('./sidebar')
-const urls = require('../static/urls.json')
+const prefetch = require('./prefetch')
 const mapViews = require('./map_views.json')
 // const territory = require('../static/territory-wao-simplified.json')
 
 if (process.env.NODE_ENV === 'production') {
   require('./service-worker')
-  var prefetched = localStorage.getItem('prefetched-waorani-assets')
-  try {
-    prefetched = JSON.parse(prefetched || '[]')
-  } catch (err) {
-    prefetched = []
-  }
-  // only grab ones we've not prefetched previously
-  localStorage.setItem('prefetched-waorani-assets', JSON.stringify(urls))
-  urls.forEach(function (url) {
-    if (prefetched.indexOf(url) === -1) {
-      console.log('fetching', url)
-      xhr(url, function (err, resp, body) {
-        if (err) console.error(err)
-      })
-    }
-  })
 }
-var data = {}
-var dataIndex = {}
 var qs = querystring.parse(window.location.search.replace('?', ''))
 var lang = qs.lang || 'es'
 
@@ -87,6 +68,8 @@ const bing = {
   paint: {
   }
 }
+
+prefetch(map)
 
 map.once('styledata', function () {
   map.addSource('bing', bingSource)
