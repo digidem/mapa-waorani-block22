@@ -18,7 +18,7 @@ function prefetch (map) {
     }
     debug('already prefetched:', prefetched)
     var toFetch = urls.filter(function (url) {
-      return prefetched.indexOf(url) > -1
+      return prefetched.indexOf(url) === -1
     })
     debug('still to fetch:', toFetch)
     downloadTile()
