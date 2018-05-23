@@ -70,19 +70,21 @@ function mapView (id, onenter, el) {
   return el
 }
 
-function video (url, placeholderImgUrl) {
+function video (url, opts) {
   // TODO: create placeholder images for videos
-  var options = {
+  if (!opts) opts = {}
+  var options = Object.assign({
     url: url,
-    background: false,
+    background: true,
     autoplay: true,
+    muted: false,
     loop: true,
     title: false,
     portrait: false,
     byline: false
-  }
+  }, opts)
   var el = html`
-  <div class=${videoDivStyle} style="background-url: url(${placeholderImgUrl})">
+  <div class=${videoDivStyle} style="background-url: url(${opts.placeholderImgUrl})">
   </div>`
   var player
   // var muted = true
@@ -280,7 +282,7 @@ module.exports = function (map, lang) {
       </section>
       <section>
         ${mapView('culture', onview, html`<h3>${message('living-title')}</h3>`)}
-        ${video('https://vimeo.com/270211741/575052a044')}
+        ${video('https://vimeo.com/270211741/575052a044', {background: false})}
         <p>${message('living')}</p>
         ${image('6CultureB')}
       </section>
@@ -295,6 +297,9 @@ module.exports = function (map, lang) {
           <h2>${message('resistance-title')}</h2>`)}
         <p>${message('resistance')}</p>
         ${image('8a')}
+        <p>
+        ${video('https://vimeo.com/270212698/62b62abe89', {background: false})}
+        </p>
       </section>
       <section class='center'>
         <h2>${message('final-title')}</h2>
@@ -305,6 +310,7 @@ module.exports = function (map, lang) {
           ${message('action-button')}
         </button>
       </p>
+        ${image('DJI_0032')}
       </section>
     </div>
     </div>
