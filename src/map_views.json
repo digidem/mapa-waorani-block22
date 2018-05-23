@@ -13,7 +13,9 @@
       "caminos-viajar": 0,
       "community": 0,
       "rivers-large": 0,
-      "rivers-small": 0
+      "rivers-small": 0,
+      "yasuni-label": 0,
+      "yasuni": 0
     }
   },
   "oil-rush": {
@@ -32,7 +34,9 @@
       "caminos-viajar": 0,
       "community": 0,
       "rivers-large": 0,
-      "rivers-small": 0
+      "rivers-small": 0,
+      "yasuni-label": 1,
+      "yasuni": 1
     }
   },
   "maps-and-resistance": {
