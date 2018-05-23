@@ -12,8 +12,6 @@
       "caminos-caseria": 0,
       "caminos-viajar": 0,
       "community": 0,
-      "rivers-large*": 0,
-      "rivers-small": 0,
       "yasuni-label": 0,
       "yasuni": 0
     }
@@ -33,8 +31,6 @@
       "caminos-caseria": 0,
       "caminos-viajar": 0,
       "community": 0,
-      "rivers-large*": 1,
-      "rivers-small": 1,
       "yasuni-label": 1,
       "yasuni": 1
     }
@@ -52,8 +48,6 @@
       "caminos-viajar": 1,
       "community": 1,
       "rivers-label-*": 1,
-      "rivers-large*": 1,
-      "rivers-small": 1,
       "yasuni-label": 0,
       "yasuni": 0
     }
@@ -68,8 +62,6 @@
       "plant-view*": 0,
       "final-*": 0,
       "rivers-label-*": 0,
-      "rivers-large*": 1,
-      "rivers-small": 1,
       "caminos-caseria": 0,
       "caminos-viajar": 0,
       "community": 0,
@@ -89,8 +81,6 @@
       "wildlife-view*": 0,
       "final-*": 0,
       "rivers-label-*": 0,
-      "rivers-large*": 1,
-      "rivers-small": 1,
       "caminos-caseria": 0,
       "caminos-viajar": 0,
       "community": 0,
@@ -110,8 +100,6 @@
       "wildlife-view*": 0,
       "final-*": 0,
       "rivers-label-*": 1,
-      "rivers-large*": 1,
-      "rivers-small": 1,
       "caminos-caseria": 1,
       "caminos-viajar": 1,
       "community": 1,
@@ -133,8 +121,6 @@
       "wildlife-view*": 0,
       "final-*": 0,
       "rivers-label-*": 1,
-      "rivers-large*": 1,
-      "rivers-small": 1,
       "caminos-caseria": 1,
       "caminos-viajar": 1,
       "community": 0,
@@ -155,8 +141,6 @@
       "plant-view*": 0,
       "wildlife-view*": 0,
       "final-*": 1,
-      "rivers-large*": 1,
-      "rivers-small": 1,
       "caminos-caseria": 1,
       "caminos-viajar": 1,
       "community": 0,
