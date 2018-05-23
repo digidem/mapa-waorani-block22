@@ -6,7 +6,7 @@
   "scripts": {
     "test": "standard",
     "build": "mkdirp dist && npm run build:js && npm run build:static && workbox generate:sw",
-    "build:js": "NODE_ENV=production browserify -p tinyify src/index.js > dist/bundle.js",
+    "build:js": "NODE_ENV=production browserify -p common-shakeify -p browser-pack-flat/plugin src/index.js > dist/bundle.js",
     "build:static": "copyup 'static/**/*' dist && copyfiles data.json dist",
     "start": "budo src/index.js:bundle.js -d static",
     "deploy": "npm run build && gh-pages -d dist"
@@ -19,9 +19,27 @@
           "u": "sheetify-nested"
         }
       ],
+      [
+        "unassertify",
+        {
+          "global": true
+        }
+      ],
+      [
+        "envify",
+        {
+          "global": true
+        }
+      ],
       "brfs",
       "yo-yoify",
-      "es2020"
+      "es2020",
+      [
+        "uglifyify",
+        {
+          "global": true
+        }
+      ]
     ]
   },
   "repository": {
@@ -58,8 +76,10 @@
   },
   "devDependencies": {
     "brfs": "^1.6.1",
+    "browser-pack-flat": "^3.0.9",
     "browserify": "^14.4.0",
     "budo": "^10.0.3",
+    "common-shakeify": "^0.4.6",
     "copyfiles": "^1.2.0",
     "envify": "^4.1.0",
     "es2020": "^1.1.9",
@@ -68,7 +88,9 @@
     "sheetify": "^6.1.1",
     "sheetify-nested": "^1.0.2",
     "standard": "^10.0.3",
-    "tinyify": "^2.4.1",
+    "uglify-js": "^3.3.27",
+    "uglifyify": "github:kristoferjoseph/uglifyify#5881f398ec8b6b5cee2f65e0ee19480bd2db92b1",
+    "unassertify": "^2.1.1",
     "yo-yoify": "^3.7.3"
   }
 }
