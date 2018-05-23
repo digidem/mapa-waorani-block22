@@ -13,7 +13,9 @@
       "caminos-viajar": 0,
       "community": 0,
       "rivers-large": 0,
-      "rivers-small": 0
+      "rivers-small": 0,
+      "yasuni-label": 0,
+      "yasuni": 0
     }
   },
   "oil-rush": {
@@ -32,7 +34,9 @@
       "caminos-viajar": 0,
       "community": 0,
       "rivers-large": 0,
-      "rivers-small": 0
+      "rivers-small": 0,
+      "yasuni-label": 1,
+      "yasuni": 1
     }
   },
   "maps-and-resistance": {
@@ -49,7 +53,9 @@
       "community": 1,
       "rivers-label-*": 1,
       "rivers-large": 1,
-      "rivers-small": 1
+      "rivers-small": 1,
+      "yasuni-label": 0,
+      "yasuni": 0
     }
   },
   "wildlife": {
@@ -68,7 +74,9 @@
       "caminos-viajar": 0,
       "community": 0,
       "rivers-peru-ecuador-colo": 0,
-      "rivers-area-peru-ecuador-colo": 0
+      "rivers-area-peru-ecuador-colo": 0,
+      "yasuni-label": 0,
+      "yasuni": 0
     }
   },
   "pharmacy": {
@@ -87,7 +95,9 @@
       "caminos-viajar": 0,
       "community": 0,
       "rivers-peru-ecuador-colo": 0,
-      "rivers-area-peru-ecuador-colo": 0
+      "rivers-area-peru-ecuador-colo": 0,
+      "yasuni-label": 0,
+      "yasuni": 0
     }
   },
   "culture": {
@@ -107,6 +117,8 @@
       "community": 1,
       "rivers-peru-ecuador-colo": 0,
       "rivers-area-peru-ecuador-colo": 1,
+      "yasuni-label": 0,
+      "yasuni": 0
     }
   },
   "conflict-visions": {
@@ -127,7 +139,9 @@
       "caminos-viajar": 1,
       "community": 0,
       "rivers-peru-ecuador-colo": 1,
-      "rivers-area-peru-ecuador-colo": 0
+      "rivers-area-peru-ecuador-colo": 0,
+      "yasuni-label": 0,
+      "yasuni": 0
     }
   },
   "resistance": {
@@ -147,7 +161,9 @@
       "caminos-viajar": 1,
       "community": 0,
       "rivers-peru-ecuador-colo": 1,
-      "rivers-area-peru-ecuador-colo": 1
+      "rivers-area-peru-ecuador-colo": 1,
+      "yasuni-label": 0,
+      "yasuni": 0
     }
   }
 }
