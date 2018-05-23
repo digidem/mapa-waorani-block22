@@ -11,6 +11,9 @@ const IMAGE_URL = 'https://s3.amazonaws.com/images.digital-democracy.org/waorani
 var dim = getViewport()
 
 var aspectStyle = css`
+  .center {
+    text-align: center;
+  }
   :host {
     width: 100%;
     position: relative;
@@ -131,8 +134,8 @@ var style = css`
       color: white;
       section {
         min-height: 100vh;
-        padding-bottom: 30vh;
-        padding-top: 1.5rem;
+        padding-bottom: 20vh;
+        padding-top: 4em;
         box-sizing: border-box;
       }
       section:first-child {
@@ -175,6 +178,29 @@ var style = css`
         margin-top: 2em;
         font-size: 1.1rem;
       }
+    }
+  }
+  .button-action {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #fa4e0e;
+    border-radius: 10%;
+    text-shadow: none;
+    color: white;
+    transition: all 0.75s ease-out 0s;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    width: 60%;
+    padding: 20px;
+    margin: auto;
+    &:hover {
+      background: #fff;
+      color: #fa4e0e;
+      text-decoration: none;
+      transition: all 0.75s ease 0s;
+      text-shadow: none;
     }
   }
   @media only screen and (max-width: 600px) {
@@ -278,14 +304,25 @@ module.exports = function (map) {
         </p>
         ${image('8a')}
       </section>
-      <section>
-        ${mapView('section-9', onview, html`
-          <h2>Join</h2>`)}
-        <p>Sidebar:  Here will be video testimonies...with audio.</p>
+      <section class='center'>
+        ${mapView('resistance', onview, html`
+        <h2>NO OIL DRILLING ON WAORANI LAND</h2>`)}
+        <h4>Tell oil companies that the most biodiverse place on Earth
+is not for sale.</h4>
+      <p  class='center'>
+        <button class='button-action'
+          onclick=${actionButton}>
+          Take Action: Sign The Letter
+        </button>
+      </p>
       </section>
-  </div>
-  </div>
-  `
+    </div>
+    </div>
+    `
+}
+
+function actionButton () {
+  window.location.href = 'https://waoresist.amazonfrontlines.org/action/'
 }
 
 function getViewport () {
