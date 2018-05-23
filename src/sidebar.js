@@ -202,9 +202,11 @@ var style = css`
     cursor: pointer;
     outline: 0;
     border: 0;
-    width: 60%;
     padding: 20px;
     margin: auto;
+    font-family: FuturaPassata, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 1rem;
     &:hover {
       background: #fff;
       color: #fa4e0e;
@@ -314,20 +316,15 @@ module.exports = function (lang, _map) {
           <h2>${message('final-title')}</h2>
           <h4>${message('final-text')}</h4>
         <p class='center'>
-          <button class='button-action'
-            onclick=${actionButton}>
+          <a class='button-action' href='https://waoresist.amazonfrontlines.org/action/' target='_parent'>
             ${message('action-button')}
-          </button>
+          </a>
         </p>
         </div>
       </section>
     </div>
     </div>
     `
-}
-
-function actionButton () {
-  window.location.href = 'https://waoresist.amazonfrontlines.org/action/'
 }
 
 function getViewport () {
