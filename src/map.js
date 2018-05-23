@@ -1,9 +1,55 @@
 const xhr = require('xhr')
 const css = require('sheetify')
-const mapboxgl = require('mapbox-gl/dist/mapbox-gl-dev')
-const DigidemAttrib = require('@digidem/attribution-control')
+const mapboxgl = require('mapbox-gl')
 const urls = require('../static/urls.json')
 const mapViews = require('./map_views.json')
+
+var logoClassname = css`
+  .mapboxgl-ctrl-bottom-right {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  :host {
+    margin-bottom: calc(5vh + 4vw) !important;
+  }
+  :host {
+    padding: 2px 5px;
+  }
+  :host, :host a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0px 0px 2px rgb(0, 0, 0, 0.7);
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  }
+  :host a {
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 21px;
+    background-position: right;
+  }
+  :host:hover {
+  }
+  :host:hover a {
+  }
+`
+
+function DdLogoControl () {
+  this._container = null
+}
+
+DdLogoControl.prototype.onAdd = function (map) {
+  var el = document.createElement('div')
+  el.className = 'mapboxgl-ctrl ' + logoClassname
+  el.innerHTML = '<a href="https://digital-democracy.org" target="_parent">Digital Democracy</a>'
+  this._container = el
+  return el
+}
+
+DdLogoControl.prototype.onRemove = function () {
+  this._container.parentNode.removeElement(this._container)
+}
 
 module.exports = function () {
   if (process.env.NODE_ENV === 'production') {
@@ -45,7 +91,7 @@ module.exports = function () {
     boxZoom: false,
     doubleClickZoom: false,
     interactive: false,
-    logoPosition: 'top-right'
+    logoPosition: 'bottom-right'
   })
 
   map.fitBounds(mapViews.start.bounds, {
@@ -107,8 +153,8 @@ module.exports = function () {
   //   map.addLayer(territoryOutline, 'territory-fill')
   // })
 
-  map.addControl(new DigidemAttrib(), 'bottom-right')
-  map.addControl(new mapboxgl.ScaleControl(), 'bottom-right')
+  map.addControl(new DdLogoControl(), 'bottom-right')
+  map.addControl(new mapboxgl.ScaleControl(), 'top-right')
   map.addControl(new mapboxgl.AttributionControl({compact: true}), 'bottom-right')
   return map
 }
