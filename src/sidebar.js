@@ -1,11 +1,13 @@
-var css = require('sheetify')
-var Player = require('@vimeo/player')
-var html = require('nanohtml')
-var onIntersect = require('on-intersect')
+const css = require('sheetify')
+const Player = require('@vimeo/player')
+const html = require('nanohtml')
+const onIntersect = require('on-intersect')
+
 var map
 var translations = {
   es: require('../messages/es.json'),
-  en: require('../messages/en.json')
+  en: require('../messages/en.json'),
+  xx: require('../messages/xx.json')
 }
 
 var mapTransition = require('./map_transition')
