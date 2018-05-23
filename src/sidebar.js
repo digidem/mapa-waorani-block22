@@ -146,6 +146,9 @@ var style = css`
         padding-top: 4em;
         box-sizing: border-box;
       }
+      section:last-child {
+        padding-bottom: 10vh;
+      }
       section:first-child {
         display: flex;
         flex-direction: column;
@@ -300,17 +303,16 @@ module.exports = function (map, lang) {
         <p>
         ${video('https://vimeo.com/270212698/62b62abe89', {background: false})}
         </p>
-      </section>
-      <section class='center'>
-        <h2>${message('final-title')}</h2>
-        <h4>${message('final-text')}</h4>
-      <p class='center'>
-        <button class='button-action'
-          onclick=${actionButton}>
-          ${message('action-button')}
-        </button>
-      </p>
-        ${image('DJI_0032')}
+        <div class='center'>
+          <h2>${message('final-title')}</h2>
+          <h4>${message('final-text')}</h4>
+        <p class='center'>
+          <button class='button-action'
+            onclick=${actionButton}>
+            ${message('action-button')}
+          </button>
+        </p>
+        </div>
       </section>
     </div>
     </div>
