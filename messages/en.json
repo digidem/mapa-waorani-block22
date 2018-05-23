@@ -1,0 +1,95 @@
+{
+  "title": {
+    "message": "IN DEFENSE OF A FOREST HOMELAND",
+    "description": "title of the whole thing"
+  },
+  "start": {
+    "message": "The Waorani people live in the upper headwaters of the Amazon river in Ecuador, one of the most biodiverse rainforests on earth. Their territory is 2.5 million acres, roughly the size of Yellowstone National Park.",
+    "description": "First section part 1"
+  },
+  "start-2": {
+    "message": "Before the oil companies, the loggers, the rubber tappers, and even before the Spanish conquistadors, the Waorani were known to the Incas and others as fierce defenders of the mountainous forests south of the mighty Napo River and north of the snaking Curaray.",
+    "description": "First section part 2"
+  },
+  "oil-rush-title": {
+    "message": "The Oil Rush",
+    "description": "Oil rush section"
+  },
+  "oil-rush": {
+    "message": "Over the last half-century the oil industry (multinationals and the Ecuadorian state oil company) have opened roads for oil platforms and pipelines into the heart of the Waorani people’s ancestral lands.  Now, the government wants to sell rights to exploit oil in the headwaters of the Curaray River, one of the last remaining oil-free, roadless areas in Waorani territory.",
+    "description": "Oil rush section"
+  },
+  "maps-and-resistance-title": {
+    "message": "MAPS AND RESISTANCE",
+    "description": "Maps and resistance title"
+  },
+  "maps-and-resistance": {
+    "message": "The Waorani communities of the Curaray river-basin (now known as Block 22 by the Government) are creating territorial maps of their lands that document the historic and actual uses of their territory, and demonstrate that their homelands are not up for grabs.",
+    "description": "Maps and resistance part 1"
+  },
+  "maps-and-resistance-2": {
+    "message": "Whereas the maps of oil companies show petrol deposits and major rivers, the maps that the Waorani peoples are creating identify historic battle sites, ancient cave-carvings, jaguar trails, medicinal plants, animal reproductive zones, important fishing holes, creek-crossings and sacred waterfalls.",
+    "description": "Maps and resistance part 1"
+  },
+  "wildlife": {
+    "message": "Waorani territory protects one of the most biodiverse regions of the world, housing over 200 species of mammals, 600 bird species, nearly 300 fish species, and thousands of insect species. It remains one of the Upper Amazon’s last intact wildlife sanctuaries amidst industrial-scale agriculture, oil and mining operations and continuous colonial invasion.",
+    "description": "Wildlife"
+  },
+  "pharmacy-title": {
+    "message": "A Natural Pharmacy",
+    "description": "Pharmacy title"
+  },
+  "pharmacy": {
+    "message": "Over millennia of keen observation and experimentation, the Waorani people have accumulated knowledge and honed techniques that employ plants, and other forest items, to heal and cure a host of ailments, such as snake bites, gaping wounds, and even psychological illness. One of their discoveries, curare, used conventionally as a blowgun dart poison, has been employed as the primary muscle relaxant in nearly every surgical operation in the world.",
+    "description": "Pharmacy"
+  },
+  "at-stake": {
+    "message": "What is at stake?",
+    "description": "heading before wildlife section"
+  },
+  "wildlife-title": {
+    "message": "Wildlife",
+    "description": "wildlife section title"
+  },
+  "living-title": {
+    "message":  "Living with the Forest",
+    "description": "living title"
+  },
+  "living": {
+    "message":  "Waorani culture embraces the secrets of living a healthy, vibrant, and fearless life within their bountiful forest home without the need for massive deforestation, resource extraction or irresponsible contamination.  Their way of life uses songs to teach life’s lessons, rear children, memorize history, and to comprehend the complexities of the forest. The Waorani dance to promote family ties and healthy social structure.  Their culture also bears an incredible repertoire of cultural-identifying crafts and iconic weaponry such as chonta wood blowguns and feather-laden spears.",
+    "description": "living"
+  },
+  "conflict-visions": {
+    "message": "The Waorani way of life requires a healthy living forest. Oil operations in their lands would require the cutting of hundreds of kilometers of dynamite-laden seismic lines, the opening up of oil roads, and the building of pipelines and platforms.  For short-term economic gain, the Ecuadorian Government and the international oil industry are prepared to cause irreparable harm to a millenary indigenous culture, threatening the forest and the rivers that the Waorani depend on for survival.",
+    "description": "conflict of visions"
+  },
+  "conflict-visions-title": {
+    "message": "A Conflict of Visions",
+    "description": "conflict of visions title"
+  },
+  "resistance-title": {
+    "message": "The Resistance",
+    "description": "Title of resistance section"
+  },
+  "final-title": {
+    "message": "Our land is not for sale",
+    "description": "final title"
+  },
+  "resistance": {
+    "message": "Armed with 500 years of experience fighting invasions, the Waorani are challenging the government’s plans to exploit oil in their rainforest. They have produced territorial maps documenting the rich biodiversity of their lands, and demonstrating their people’s historical and present-day connection to their forests.  They have organized dozens of community assemblies, building strategies to resist the imminent auctioning of their ancestral territory to the oil industry.",
+    "description": "resistance"
+  },
+  "final-text": {
+    "message": "Sign the global petition to support the Waorani peoples’ defense of their lands, their cultures, and our global climate. Tell oil companies that the most biodiverse place on Earth is not for sale.",
+    "description": "Final text under the heading"
+  },
+  "action-button": {
+    "message": "Take Action: Sign The Letter",
+    "description": "Text for the action button"
+  },
+  "testimony-caption": {
+    "message": "The Waorani people of the Curaray river basin — 18 communities located within oil block 22 — have this message to the international oil industry.",
+    "description": "caption for testimony video"
+  }
+
+}

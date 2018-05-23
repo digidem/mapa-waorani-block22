@@ -11,19 +11,14 @@ var FLY_SPEED = 0.5
 // These layers are complex to draw (calculating collisions) so we always
 // hide them when transitioning between map views to avoid animation jitter
 var HIDDEN_TRANSITION_LAYERS = [
-  'rivers-large-highlight',
-  'rivers-large-shadow',
+  'rivers-large-*', // wao-scale river shadows
+  'rivers-peru-ecuador-colo-*', // country-scale river shadows
+  'rivers-area-peru-ecuador-colo-*', // river areas shadows
   'plant-view*',
   'final-*',
   'wildlife-view-*',
   'territory-points-*',
   'rivers-label-*'
-]
-
-var POINT_LAYERS = [
-  'plant-view*',
-  'wildlife-view-*',
-  'territory-points-*'
 ]
 
 var timeoutId
@@ -112,8 +107,7 @@ function mapTransition (viewId, map) {
     // Fadein layers in target view
     Object.keys(view.layerOpacity).forEach(function (layerId) {
       debug(viewId + ': fadein', layerId)
-      var pointLayer = mm([layerId], POINT_LAYERS).length > 0
-      setLayerOpacity(map, layerId, view.layerOpacity[layerId], pointLayer ? 0 : FADEIN_DURATION)
+      setLayerOpacity(map, layerId, view.layerOpacity[layerId], FADEIN_DURATION)
     })
   }
 

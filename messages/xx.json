@@ -1,0 +1,94 @@
+{
+  "title": {
+    "message": "crwdns19:0crwdne19:0",
+    "description": "title of the whole thing"
+  },
+  "start": {
+    "message": "crwdns20:0crwdne20:0",
+    "description": "First section part 1"
+  },
+  "start-2": {
+    "message": "crwdns21:0crwdne21:0",
+    "description": "First section part 2"
+  },
+  "oil-rush-title": {
+    "message": "crwdns22:0crwdne22:0",
+    "description": "Oil rush section"
+  },
+  "oil-rush": {
+    "message": "crwdns23:0crwdne23:0",
+    "description": "Oil rush section"
+  },
+  "maps-and-resistance-title": {
+    "message": "crwdns24:0crwdne24:0",
+    "description": "Maps and resistance title"
+  },
+  "maps-and-resistance": {
+    "message": "crwdns25:0crwdne25:0",
+    "description": "Maps and resistance part 1"
+  },
+  "maps-and-resistance-2": {
+    "message": "crwdns26:0crwdne26:0",
+    "description": "Maps and resistance part 1"
+  },
+  "wildlife": {
+    "message": "crwdns27:0crwdne27:0",
+    "description": "Wildlife"
+  },
+  "pharmacy-title": {
+    "message": "crwdns28:0crwdne28:0",
+    "description": "Pharmacy title"
+  },
+  "pharmacy": {
+    "message": "crwdns29:0crwdne29:0",
+    "description": "Pharmacy"
+  },
+  "at-stake": {
+    "message": "crwdns30:0crwdne30:0",
+    "description": "heading before wildlife section"
+  },
+  "wildlife-title": {
+    "message": "crwdns31:0crwdne31:0",
+    "description": "wildlife section title"
+  },
+  "living-title": {
+    "message": "crwdns32:0crwdne32:0",
+    "description": "living title"
+  },
+  "living": {
+    "message": "crwdns33:0crwdne33:0",
+    "description": "living"
+  },
+  "conflict-visions": {
+    "message": "crwdns34:0crwdne34:0",
+    "description": "conflict of visions"
+  },
+  "conflict-visions-title": {
+    "message": "crwdns35:0crwdne35:0",
+    "description": "conflict of visions title"
+  },
+  "resistance-title": {
+    "message": "crwdns36:0crwdne36:0",
+    "description": "Title of resistance section"
+  },
+  "final-title": {
+    "message": "crwdns37:0crwdne37:0",
+    "description": "final title"
+  },
+  "resistance": {
+    "message": "crwdns38:0crwdne38:0",
+    "description": "resistance"
+  },
+  "final-text": {
+    "message": "crwdns39:0crwdne39:0",
+    "description": "Final text under the heading"
+  },
+  "action-button": {
+    "message": "crwdns40:0crwdne40:0",
+    "description": "Text for the action button"
+  },
+  "testimony-caption": {
+    "message": "crwdns41:0crwdne41:0",
+    "description": "caption for testimony video"
+  }
+}
