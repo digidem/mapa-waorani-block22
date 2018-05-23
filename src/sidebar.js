@@ -107,6 +107,7 @@ function video (url, opts) {
     player = new Player(el, options)
     player.element.style.width = '100%'
     player.element.style.height = '100%'
+    if (options.background) player.setCurrentTime(2)
   }
 
   function onexit () {
