@@ -2,12 +2,10 @@ var css = require('sheetify')
 var Player = require('@vimeo/player')
 var html = require('nanohtml')
 var onIntersect = require('on-intersect')
-var fs = require('fs')
-var path = require('path')
 var map
 var translations = {
-  es: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'messages', 'es.json')).toString()),
-  en: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'messages', 'en.json')).toString())
+  es: require('../messages/es.json'),
+  en: require('../messages/en.json')
 }
 
 var mapTransition = require('./map_transition')
