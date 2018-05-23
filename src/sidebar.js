@@ -4,6 +4,7 @@ var html = require('nanohtml')
 var onIntersect = require('on-intersect')
 var fs = require('fs')
 var path = require('path')
+var map
 var translations = {
   es: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'messages', 'es.json')).toString()),
   en: JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'messages', 'en.json')).toString())
@@ -88,7 +89,8 @@ function video (url, opts) {
   </div>`
   var player
   // var muted = true
-  onIntersect(el, onenter, onexit)
+  if (!map) onenter()
+  else onIntersect(el, onenter, onexit)
 
   // function toggleMute () {
   //   if (!player) return
@@ -132,12 +134,9 @@ var style = css`
     position: fixed;
     overflow-y: scroll;
     max-height: 100%;
-    margin-right: -16px;
     transform: translateZ(0);
-    background: linear-gradient(to right, rgba(22,22,22, .6), rgba(22,22,22, .4) 40%, rgba(22,22,22, .2) 60%, transparent 70%);
     #sidebar {
       transform: translateZ(0);
-      margin-left: 20px;
       z-index: 999;
       color: white;
       section {
@@ -216,14 +215,19 @@ var style = css`
   }
   @media only screen and (max-width: 600px) {
     :host {
+      background: black;
+      padding: 10px;
       #sidebar {
-        width: 100%;
+        width: 95%;
       }
     }
   }
   @media only screen and (min-width: 601px) {
     :host {
+      background: linear-gradient(to right, rgba(22,22,22, .6), rgba(22,22,22, .4) 40%, rgba(22,22,22, .2) 60%, transparent 70%);
       #sidebar {
+        margin-right: -16px;
+        margin-left: 20px;
         width: 45%;
         max-width: 600px;
       }
@@ -236,13 +240,14 @@ var style = css`
   }
 `
 
-module.exports = function (map, lang) {
+module.exports = function (lang, _map) {
+  map = _map
   function message (key) {
     var msg = translations[lang][key]
     return msg ? msg.message : translations['en'][key].message
   }
   function onview (id) {
-    mapTransition(id, map)
+    if (map) mapTransition(id, map)
   }
 
   return html`<div id="sidebar-wrapper" class=${style}>
