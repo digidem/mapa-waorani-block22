@@ -19,7 +19,7 @@ var logoClassname = css`
   :host, :host a {
     color: white;
     text-decoration: none;
-    text-shadow: 0px 0px 2px rgb(0, 0, 0, 0.7);
+    text-shadow: 0px 0px 2px rgb(0, 0, 0);
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   }
   :host a {
