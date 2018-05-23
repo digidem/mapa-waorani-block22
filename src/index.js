@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 var data = {}
 var dataIndex = {}
 var qs = querystring.parse(window.location.search.replace('?', ''))
-var lang = qs.lang || 'es'
+var lang = qs.lang || 'en'
 
 css('mapbox-gl/dist/mapbox-gl.css')
 css('alianza-elements/style.css')
@@ -118,4 +118,4 @@ map.addControl(new DigidemAttrib(), 'bottom-right')
 map.addControl(new mapboxgl.ScaleControl(), 'bottom-right')
 map.addControl(new mapboxgl.AttributionControl({compact: true}), 'bottom-right')
 
-document.body.appendChild(sidebarDOM(map))
+document.body.appendChild(sidebarDOM(map, lang))
