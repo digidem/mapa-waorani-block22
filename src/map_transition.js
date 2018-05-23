@@ -11,8 +11,9 @@ var FLY_SPEED = 0.5
 // These layers are complex to draw (calculating collisions) so we always
 // hide them when transitioning between map views to avoid animation jitter
 var HIDDEN_TRANSITION_LAYERS = [
-  'rivers-large-highlight',
-  'rivers-large-shadow',
+  'rivers-large-*', // wao-scale river shadows
+  'rivers-peru-ecuador-colo-*', // country-scale river shadows
+  'rivers-area-peru-ecuador-colo-*', // river areas shadows
   'plant-view*',
   'final-*',
   'wildlife-view-*',
