@@ -301,6 +301,8 @@ module.exports = function (map, lang) {
         <p>${message('resistance')}</p>
         ${image('8a')}
         <p>
+        ${message('testimony-caption')}</p>
+        <p>
         ${video('https://vimeo.com/270212698/62b62abe89', {background: false})}
         </p>
         <div class='center'>

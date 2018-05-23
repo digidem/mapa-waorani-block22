@@ -80,13 +80,16 @@
     "description": "resistance"
   },
   "final-text": {
-    "message": "Tell oil companies that the most biodiverse place on Earth is not for sale.",
+    "message": "Sign the global petition to support the Waorani peoples’ defense of their lands, their cultures, and our global climate. Tell oil companies that the most biodiverse place on Earth is not for sale.",
     "description": "Final text under the heading"
   },
   "action-button": {
     "message": "Take Action: Sign The Letter",
     "description": "Text for the action button"
-
+  },
+  "testimony-caption": {
+    "message": "The Waorani people of the Curaray river basin - 18 communities located within oil block 22 - have this message to the international oil industry.",
+    "description": "caption for testimony video"
   }
 
 }
