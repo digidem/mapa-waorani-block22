@@ -11,7 +11,7 @@ var translations = {
 var mapTransition = require('./map_transition')
 
 const RESIZE_URL = 'https://resizer.digital-democracy.org/'
-const IMAGE_URL = 'https://s3.amazonaws.com/images.digital-democracy.org/waorani-images/'
+const IMAGE_URL = 'https://images.digital-democracy.org/waorani-images/'
 
 var dim = getViewport()
 
@@ -44,7 +44,8 @@ var aspectStyle = css`
 
 var videoDivStyle = css`
   :host {
-    background: center;
+    background-position: center;
+    background-size: cover;
     background-color: black;
   }
 `
@@ -82,8 +83,9 @@ function video (url, opts) {
     portrait: false,
     byline: false
   }, opts)
+  var imgUrl = RESIZE_URL + '600/' + IMAGE_URL + opts.placeholderImg
   var el = html`
-  <div class=${videoDivStyle} style="background-url: url(${opts.placeholderImgUrl})">
+  <div class=${videoDivStyle} style="background-image: url(${imgUrl});">
   </div>`
   var player
   // var muted = true
@@ -254,7 +256,7 @@ module.exports = function (lang, _map) {
   <div id="sidebar">
       <section>
         ${mapView('start', onview, html`<h1>${message('title')}</h1>`)}
-        ${video('https://vimeo.com/270209852/d857a916b5')}
+        ${video('https://vimeo.com/270209852/d857a916b5', {placeholderImg: '1territory.jpg'})}
         <p>${message('start')}</p>
       </section>
       <section>
@@ -265,7 +267,7 @@ module.exports = function (lang, _map) {
         ${mapView('oil-rush', onview, html`<h2>${message('oil-rush-title')}</h2>`)}
         ${image('2a')}
         <p>${message('oil-rush')}</p>
-        ${video('https://vimeo.com/270208622/ee7d7a12cc')}
+        ${video('https://vimeo.com/270208622/ee7d7a12cc', {placeholderImg: '2oil.jpg'})}
       </section>
       <section>
         ${mapView('maps-and-resistance', onview, html`<h2>${message('maps-and-resistance-title')}</h2>`)}
@@ -278,7 +280,7 @@ module.exports = function (lang, _map) {
       <section>
         ${mapView('wildlife', onview, html`<h2>${message('at-stake')}</h2>`)}
         <h3>${message('wildlife-title')}</h3>
-        ${video('https://vimeo.com/270211119/a857892d50')}
+        ${video('https://vimeo.com/270211119/a857892d50', {placeholderImg: '3wildlife.jpg'})}
         <p>${message('wildlife')}</p>
         ${image('4WildlifeB')}
       </section>
@@ -290,7 +292,7 @@ module.exports = function (lang, _map) {
       </section>
       <section>
         ${mapView('culture', onview, html`<h3>${message('living-title')}</h3>`)}
-        ${video('https://vimeo.com/270211741/575052a044', {background: false})}
+        ${video('https://vimeo.com/270211741/575052a044', {background: false, placeholderImg: '4chant.jpg'})}
         <p>${message('living')}</p>
         ${image('6CultureB')}
       </section>
@@ -308,7 +310,7 @@ module.exports = function (lang, _map) {
         <p>
         ${message('testimony-caption')}</p>
         <p>
-        ${video('https://vimeo.com/270212698/62b62abe89', {background: false})}
+        ${video('https://vimeo.com/270212698/62b62abe89', {background: false, placeholderImg: '5testimonies.jpg'})}
         </p>
         <div class='center'>
           <h2>${message('final-title')}</h2>
