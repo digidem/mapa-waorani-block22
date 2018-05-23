@@ -20,12 +20,6 @@ var HIDDEN_TRANSITION_LAYERS = [
   'rivers-label-*'
 ]
 
-var POINT_LAYERS = [
-  'plant-view*',
-  'wildlife-view-*',
-  'territory-points-*'
-]
-
 var timeoutId
 var hiddenLayersExpanded
 var loaded = false
@@ -112,8 +106,7 @@ function mapTransition (viewId, map) {
     // Fadein layers in target view
     Object.keys(view.layerOpacity).forEach(function (layerId) {
       debug(viewId + ': fadein', layerId)
-      var pointLayer = mm([layerId], POINT_LAYERS).length > 0
-      setLayerOpacity(map, layerId, view.layerOpacity[layerId], pointLayer ? 0 : FADEIN_DURATION)
+      setLayerOpacity(map, layerId, view.layerOpacity[layerId], FADEIN_DURATION)
     })
   }
 
