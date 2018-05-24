@@ -1,8 +1,18 @@
-var mm = require('micromatch')
 var EventEmitter = require('events')
 var debug = function () {}
 if (process.env.NODE_ENV !== 'production') {
   debug = require('debug')('mapa-waorani:prefetch')
+}
+
+function mm (list, patterns) {
+  var regexps = patterns.map(function (p) {
+    return new RegExp(p.replace('*', '.*'))
+  })
+  return list.filter(function (str) {
+    return regexps.some(function (regexp) {
+      return regexp.exec(str)
+    })
+  })
 }
 
 var views = require('./map_views.json')
@@ -174,7 +184,7 @@ function expandLayerGlobs (map) {
     var expandedLayerOpacity = {}
     var layerMatchPatterns = Object.keys(views[key].layerOpacity)
     layerMatchPatterns.forEach(function (pattern) {
-      var matchedLayers = mm(mapLayers, pattern)
+      var matchedLayers = mm(mapLayers, [pattern])
       matchedLayers.forEach(function (layerId) {
         expandedLayerOpacity[layerId] = views[key].layerOpacity[pattern]
       })
