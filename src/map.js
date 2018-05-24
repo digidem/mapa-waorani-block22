@@ -53,7 +53,6 @@ DdLogoControl.prototype.onRemove = function () {
 
 module.exports = function () {
   css('mapbox-gl/dist/mapbox-gl.css')
-  css('alianza-elements/style.css')
 
   // var qs = querystring.parse(window.location.search.replace('?', ''))
   mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeWEiLCJhIjoiY2lzZDVhbjM2MDAwcTJ1cGY4YTN6YmY4cSJ9.NxK9jMmYZsA32ol_IZGs5g'
