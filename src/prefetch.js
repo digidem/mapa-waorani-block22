@@ -1,6 +1,9 @@
 /* global caches,fetch,mapboxgl */
 
-var debug = require('debug')('mapa-waorani:prefetch')
+var debug = function () {}
+if (process.env.NODE_ENV !== 'production') {
+  debug = require('debug')('mapa-waorani:prefetch')
+}
 
 var urls = require('../static/urls.json')
 var MAX_CONNECTIONS = 5

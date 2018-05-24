@@ -1,6 +1,9 @@
 var mm = require('micromatch')
 var EventEmitter = require('events')
-var debug = require('debug')('mapa-waorani:transition')
+var debug = function () {}
+if (process.env.NODE_ENV !== 'production') {
+  debug = require('debug')('mapa-waorani:prefetch')
+}
 
 var views = require('./map_views.json')
 
