@@ -4,6 +4,7 @@
     "layerOpacity": {
       "bing-satellite": 1,
       "petrol-blocks-*": 0,
+      "block-22-label": 0,
       "wildlife-view*": 0,
       "plant-view*": 0,
       "territory-points-*": 0,
@@ -21,6 +22,7 @@
     "layerOpacity": {
       "bing-satellite": 0.4,
       "petrol-blocks-label": 1,
+      "block-22-label": 0,
       "petrol-blocks-label copy": 1,
       "petrol-blocks-line": 0.7,
       "territory-points-*": 0,
@@ -40,6 +42,7 @@
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
+      "block-22-label": 0,
       "territory-points-*": 1,
       "wildlife-view*": 0,
       "plant-view*": 0,
@@ -57,6 +60,7 @@
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
+      "block-22-label": 0,
       "territory-points-*": 0,
       "wildlife-view*": 1,
       "plant-view*": 0,
@@ -76,6 +80,7 @@
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
+      "block-22-label": 0,
       "territory-points-*": 0,
       "plant-view*": 1,
       "wildlife-view*": 0,
@@ -95,6 +100,7 @@
     "layerOpacity":  {
       "bing-satellite": 0,
       "petrol-blocks-*": 0,
+      "block-22-label": 0,
       "territory-points-*": 1,
       "plant-view*": 0,
       "wildlife-view*": 0,
@@ -115,6 +121,7 @@
       "bing-satellite": 0,
       "petrol-blocks-label copy": 1,
       "petrol-blocks-label": 1,
+      "block-22-label": 0,
       "petrol-blocks-line": 0.5,
       "petrol-blocks-fill": 0.6,
       "territory-points-*": 1,
@@ -135,6 +142,7 @@
     "layerOpacity": {
       "bing-satellite": 0,
       "petrol-blocks-label": 0,
+      "block-22-label": 1,
       "petrol-blocks-line": 0.3,
       "petrol-blocks-fill": 0,
       "territory-points-*": 1,
