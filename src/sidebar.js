@@ -160,6 +160,7 @@ var style = css`
     width: 100%;
     position: fixed;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     max-height: 100%;
     transform: translateZ(0);
     #sidebar {
