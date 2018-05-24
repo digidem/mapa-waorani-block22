@@ -20,13 +20,6 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-  /https:\/\/api\.mapbox\.com/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'mapbox-api'
-  })
-)
-
-workbox.routing.registerRoute(
   /https:\/\/resizer.digital-democracy.org/,
   new workbox.strategies.CacheFirst({
     cacheName: 'images'
