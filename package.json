@@ -7,7 +7,7 @@
     "test": "standard",
     "build": "mkdirp dist && npm run build:js && npm run build:static && npm run build:sw",
     "build:sw": "workbox injectManifest",
-    "build:js": "NODE_ENV=production browserify -t [ sheetify/transform -u sheetify-nested ] -g unassertify -g envify -t yo-yoify -t es2020 -g uglifyify -p common-shakeify -p browser-pack-flat/plugin src/index.js | uglifyjs -c comparisons=false -m > dist/bundle.js",
+    "build:js": "NODE_ENV=production browserify --debug -t [ sheetify/transform -u sheetify-nested ] -g unassertify -g envify -t yo-yoify -t es2020 -g uglifyify -p common-shakeify -p browser-pack-flat/plugin src/index.js | uglifyjs --source-map 'content=inline' -c comparisons=false -m -o dist/bundle.js",
     "build:static": "copyup 'static/**/*' dist",
     "start": "budo src/index.js:bundle.js -d static -- -t [ sheetify/transform -u sheetify-nested]",
     "deploy": "npm run build && gh-pages -d dist"
