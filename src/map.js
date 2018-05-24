@@ -111,6 +111,10 @@ module.exports = function () {
     map.addSource('bing', bingSource)
     map.addLayer(bing, 'territory-outline')
     map.setLayoutProperty('background', 'visibility', 'none')
+    map.setPaintProperty('background', 'background-opacity', 0)
+  })
+
+  map.once('load', function () {
     document.body.style['background-image'] = 'none'
   })
 
