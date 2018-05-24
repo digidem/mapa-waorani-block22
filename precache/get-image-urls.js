@@ -4,8 +4,8 @@ module.exports = getImageUrls
 
 function getImageUrls (str, cb) {
   var urls = []
-  urls = urls.concat(matchAll(str, /<img[^>]+src="([^">]+)"/g))
-  urls = urls.concat(matchAll(str, /-image:\s?url\(([^)]+)\)/g))
+  urls = urls.concat(matchAll(str, /<img[^>]+src="(http[^">]+)"/g))
+  urls = urls.concat(matchAll(str, /-image:\s?url\((http[^)]+)\)/g))
   verifyUrls(urls, cb)
 }
 
