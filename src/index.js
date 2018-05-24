@@ -20,7 +20,7 @@ if (typeof qs.translate !== 'undefined') {
 }
 
 var map
-var sidebarEl = document.getElementById('sidebar')
+var sidebarEl = document.getElementById('sidebar-wrapper')
 
 if (!mobile) {
   require('./service-worker')
