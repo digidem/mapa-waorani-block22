@@ -2,6 +2,7 @@
 
 const css = require('sheetify')
 const mapViews = require('./map_views.json')
+const config = require('../mapbox-config')
 
 var logoClassname = css`
   .mapboxgl-ctrl-bottom-right {
@@ -52,14 +53,14 @@ DdLogoControl.prototype.onRemove = function () {
 
 module.exports = function () {
   // var qs = querystring.parse(window.location.search.replace('?', ''))
-  mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeWEiLCJhIjoiY2lzZDVhbjM2MDAwcTJ1cGY4YTN6YmY4cSJ9.NxK9jMmYZsA32ol_IZGs5g'
+  mapboxgl.accessToken = config.accessToken
   var defaultCenter = [ -79.656232, -0.489971 ]
 
   var map = window.map = new mapboxgl.Map({
     container: 'map',
     center: defaultCenter,
     zoom: 6,
-    style: 'mapbox://styles/aliya/cjgowcgqq00a62spkeo922ik6?fresh=true',
+    style: config.style,
     hash: false,
     zoomControl: false,
     attributionControl: false,

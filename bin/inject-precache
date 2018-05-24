@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+var path = require('path')
+
+var html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8')
+var sw = fs.readFileSync(path.join(__dirname, '../dist/sw.js'), 'utf8')
+
+var getMapboxUrls = require('../precache/get-mapbox-urls')
+var getImageUrls = require('../precache/get-image-urls')
+var config = require('../mapbox-config')
+
+var precacheUrls = ['https://fonts.googleapis.com/css?family=Nunito+Sans']
+var pending = 2
+
+getImageUrls(html, done)
+getMapboxUrls(config.style, config.accessToken, done)
+
+function done (err, urls) {
+  if (err) return console.error(err)
+  precacheUrls = precacheUrls.concat(urls)
+  if (--pending) return
+  sw += '\nworkbox.precaching.precacheAndRoute(' + JSON.stringify(precacheUrls, null, 2) + ')'
+  fs.writeFileSync(path.join(__dirname, '../dist/sw.js'), sw)
+}

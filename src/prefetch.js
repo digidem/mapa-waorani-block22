@@ -1,4 +1,4 @@
-/* global caches,fetch,mapboxgl */
+/* global caches,fetch */
 
 var debug = function () {}
 if (process.env.NODE_ENV !== 'production') {
@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 var urls = require('../static/urls.json')
+var config = require('../mapbox-config')
 var MAX_CONNECTIONS = 5
 
 module.exports = prefetch
@@ -52,7 +53,7 @@ function getUrl (canonicalTileID, source) {
   var urls = ['a', 'b'].map(s => {
     return source.url
       .replace('mapbox://', 'https://' + s + '.tiles.mapbox.com/v4/') +
-      '/{z}/{x}/{y}.vector.pbf?access_token=' + mapboxgl.accessToken
+      '/{z}/{x}/{y}.vector.pbf?access_token=' + config.accessToken
   })
   return canonicalTileID.url(urls)
 }
