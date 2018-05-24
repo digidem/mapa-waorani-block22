@@ -3,6 +3,7 @@
 const css = require('sheetify')
 const Player = require('@vimeo/player')
 const html = require('nanohtml')
+const raw = require('nanohtml/raw')
 const onIntersectOrig = require('on-intersect')
 
 function onIntersect () {
@@ -229,10 +230,13 @@ var style = css`
         font-weight: bold;
         font-size: 1.3em;
       }
-      p.small {
+      p.footnote {
         font-size: .8em;
         padding-top: 20px;
         color: #ccc;
+        a {
+          color: #fff;
+        }
       }
     }
   }
@@ -366,8 +370,8 @@ module.exports = function (lang, _map) {
               ${message('action-button')}
             </a>
           </p>
-          <p class='small'>
-            ${message('final-copyright')}
+          <p class='footnote'>
+            ${raw(message('final-copyright'))}
           </p>
         </div>
       </section>
