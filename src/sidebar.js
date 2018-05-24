@@ -48,6 +48,18 @@ var aspectStyle = css`
     width: 100%;
     height: 100%;
   }
+  @media only screen and (max-width: 600px) {
+    :host {
+      width: 100vw;
+      left: -10px;
+    }
+    :host.aspect-16x9 {
+      padding-bottom: calc(56.25% + 11.25px);
+    }
+    :host.aspect-3x2 {
+      padding-bottom: calc(66.67% + 11.25px);
+    }
+  }
 `
 
 var videoDivStyle = css`
