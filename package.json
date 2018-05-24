@@ -7,7 +7,7 @@
     "test": "standard",
     "build": "mkdirp dist && npm run build:js && npm run build:static && npm run build:sw",
     "build:sw": "workbox injectManifest && bin/inject-precache",
-    "build:js": "NODE_ENV=production browserify --debug -t [ sheetify/transform -u sheetify-nested ] -g unassertify -g envify -t yo-yoify -t es2020 -g uglifyify -p common-shakeify -p browser-pack-flat/plugin src/index.js | uglifyjs --source-map 'content=inline' -c comparisons=false -m -o dist/bundle.js",
+    "build:js": "NODE_ENV=production browserify --debug -t [ sheetify/transform -u sheetify-nested ] -p [ css-extract -o dist/bundle.css ] -g unassertify -g envify -t yo-yoify -t es2020 -g uglifyify -p common-shakeify -p browser-pack-flat/plugin src/index.js | uglifyjs --source-map 'content=inline' -c comparisons=false -m -o dist/bundle.js",
     "build:static": "copyup 'static/**/*' dist && bin/ssr",
     "start": "budo src/index.js:bundle.js -d static -- -t [ sheetify/transform -u sheetify-nested]",
     "deploy": "npm run build && gh-pages -d dist"
@@ -52,6 +52,7 @@
     "budo": "^10.0.3",
     "common-shakeify": "^0.4.6",
     "copyfiles": "^1.2.0",
+    "css-extract": "^1.3.0",
     "envify": "^4.1.0",
     "es2020": "^1.1.9",
     "gh-pages": "^1.0.0",
