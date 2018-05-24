@@ -3,8 +3,13 @@
 const css = require('sheetify')
 const Player = require('@vimeo/player')
 const html = require('nanohtml')
-const onIntersect = require('on-intersect')
+const onIntersectOrig = require('on-intersect')
 const onload = require('on-load')
+
+function onIntersect () {
+  if (typeof window === 'undefined') return
+  onIntersectOrig.apply(null, arguments)
+}
 
 var map
 var translations = {
@@ -105,8 +110,7 @@ function video (url, opts) {
   })
 
   // var muted = true
-  if (!map) onenter()
-  else onIntersect(el, onenter, onexit)
+  onIntersect(el, onenter, onexit)
 
   // function toggleMute () {
   //   if (!player) return
