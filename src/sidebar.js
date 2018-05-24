@@ -103,24 +103,11 @@ function video (url, opts) {
     portrait: false,
     byline: false
   }, opts)
-  var previewUrl = RESIZE_URL + '200/200/30/' + IMAGE_URL + opts.placeholderImg
+  var previewUrl = RESIZE_URL + '400/400/20/' + IMAGE_URL + opts.placeholderImg
   var el = html`
   <div class=${videoDivStyle} style="background-image: url(${previewUrl});">
   </div>`
   var player
-
-  // Start video background as preview, then load image according to screen size
-  onload(el, function (el) {
-    var img = new Image()
-    // Get image width rounded to nearest 100
-    var width = Math.ceil(el.offsetWidth / 100) * 100 * window.devicePixelRatio
-    var imageUrl = RESIZE_URL + width + '/' + IMAGE_URL + opts.placeholderImg
-    img.crossOrigin = 'anonymous'
-    img.src = imageUrl
-    img.onload = function () {
-      el.style['background-image'] = 'url(' + imageUrl + ')'
-    }
-  })
 
   // var muted = true
   onIntersect(el, onenter, onexit)
@@ -135,6 +122,15 @@ function video (url, opts) {
   // }
 
   function onenter () {
+    var img = new Image()
+    // Get image width rounded to nearest 100
+    var width = Math.ceil(el.offsetWidth / 100) * 100 * window.devicePixelRatio
+    var imageUrl = RESIZE_URL + width + '/' + IMAGE_URL + opts.placeholderImg
+    img.crossOrigin = 'anonymous'
+    img.src = imageUrl
+    img.onload = function () {
+      el.style['background-image'] = 'url(' + imageUrl + ')'
+    }
     player = new Player(el, options)
     player.element.style.width = '100%'
     player.element.style.height = '100%'
@@ -149,7 +145,7 @@ function video (url, opts) {
 
 function image (path) {
   var hasBeenSeen = false
-  var previewUrl = RESIZE_URL + '200/200/30/' + IMAGE_URL + path + '.jpg'
+  var previewUrl = RESIZE_URL + '400/400/20/' + IMAGE_URL + path + '.jpg'
   var el = html`<img crossorigin="anonymous" src=${previewUrl} />`
 
   onIntersect(el, function () {
