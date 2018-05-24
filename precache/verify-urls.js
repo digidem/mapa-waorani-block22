@@ -8,7 +8,6 @@ module.exports = function (urls, cb) {
   var verifiedUrls = []
   urls.forEach(function (url) {
     request(url, function (err, response) {
-      console.log(response.statusCode)
       if (err || response.statusCode !== 200) {
         console.error(err)
       } else {
