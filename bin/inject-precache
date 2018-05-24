@@ -3,11 +3,11 @@
 var fs = require('fs')
 var path = require('path')
 
-var html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8')
+// var html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8')
 var sw = fs.readFileSync(path.join(__dirname, '../dist/sw.js'), 'utf8')
 
 var getMapboxUrls = require('../precache/get-mapbox-urls')
-var getImageUrls = require('../precache/get-image-urls')
+// var getImageUrls = require('../precache/get-image-urls')
 var config = require('../mapbox-config')
 
 var precacheUrls = [
@@ -16,9 +16,9 @@ var precacheUrls = [
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css',
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'
 ]
-var pending = 2
+var pending = 1
 
-getImageUrls(html, done)
+// getImageUrls(html, done)
 getMapboxUrls(config.style, config.accessToken, done)
 
 function done (err, urls) {

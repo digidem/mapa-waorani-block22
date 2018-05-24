@@ -51,7 +51,6 @@ function loadMapbox (cb) {
   cssLink.onload = done
 
   function done () {
-    console.log(pending)
     if (--pending) return
     cb()
   }
