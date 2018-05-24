@@ -115,6 +115,7 @@ function video (url, opts) {
     // Get image width rounded to nearest 100
     var width = Math.ceil(el.offsetWidth / 100) * 100 * window.devicePixelRatio
     var imageUrl = RESIZE_URL + width + '/' + IMAGE_URL + opts.placeholderImg
+    img.crossOrigin = 'anonymous'
     img.src = imageUrl
     img.onload = function () {
       el.style['background-image'] = 'url(' + imageUrl + ')'
@@ -149,7 +150,7 @@ function video (url, opts) {
 function image (path) {
   var hasBeenSeen = false
   var previewUrl = RESIZE_URL + '200/200/30/' + IMAGE_URL + path + '.jpg'
-  var el = html`<img src=${previewUrl} />`
+  var el = html`<img crossorigin="anonymous" src=${previewUrl} />`
 
   onIntersect(el, function () {
     if (hasBeenSeen) return
@@ -157,6 +158,7 @@ function image (path) {
     // Get image width rounded to nearest 100
     var width = Math.ceil(el.width / 100) * 100 * window.devicePixelRatio
     var imageUrl = RESIZE_URL + width + '/' + IMAGE_URL + path + '.jpg'
+    img.crossOrigin = 'anonymous'
     img.src = imageUrl
     img.onload = function () {
       el.src = imageUrl

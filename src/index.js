@@ -40,11 +40,13 @@ function loadMapbox (cb) {
 
   var script = document.createElement('script')
   script.type = 'text/javascript'
+  script.crossOrigin = 'anonymous'
   script.src = 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'
   script.onload = done
 
   var cssLink = document.createElement('link')
   cssLink.rel = 'stylesheet'
+  cssLink.crossOrigin = 'anonymous'
   cssLink.href = 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css'
   cssLink.onload = done
 
