@@ -1,11 +1,10 @@
 const traverse = require('traverse')
 const request = require('request')
 
-var getRevisionedUrls = require('./get-revisioned-urls')
-
 const normalizeSpriteURL = require('./mapbox').normalizeSpriteURL
 const normalizeGlyphsURL = require('./mapbox').normalizeGlyphsURL
 const normalizeStyleURL = require('./mapbox').normalizeStyleURL
+const normalizeSourceURL = require('./mapbox').normalizeSourceURL
 
 module.exports = getUrls
 
@@ -19,7 +18,14 @@ function getUrls (url, accessToken, cb) {
     urls = urls
       .concat(getSpriteUrls(style, accessToken))
       .concat(getGlyphUrls(style, accessToken))
-    getRevisionedUrls(urls, cb)
+      .concat(getSourceUrls(style, accessToken))
+    cb(null, urls)
+  })
+}
+
+function getSourceUrls (style, accessToken) {
+  return Object.keys(style.sources).map(key => {
+    return normalizeSourceURL(style.sources[key].url, accessToken)
   })
 }
 

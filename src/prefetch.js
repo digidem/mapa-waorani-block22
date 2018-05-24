@@ -14,14 +14,14 @@ module.exports = prefetch
 function prefetch (map) {
   var toFetch
   if (process.env.NODE_ENV === 'production') {
-    navigator.serviceWorker.ready.then(() => Promise.all([
-      getUrlsInCache('mapbox-tile-cache'),
-      getUrlsInCache('bing-tile-cache')
-    ])).then(values => {
-      var prefetched = values[0].concat(values[1])
+    navigator.serviceWorker.ready.then(() => caches.keys())
+    .then(keys => keys.find(k => k.indexOf('workbox-runtime') === 0))
+    .then(getUrlsInCache)
+    .then(urlsInCache => {
       toFetch = urls.filter(function (url, i) {
-        return prefetched.indexOf(url) === -1
+        return urlsInCache.indexOf(url) === -1
       })
+      debug('tiles to prefetch:', toFetch.length)
       downloadTiles()
     }).catch(error => console.error(error))
   } else {

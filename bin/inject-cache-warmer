@@ -3,28 +3,34 @@
 var fs = require('fs')
 var path = require('path')
 
-// var html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8')
+var html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8')
 var sw = fs.readFileSync(path.join(__dirname, '../dist/sw.js'), 'utf8')
 
 var getMapboxUrls = require('../precache/get-mapbox-urls')
-// var getImageUrls = require('../precache/get-image-urls')
+var getImageUrls = require('../precache/get-image-urls')
 var config = require('../mapbox-config')
 
-var precacheUrls = [
+var cachableUrls = [
   'https://fonts.googleapis.com/css?family=Nunito+Sans',
   'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver',
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css',
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'
 ]
-var pending = 1
+var pending = 2
 
-// getImageUrls(html, done)
+getImageUrls(html, done)
 getMapboxUrls(config.style, config.accessToken, done)
 
 function done (err, urls) {
   if (err) return console.error(err)
-  precacheUrls = precacheUrls.concat(urls)
+  cachableUrls = cachableUrls.concat(urls)
   if (--pending) return
-  sw += '\nworkbox.precaching.precacheAndRoute(' + JSON.stringify(precacheUrls, null, 2) + ')'
+  sw += `
+self.addEventListener('install', (event) => {
+  const urls = ${JSON.stringify(cachableUrls, null, 2)};
+  const cacheName = workbox.core.cacheNames.runtime;
+  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(urls)));
+});
+`
   fs.writeFileSync(path.join(__dirname, '../dist/sw.js'), sw)
 }

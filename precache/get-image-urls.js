@@ -1,4 +1,4 @@
-var getRevisionedUrls = require('./get-revisioned-urls')
+var verifyUrls = require('./verify-urls')
 
 module.exports = getImageUrls
 
@@ -6,7 +6,7 @@ function getImageUrls (str, cb) {
   var urls = []
   urls = urls.concat(matchAll(str, /<img[^>]+src="([^">]+)"/g))
   urls = urls.concat(matchAll(str, /-image:\s?url\(([^)]+)\)/g))
-  getRevisionedUrls(urls, cb)
+  verifyUrls(urls, cb)
 }
 
 function matchAll (str, re) {
