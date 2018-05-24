@@ -52,26 +52,6 @@ DdLogoControl.prototype.onRemove = function () {
 }
 
 module.exports = function () {
-  if (process.env.NODE_ENV === 'production') {
-    require('./service-worker')
-    var prefetched = localStorage.getItem('prefetched-waorani-assets')
-    try {
-      prefetched = JSON.parse(prefetched || '[]')
-    } catch (err) {
-      prefetched = []
-    }
-    // only grab ones we've not prefetched previously
-    localStorage.setItem('prefetched-waorani-assets', JSON.stringify(urls))
-    urls.forEach(function (url) {
-      if (prefetched.indexOf(url) === -1) {
-        console.log('fetching', url)
-        xhr(url, function (err, resp, body) {
-          if (err) console.error(err)
-        })
-      }
-    })
-  }
-
   css('mapbox-gl/dist/mapbox-gl.css')
   css('alianza-elements/style.css')
 

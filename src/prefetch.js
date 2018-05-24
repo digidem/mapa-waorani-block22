@@ -1,96 +1,62 @@
-var xhr = require('xhr')
+/* global caches,fetch */
+
 var mapboxgl = require('mapbox-gl')
 var debug = require('debug')('mapa-waorani:prefetch')
 
 var urls = require('../static/urls.json')
-
-var localStorage = window.localStorage
+var MAX_CONNECTIONS = 5
 
 module.exports = prefetch
 
 function prefetch (map) {
+  var toFetch
   if (process.env.NODE_ENV === 'production') {
-    var prefetched = localStorage.getItem('prefetched-waorani-assets')
-    try {
-      prefetched = JSON.parse(prefetched || '[]')
-    } catch (err) {
-      prefetched = []
-    }
-    debug('already prefetched:', prefetched)
-    var toFetch = urls.filter(function (url) {
-      return prefetched.indexOf(url) === -1
-    })
-    debug('still to fetch:', toFetch)
-    downloadTile()
+    navigator.serviceWorker.ready.then(() => Promise.all([
+      getUrlsInCache('mapbox-tile-cache'),
+      getUrlsInCache('bing-tile-cache')
+    ])).then(values => {
+      var prefetched = values[0].concat(values[1])
+      toFetch = urls.filter(function (url, i) {
+        return prefetched.indexOf(url) === -1
+      })
+      downloadTiles()
+    }).catch(error => console.error(error))
   } else {
     urls = window.urls = []
-    map.on('sourcedata', function (e) {
-      if (!(e.coord && e.tile)) return
-      var url = getUrl(e.coord.canonical, e.source)
+    map.on('dataloading', function (e) {
+      if (!(e.tile && e.tile.tileID)) return
+      var url = getUrl(e.tile.tileID.canonical, e.source)
       urls.push(url)
     })
   }
 
-  function downloadTile () {
-    if (!toFetch.length) return
-    if (!map.areTilesLoaded()) {
-      map.once('sourcedata', downloadTile)
-      return
-    }
-    var url = toFetch.shift()
-    debug('downloading ' + url)
-    xhr(url, function (err) {
-      if (err) {
-        console.error(err)
-      } else {
-        debug('downloaded ' + url)
-        prefetched.push(url)
-        localStorage.setItem('prefetched-waorani-assets', JSON.stringify(prefetched))
-      }
-      downloadTile()
-    })
+  function downloadTiles () {
+    if (!toFetch.length) return debug('Finished prefetch')
+    // Only download when the map has finished loading tiles
+    if (!map.areTilesLoaded()) return map.once('sourcedata', downloadTiles)
+    var urls = toFetch.splice(0, Math.min(toFetch.length, MAX_CONNECTIONS))
+    debug('prefetching ' + urls.length + ' tiles')
+    Promise.all(urls.map(url => fetch(url)))
+      .then(downloadTiles)
+      .catch(error => {
+        console.error(error)
+        downloadTiles()
+      })
   }
 }
 
-var i = 0
-
-function getUrl (tile, source) {
-  var q = tileToQuadkey([tile.x, tile.y, tile.z])
-  var url
-  if (source.url) {
-    url = source.url
-  } else {
-    url = source.tiles[i++ % source.tiles.length]
-  }
-  if (url.startsWith('mapbox://')) {
-    url = url.replace('mapbox://', 'https://' + ['a', 'b'][i++ % 2] + '.tiles.mapbox.com/v4/')
-    url += '/{z}/{x}/{y}.vector.pbf?access_token=' + mapboxgl.accessToken
-  }
-  url = url.replace('{quadkey}', q)
-  url = url.replace('{z}', tile.z)
-  url = url.replace('{x}', tile.x)
-  url = url.replace('{y}', tile.y)
-  return url
+function getUrl (canonicalTileID, source) {
+  if (source.tiles) return canonicalTileID.url(source.tiles)
+  var urls = ['a', 'b'].map(s => {
+    return source.url
+      .replace('mapbox://', 'https://' + s + '.tiles.mapbox.com/v4/') +
+      '/{z}/{x}/{y}.vector.pbf?access_token=' + mapboxgl.accessToken
+  })
+  return canonicalTileID.url(urls)
 }
 
-/**
- * Get the quadkey for a tile [x, y, z]
- *
- * @name tileToQuadkey
- * @param {Array<number>} tile [x, y, z]
- * @returns {string} quadkey
- * @example
- * var quadkey = tileToQuadkey([1, 1, 5])
- * //=quadkey
- */
-function tileToQuadkey (tile) {
-  var index = ''
-  for (var z = tile[2]; z > 0; z--) {
-    var b = 0
-    var mask = 1 << (z - 1)
-    if ((tile[0] & mask) !== 0) b++
-    if ((tile[1] & mask) !== 0) b += 2
-    index += b.toString()
-  }
-  return index
+function getUrlsInCache (cacheName) {
+  return caches.open(cacheName)
+    .then(cache => cache.keys())
+    .then(keys => keys.map(k => k.url))
 }

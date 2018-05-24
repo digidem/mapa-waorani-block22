@@ -19,7 +19,10 @@ if (typeof qs.translate !== 'undefined') {
 
 var map
 if (!mobile) {
+  require('./service-worker')
   map = createMap()
-  prefetch(map)
+  if ('serviceWorker' in navigator) {
+    prefetch(map)
+  }
 }
 document.body.appendChild(sidebarDOM(lang, map))
