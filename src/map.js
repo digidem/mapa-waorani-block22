@@ -1,7 +1,6 @@
-const xhr = require('xhr')
+/* global mapboxgl */
+
 const css = require('sheetify')
-const mapboxgl = require('mapbox-gl')
-const urls = require('../static/urls.json')
 const mapViews = require('./map_views.json')
 
 var logoClassname = css`
@@ -52,8 +51,6 @@ DdLogoControl.prototype.onRemove = function () {
 }
 
 module.exports = function () {
-  css('mapbox-gl/dist/mapbox-gl.css')
-
   // var qs = querystring.parse(window.location.search.replace('?', ''))
   mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeWEiLCJhIjoiY2lzZDVhbjM2MDAwcTJ1cGY4YTN6YmY4cSJ9.NxK9jMmYZsA32ol_IZGs5g'
   var defaultCenter = [ -79.656232, -0.489971 ]

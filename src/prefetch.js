@@ -1,6 +1,5 @@
-/* global caches,fetch */
+/* global caches,fetch,mapboxgl */
 
-var mapboxgl = require('mapbox-gl')
 var debug = require('debug')('mapa-waorani:prefetch')
 
 var urls = require('../static/urls.json')
