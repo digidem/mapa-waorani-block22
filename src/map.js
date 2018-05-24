@@ -107,6 +107,8 @@ module.exports = function () {
   map.once('styledata', function () {
     map.addSource('bing', bingSource)
     map.addLayer(bing, 'territory-outline')
+    map.setLayoutProperty('background', 'visibility', 'none')
+    document.body.style['background-image'] = 'none'
   })
 
   // Attempt at bootstrapping Wao territory to improve initial load speed
