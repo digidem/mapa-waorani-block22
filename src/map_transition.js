@@ -125,13 +125,15 @@ function mapTransition (viewId, map) {
   }
 
   function moveMap () {
+    var sidebarWidth = document.getElementById('sidebar').clientWidth || 500
+    console.log(sidebarWidth)
     if (view.bounds) {
       map.fitBounds(view.bounds, {
         padding: {
           top: 0,
           right: 0,
           bottom: 0,
-          left: 600
+          left: sidebarWidth
         },
         speed: FLY_SPEED
       })

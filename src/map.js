@@ -71,12 +71,15 @@ module.exports = function () {
     logoPosition: 'bottom-right'
   })
 
+  var sidebar = document.getElementById('sidebar')
+  var sidebarWidth = sidebar ? sidebar.clientWidth : 500
+
   map.fitBounds(mapViews.start.bounds, {
     padding: {
       top: 0,
       right: 0,
       bottom: 0,
-      left: 600
+      left: sidebarWidth
     },
     duration: 0
   })

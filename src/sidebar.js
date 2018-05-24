@@ -4,7 +4,6 @@ const css = require('sheetify')
 const Player = require('@vimeo/player')
 const html = require('nanohtml')
 const onIntersectOrig = require('on-intersect')
-const onload = require('on-load')
 
 function onIntersect () {
   if (typeof window === 'undefined') return
