@@ -90,6 +90,9 @@
   "testimony-caption": {
     "message": "The Waorani people of the Curaray river basin — 18 communities located within oil block 22 — have this message to the international oil industry.",
     "description": "caption for testimony video"
+  },
+  "final-copyright": {
+    "message": "All map data and symbol design are the intellectual property of the Waorani Nation. Text and photos by Alianza Ceibo and Amazon Frontlines. Interactive map design and production by Digital Democracy.",
+    "description": "final copyright information"
   }
-
 }

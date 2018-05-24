@@ -230,6 +230,15 @@ var style = css`
         margin-top: 2em;
         font-size: 1.1rem;
       }
+      p.big {
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+      p.small {
+        font-size: .8em;
+        padding-top: 20px;
+        color: #ccc;
+      }
     }
   }
   .button-action {
@@ -356,12 +365,15 @@ module.exports = function (lang, _map) {
         </p>
         <div class='center'>
           <h2>${message('final-title')}</h2>
-          <h4>${message('final-text')}</h4>
-        <p class='center'>
-          <a class='button-action' href='https://waoresist.amazonfrontlines.org/action/' target='_parent'>
-            ${message('action-button')}
-          </a>
-        </p>
+          <p class="big">${message('final-text')}</p>
+          <p class='center'>
+            <a class='button-action' href='https://waoresist.amazonfrontlines.org/action/' target='_parent'>
+              ${message('action-button')}
+            </a>
+          </p>
+          <p class='small'>
+            ${message('final-copyright')}
+          </p>
         </div>
       </section>
     </div>
