@@ -1,7 +1,10 @@
+/* global Image */
+
 const css = require('sheetify')
 const Player = require('@vimeo/player')
 const html = require('nanohtml')
 const onIntersect = require('on-intersect')
+const onload = require('on-load')
 
 var map
 var translations = {
@@ -14,8 +17,6 @@ var mapTransition = require('./map_transition')
 
 const RESIZE_URL = 'https://resizer.digital-democracy.org/'
 const IMAGE_URL = 'https://images.digital-democracy.org/waorani-images/'
-
-var dim = getViewport()
 
 var aspectStyle = css`
   .center {
@@ -85,11 +86,24 @@ function video (url, opts) {
     portrait: false,
     byline: false
   }, opts)
-  var imgUrl = RESIZE_URL + '600/' + IMAGE_URL + opts.placeholderImg
+  var previewUrl = RESIZE_URL + '200/200/30/' + IMAGE_URL + opts.placeholderImg
   var el = html`
-  <div class=${videoDivStyle} style="background-image: url(${imgUrl});">
+  <div class=${videoDivStyle} style="background-image: url(${previewUrl});">
   </div>`
   var player
+
+  // Start video background as preview, then load image according to screen size
+  onload(el, function (el) {
+    var img = new Image()
+    // Get image width rounded to nearest 100
+    var width = Math.ceil(el.offsetWidth / 100) * 100 * window.devicePixelRatio
+    var imageUrl = RESIZE_URL + width + '/' + IMAGE_URL + opts.placeholderImg
+    img.src = imageUrl
+    img.onload = function () {
+      el.style['background-image'] = 'url(' + imageUrl + ')'
+    }
+  })
+
   // var muted = true
   if (!map) onenter()
   else onIntersect(el, onenter, onexit)
@@ -118,16 +132,22 @@ function video (url, opts) {
 
 function image (path) {
   var hasBeenSeen = false
-  var fullsize = Math.ceil(dim[0] * 0.45 * window.devicePixelRatio)
-  var imageUrl = RESIZE_URL + fullsize + '/' + IMAGE_URL + path + '.jpg'
   var previewUrl = RESIZE_URL + '200/200/30/' + IMAGE_URL + path + '.jpg'
   var el = html`<img src=${previewUrl} />`
 
   onIntersect(el, function () {
     if (hasBeenSeen) return
-    el.src = imageUrl
+    var img = new Image()
+    // Get image width rounded to nearest 100
+    var width = Math.ceil(el.width / 100) * 100 * window.devicePixelRatio
+    var imageUrl = RESIZE_URL + width + '/' + IMAGE_URL + path + '.jpg'
+    img.src = imageUrl
+    img.onload = function () {
+      el.src = imageUrl
+    }
     hasBeenSeen = true
   })
+
   return aspectDiv('3x2', el)
 }
 
@@ -328,10 +348,4 @@ module.exports = function (lang, _map) {
     </div>
     </div>
     `
-}
-
-function getViewport () {
-  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-  return [w, h]
 }

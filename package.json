@@ -38,6 +38,7 @@
     "nanocomponent": "^6.5.2",
     "nanohtml": "^1.2.4",
     "on-intersect": "^2.0.0",
+    "on-load": "^3.4.0",
     "sheetify": "^6.1.1",
     "sheetify-nested": "^1.0.2",
     "uglifyify": "^5.0.0",
