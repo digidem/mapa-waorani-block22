@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+var path = require('path')
+
+var sidebar = require('../src/sidebar')
+
+var html = fs.readFileSync(path.join(__dirname, '../static/index.html'), 'utf8')
+var sidebarHtml = sidebar('en').toString()
+
+html = html.replace("<div id='sidebar-wrapper'></div>", sidebarHtml)
+
+fs.writeFileSync(path.join(__dirname, '../dist/index.html'), html)
