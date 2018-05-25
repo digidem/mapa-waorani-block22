@@ -68,6 +68,7 @@ ZoomableImage.prototype.zoomin = function () {
   })
   this.element.insertBefore(this.shade, this.img)
   setTimeout(function () {
+    self.img.style.cursor = 'zoom-out'
     self.shade.classList.add('zoomed')
     self.img.onclick = self.zoomout
     Object.assign(self.img.style, {
