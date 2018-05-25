@@ -71,13 +71,13 @@ ZoomableVideo.prototype.zoomin = function () {
   wrapperDiv.style.cursor = 'zoom-out'
   self.shade.onclick = self.zoomout
   if (!this.background && this.player) this.player.play()
+  if (this.iframe) this.iframe.style.transform = 'translateZ(0)'
   Object.assign(wrapperDiv.style, {
     top: rect.top + 'px',
     left: rect.left + 'px',
     width: rect.width + 'px',
     height: rect.height + 'px',
     position: 'fixed',
-    transform: 'translateZ(0)',
     zIndex: 9999
   })
   setTimeout(function () {
@@ -116,6 +116,7 @@ ZoomableVideo.prototype.returnInline = function () {
   this.wrapperDiv.removeEventListener('transitionend', this.returnInline)
   this.wrapperDiv.removeEventListener('mousewheel', noscroll)
   this.wrapperDiv.onclick = this.zoomin
+  if (this.iframe) this.iframe.style.transform = null
   Object.assign(this.wrapperDiv.style, {
     transition: 'none',
     transform: null,
@@ -136,6 +137,7 @@ ZoomableVideo.prototype.onenter = function () {
   })
   this.player.ready().then(() => {
     this.wrapperDiv.style.backgroundSize = 0
+    this.iframe = this.wrapperDiv.childNodes[0]
   })
   if (this.background) this.player.setCurrentTime(2)
 }
@@ -143,6 +145,7 @@ ZoomableVideo.prototype.onenter = function () {
 ZoomableVideo.prototype.onexit = function exit () {
   this.wrapperDiv.style.backgroundSize = 'cover'
   this.player.destroy()
+  this.iframe = null
 }
 
 ZoomableVideo.prototype.createElement = function (props) {
