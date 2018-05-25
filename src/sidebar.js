@@ -27,8 +27,9 @@ function mapView (id, el, onenter, onexit) {
   // Don't consider title in map view until more than 40% from bottom
   // of the viewport
   var rootMarginWithMap = '0px 0px -40% 0px'
-  var rootMarginMobile = '-55% 0px 20px 0px'
+  var rootMarginMobile = '-55% 0px 0px 0px'
   onIntersect(el, {
+    root: document.getElementById('#scroll-container'),
     rootMargin: mobile ? rootMarginMobile : rootMarginWithMap
   }, function () {
     onenter(id)
@@ -161,13 +162,23 @@ var style = css`
       }
       #sidebar {
         section {
-          padding-bottom: 80vh;
+          p:last-child {
+            margin-bottom: 0;
+          }
+          padding-bottom: 75vh;
+          padding-top: 0;
+        }
+        section > h1:first-child, section > h2:first-child {
+          padding-top: 25vh;
+        }
+        section:first-child > h1:first-child {
           padding-top: 0;
         }
       }
     }
     :host:before {
       content: attr(data-content);
+      padding-bottom: 20vh;
       font-size: 40px;
       font-weight: bold;
       text-transform: uppercase;
@@ -195,7 +206,7 @@ var style = css`
 module.exports = function (lang, _map) {
   map = _map
   var i = 0
-  var colors = ['aqua', 'firebrick', 'deeppink', 'orangered']
+  var colors = ['darkmagenta', 'firebrick', 'deeppink', 'orangered', 'darkgreen']
 
   function message (key) {
     var msg = translations[lang][key]
@@ -309,5 +320,5 @@ module.exports = function (lang, _map) {
 
 function isMobile () {
   if (typeof window === 'undefined') return false
-  return isMobile()
+  return window.innerWidth < 601
 }
