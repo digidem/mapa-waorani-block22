@@ -2,6 +2,7 @@ const css = require('sheetify')
 const html = require('nanohtml')
 const raw = require('nanohtml/raw')
 const onIntersectOrig = require('on-intersect')
+var document = require('global/document')
 
 var ZoomableImage = require('./image')
 var ZoomableVideo = require('./video')
