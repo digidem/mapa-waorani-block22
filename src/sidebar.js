@@ -147,9 +147,9 @@ var style = css`
   @media only screen and (max-width: 600px) {
     :host {
       background: black;
-      padding: 10px;
-      #sidebar {
-        width: 95%;
+      #scroll-container {
+        padding: 10px;
+        box-sizing: border-box;
       }
     }
   }
@@ -159,6 +159,7 @@ var style = css`
       #sidebar {
         padding-left: 20px;
         width: 45%;
+        box-sizing: border-box;
         max-width: 600px;
       }
     }
