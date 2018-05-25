@@ -23,7 +23,7 @@ var mapTransition = require('./map_transition')
 const IMAGE_URL = 'https://images.digital-democracy.org/waorani-images/'
 
 function mapView (id, el, onenter, onexit) {
-  var mobile = window.innerWidth < 601
+  var mobile = isMobile()
   // Don't consider title in map view until more than 40% from bottom
   // of the viewport
   var rootMarginWithMap = '0px 0px -40% 0px'
@@ -202,7 +202,7 @@ module.exports = function (lang, _map) {
     return msg ? msg.message : translations['en'][key].message
   }
   function onenter (id) {
-    var mobile = window.innerWidth < 601
+    var mobile = isMobile()
     if (map) mapTransition(id, map)
     if (!mobile) return
     var color = colors[i++ % colors.length]
@@ -212,7 +212,7 @@ module.exports = function (lang, _map) {
   }
 
   function onexit (id) {
-    var mobile = window.innerWidth < 601
+    var mobile = isMobile()
     if (!mobile) return
     var sc = document.getElementById('sidebar-wrapper')
     sc.style.backgroundColor = 'black'
@@ -305,4 +305,9 @@ module.exports = function (lang, _map) {
     </div>
   </div>
   </div>`
+}
+
+function isMobile () {
+  if (typeof window === 'undefined') return false
+  return isMobile()
 }
