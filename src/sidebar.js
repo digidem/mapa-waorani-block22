@@ -22,14 +22,18 @@ var mapTransition = require('./map_transition')
 
 const IMAGE_URL = 'https://images.digital-democracy.org/waorani-images/'
 
-function mapView (id, onenter, el) {
+function mapView (id, el, onenter, onexit) {
+  var mobile = window.innerWidth < 601
   // Don't consider title in map view until more than 40% from bottom
   // of the viewport
-  var opts = {
-    rootMargin: `0px 0px -40% 0px`
-  }
-  onIntersect(el, opts, function () {
+  var rootMarginWithMap = '0px 0px -40% 0px'
+  var rootMarginMobile = '-55% 0px 20px 0px'
+  onIntersect(el, {
+    rootMargin: mobile ? rootMarginMobile : rootMarginWithMap
+  }, function () {
     onenter(id)
+  }, function () {
+    onexit(id)
   })
   return el
 }
@@ -146,11 +150,28 @@ var style = css`
   }
   @media only screen and (max-width: 600px) {
     :host {
-      background: black;
+      transition: background-color 500ms linear;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       #scroll-container {
         padding: 10px;
         box-sizing: border-box;
       }
+      #sidebar {
+        section {
+          padding-bottom: 80vh;
+          padding-top: 0;
+        }
+      }
+    }
+    :host:before {
+      content: attr(data-content);
+      font-size: 40px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
     }
   }
   @media only screen and (min-width: 601px) {
@@ -173,19 +194,36 @@ var style = css`
 
 module.exports = function (lang, _map) {
   map = _map
+  var i = 0
+  var colors = ['aqua', 'firebrick', 'deeppink', 'orangered']
+
   function message (key) {
     var msg = translations[lang][key]
     return msg ? msg.message : translations['en'][key].message
   }
-  function onview (id) {
+  function onenter (id) {
+    var mobile = window.innerWidth < 601
     if (map) mapTransition(id, map)
+    if (!mobile) return
+    var color = colors[i++ % colors.length]
+    var sc = document.getElementById('sidebar-wrapper')
+    sc.style.backgroundColor = color
+    sc.setAttribute('data-content', id)
+  }
+
+  function onexit (id) {
+    var mobile = window.innerWidth < 601
+    if (!mobile) return
+    var sc = document.getElementById('sidebar-wrapper')
+    sc.style.backgroundColor = 'black'
+    sc.removeAttribute('data-content')
   }
 
   return html`<div id="sidebar-wrapper" class=${style}>
   <div id="scroll-container">
     <div id="sidebar">
       <section>
-        ${mapView('start', onview, html`<h1>${message('title')}</h1>`)}
+        ${mapView('start', html`<h1>${message('title')}</h1>`, onenter, onexit)}
         ${video('https://vimeo.com/270209852/d857a916b5', {
           background: true,
           placeholderImg: '1territory.jpg'})}
@@ -196,7 +234,7 @@ module.exports = function (lang, _map) {
         <p>${message('start-2')}</p>
       </section>
       <section>
-        ${mapView('oil-rush', onview, html`<h2>${message('oil-rush-title')}</h2>`)}
+        ${mapView('oil-rush', html`<h2>${message('oil-rush-title')}</h2>`, onenter, onexit)}
         ${image('2a')}
         <p>${message('oil-rush')}</p>
         ${video('https://vimeo.com/270208622/ee7d7a12cc', {
@@ -204,7 +242,7 @@ module.exports = function (lang, _map) {
           placeholderImg: '2oil.jpg'})}
       </section>
       <section>
-        ${mapView('maps-and-resistance', onview, html`<h2>${message('maps-and-resistance-title')}</h2>`)}
+        ${mapView('maps-and-resistance', html`<h2>${message('maps-and-resistance-title')}</h2>`, onenter, onexit)}
         ${image('3a')}
         <p>${message('maps-and-resistance')}</p>
         ${image('3b')}
@@ -212,7 +250,7 @@ module.exports = function (lang, _map) {
         ${image('3c')}
       </section>
       <section>
-        ${mapView('wildlife', onview, html`<h2>${message('at-stake')}</h2>`)}
+        ${mapView('wildlife', html`<h2>${message('at-stake')}</h2>`, onenter, onexit)}
         <h3>${message('wildlife-title')}</h3>
         ${video('https://vimeo.com/270211119/a857892d50', {
           background: true,
@@ -221,13 +259,13 @@ module.exports = function (lang, _map) {
         ${image('4WildlifeB')}
       </section>
       <section>
-        ${mapView('pharmacy', onview, html`<h2>${message('pharmacy-title')}</h2>`)}
+        ${mapView('pharmacy', html`<h2>${message('pharmacy-title')}</h2>`, onenter, onexit)}
         ${image('5MedicineA')}
         <p>${message('pharmacy')}</p>
         ${image('5MedicineB')}
       </section>
       <section>
-        ${mapView('culture', onview, html`<h3>${message('living-title')}</h3>`)}
+        ${mapView('culture', html`<h3>${message('living-title')}</h3>`, onenter, onexit)}
         ${video('https://vimeo.com/270211741/575052a044', {
           background: false,
           placeholderImg: '4chant.jpg'})}
@@ -235,14 +273,13 @@ module.exports = function (lang, _map) {
         ${image('6CultureB')}
       </section>
       <section>
-        ${mapView('conflict-visions', onview, html`<h2>${message('conflict-visions-title')}</h2>`)}
+        ${mapView('conflict-visions', html`<h2>${message('conflict-visions-title')}</h2>`, onenter, onexit)}
         ${image('IMG_4881')}
         <p>${message('conflict-visions')}</p>
         ${image('7Conflictvisions')}
       </section>
       <section>
-        ${mapView('resistance', onview, html`
-          <h2>${message('resistance-title')}</h2>`)}
+        ${mapView('resistance', html`<h2>${message('resistance-title')}</h2>`, onenter, onexit)}
         <p>${message('resistance')}</p>
         ${image('8a')}
         <p>
