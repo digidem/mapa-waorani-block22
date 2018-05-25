@@ -12,6 +12,8 @@ var aspectStyle = css`
     left: 0;
     width: 100%;
     height: 100%;
+  }
+  img {
     object-fit: cover;
   }
 }
