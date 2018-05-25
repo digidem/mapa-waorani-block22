@@ -51,6 +51,7 @@ ZoomableImage.prototype.zoomin = function () {
   })
   var zoomedImgUrl = RESIZE_URL + dim[0] + '/' + dim[1] + '/70/' + this.url
   var zoomedImg = new Image()
+  zoomedImg.crossOrigin = 'anonymous'
   zoomedImg.onload = function () {
     self.img.src = zoomedImgUrl
   }
