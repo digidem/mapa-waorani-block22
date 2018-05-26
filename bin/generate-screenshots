@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+var budo = require('budo')
+var path = require('path')
+var puppeteer = require('puppeteer')
+var mapViews = require('../src/map_views.json')
+var mkdirp = require('mkdirp')
+
+var outputDir = path.join(__dirname, '../static/screenshots')
+mkdirp.sync(outputDir)
+
+var b = budo(path.join(__dirname, '../src/screenshot-map.js'), {
+  port: 8000,             // use this port
+  serve: 'bundle.js',
+  live: true,
+  browserify: {
+    transform: [['sheetify', { use: [ 'sheetify-nested' ] }]]
+  }
+}).on('connect', onconnect)
+
+async function onconnect (e) {
+  // Run with webgl see https://github.com/GoogleChrome/puppeteer/issues/1260#issuecomment-348878456
+  const browser = await puppeteer.launch({
+    headless: false,
+    args: [
+      '--headless',
+      '--hide-scrollbars',
+      '--mute-audio'
+    ]
+  })
+  const page = await browser.newPage()
+  await page.setViewport({
+    width: 420,
+    height: 667,
+    deviceScaleFactor: 3
+  })
+  await page.goto(e.uri, {waitUntil: 'networkidle0'})
+  for (var viewId in mapViews) {
+    var outfile = path.join(outputDir, viewId + '.jpg')
+    await page.evaluate((viewId) => window.mapTransition(viewId), viewId)
+    await page.screenshot({
+      type: 'jpeg',
+      quality: 70,
+      path: outfile
+    })
+    console.log('Generated screenshot: ' + outfile)
+  }
+  await browser.close()
+  b.close()
+}

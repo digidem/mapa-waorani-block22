@@ -58,6 +58,7 @@
     "es2020": "^1.1.9",
     "gh-pages": "^1.0.0",
     "mkdirp": "^0.5.1",
+    "puppeteer": "^1.4.0",
     "request": "^2.87.0",
     "sheetify": "^6.1.1",
     "sheetify-nested": "^1.0.2",

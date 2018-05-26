@@ -118,6 +118,7 @@ module.exports = function () {
     document.body.style['background-image'] = 'none'
   })
 
+  map.on('moveend', () => console.log('moveend'))
   // Attempt at bootstrapping Wao territory to improve initial load speed
   // map.once('styledata', function () {
   //   map.addSource('territory-bootstrapped', {

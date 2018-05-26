@@ -41,7 +41,8 @@ var events = new EventEmitter()
 
 module.exports = mapTransition
 
-function mapTransition (viewId, map) {
+function mapTransition (viewId, map, fitBoundsOptions) {
+  fitBoundsOptions = Object.assign({}, {speed: FLY_SPEED}, fitBoundsOptions)
   var view = views[viewId]
   debug('Transition view:', viewId)
   if (!view) return console.warn('undefined view', viewId)
@@ -125,24 +126,14 @@ function mapTransition (viewId, map) {
   }
 
   function moveMap () {
-    var sidebarWidth = document.getElementById('sidebar').clientWidth || 500
-    console.log(sidebarWidth)
     if (view.bounds) {
-      map.fitBounds(view.bounds, {
-        padding: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: sidebarWidth
-        },
-        speed: FLY_SPEED
-      })
+      map.fitBounds(view.bounds, fitBoundsOptions)
     } else {
-      map.flyTo({
+      map.flyTo(Object.assign({
         center: view.center,
         zoom: view.zoom,
         speed: FLY_SPEED
-      })
+      }, fitBoundsOptions))
     }
   }
 

@@ -28,7 +28,7 @@ function mapView (id, el, onenter, onexit) {
   // Don't consider title in map view until more than 40% from bottom
   // of the viewport
   var rootMarginWithMap = '0px 0px -40% 0px'
-  var rootMarginMobile = '-55% 0px 0px 0px'
+  var rootMarginMobile = '-100% 0px 0px 0px'
   onIntersect(el, {
     root: document.getElementById('#scroll-container'),
     rootMargin: mobile ? rootMarginMobile : rootMarginWithMap
@@ -60,6 +60,9 @@ var style = css`
     height: 100%;
     overflow: hidden;
     transform: translateZ(0);
+    .mobile-background {
+      display: none;
+    }
     #scroll-container {
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
@@ -152,11 +155,19 @@ var style = css`
   }
   @media only screen and (max-width: 600px) {
     :host {
-      transition: background-color 500ms linear;
       background-color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      .mobile-background {
+        display: block;
+        transition: opacity 500ms linear;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
       #scroll-container {
         padding: 10px;
         box-sizing: border-box;
@@ -169,8 +180,8 @@ var style = css`
           padding-bottom: 75vh;
           padding-top: 0;
         }
-        section > h1:first-child, section > h2:first-child {
-          padding-top: 25vh;
+        section > h1:first-child, section > h2:first-child, section > h3:first-child  {
+          padding-top: 50vh;
         }
         section:first-child > h1:first-child {
           padding-top: 0;
@@ -207,31 +218,52 @@ var style = css`
 module.exports = function (lang, _map) {
   map = _map
   var i = 0
-  var colors = ['darkmagenta', 'firebrick', 'deeppink', 'orangered', 'darkgreen']
+  var mobileBackground = html`<div class='mobile-background' />`
+  var entered = true
 
   function message (key) {
     var msg = translations[lang][key]
     return msg ? msg.message : translations['en'][key].message
   }
   function onenter (id) {
+    entered = true
     var mobile = isMobile()
-    if (map) mapTransition(id, map)
+    var sidebarWidth = document.getElementById('sidebar').clientWidth || 500
+    if (map) {
+      mapTransition(id, map, {
+        padding: {top: 0, left: sidebarWidth, right: 0, bottom: 0}
+      })
+    }
     if (!mobile) return
-    var color = colors[i++ % colors.length]
-    var sc = document.getElementById('sidebar-wrapper')
-    sc.style.backgroundColor = color
-    sc.setAttribute('data-content', id)
+    var img = new Image()
+    var imageUrl = '/screenshots/' + id + '.jpg'
+    img.onload = function () {
+      if (mobileBackground.style.backgroundImage === 'url("' + imageUrl + '")') {
+        mobileBackground.style.opacity = 1
+        return
+      }
+      mobileBackground.addEventListener('transitionend', switchImage)
+      mobileBackground.style.opacity = 0
+    }
+    function switchImage () {
+      mobileBackground.removeEventListener('transitionend', switchImage)
+      mobileBackground.style.backgroundImage = 'url(' + imageUrl + ')'
+      // don't change opacity if we have exited whilst loading
+      if (!entered) mobileBackground.style.opacity = 0.3
+      else mobileBackground.style.opacity = 1
+    }
+    img.src = imageUrl
   }
 
   function onexit (id) {
+    entered = false
     var mobile = isMobile()
     if (!mobile) return
-    var sc = document.getElementById('sidebar-wrapper')
-    sc.style.backgroundColor = 'black'
-    sc.removeAttribute('data-content')
+    mobileBackground.style.opacity = 0.3
   }
 
   return html`<div id="sidebar-wrapper" class=${style}>
+  ${mobileBackground}
   <div id="scroll-container">
     <div id="sidebar">
       <section>
