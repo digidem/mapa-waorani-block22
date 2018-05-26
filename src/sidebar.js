@@ -238,7 +238,7 @@ module.exports = function (lang, _map) {
     var img = new Image()
     var imageUrl = '/screenshots/' + id + '.jpg'
     img.onload = function () {
-      if (mobileBackground.style.backgroundImage === 'url("' + imageUrl + '")') {
+      if (mobileBackground.style.backgroundImage.indexOf(imageUrl) > -1) {
         mobileBackground.style.opacity = 1
         return
       }
