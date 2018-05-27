@@ -62,7 +62,7 @@ ZoomableVideo.prototype = Object.create(Nanocomponent.prototype)
 ZoomableVideo.prototype.zoomin = function () {
   this.shade.removeEventListener('transitionend', this.removeShade)
   this.wrapperDiv.removeEventListener('transitionend', this.returnInline)
-  this.wrapperDiv.addEventListener('mousewheel', noscroll)
+  disableScroll(this.wrapperDiv)
   var self = this
   var wrapperDiv = this.wrapperDiv
   var rect = this.element.getBoundingClientRect()
@@ -114,7 +114,7 @@ ZoomableVideo.prototype.removeShade = function () {
 
 ZoomableVideo.prototype.returnInline = function () {
   this.wrapperDiv.removeEventListener('transitionend', this.returnInline)
-  this.wrapperDiv.removeEventListener('mousewheel', noscroll)
+  enableScroll(this.wrapperDiv)
   this.wrapperDiv.onclick = this.zoomin
   if (this.iframe) this.iframe.style.transform = null
   Object.assign(this.wrapperDiv.style, {
@@ -172,7 +172,18 @@ ZoomableVideo.prototype.update = function () {
   return false
 }
 
-function noscroll (e) {
+function disableScroll (el) {
+  el.addEventListener('mousewheel', stopPropagation)
+  el.addEventListener('touchmove', stopPropagation)
+}
+
+function enableScroll (el) {
+  el.removeEventListener('mousewheel', stopPropagation)
+  el.removeEventListener('touchmove', stopPropagation)
+}
+
+function stopPropagation (e) {
   e.stopPropagation()
   e.preventDefault()
+  return false
 }

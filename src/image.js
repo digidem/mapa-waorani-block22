@@ -45,7 +45,7 @@ ZoomableImage.prototype = Object.create(Nanocomponent.prototype)
 
 ZoomableImage.prototype.zoomin = function () {
   var self = this
-  this.img.addEventListener('mousewheel', noscroll)
+  disableScroll(this.img)
   var dim = getViewport().map(function (n) {
     return n * window.devicePixelRatio
   })
@@ -103,7 +103,7 @@ ZoomableImage.prototype.removeShade = function () {
 
 ZoomableImage.prototype.returnInline = function () {
   this.img.removeEventListener('transitionend', this.returnInline)
-  this.img.removeEventListener('mousewheel', noscroll)
+  enableScroll(this.img)
   this.img.onclick = this.zoomin
   Object.assign(this.img.style, {
     objectFit: 'cover',
@@ -151,7 +151,18 @@ function getViewport () {
   return [w, h]
 }
 
-function noscroll (e) {
+function disableScroll (el) {
+  el.addEventListener('mousewheel', stopPropagation)
+  el.addEventListener('touchmove', stopPropagation)
+}
+
+function enableScroll (el) {
+  el.removeEventListener('mousewheel', stopPropagation)
+  el.removeEventListener('touchmove', stopPropagation)
+}
+
+function stopPropagation (e) {
   e.stopPropagation()
   e.preventDefault()
+  return false
 }
