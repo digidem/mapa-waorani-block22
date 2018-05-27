@@ -136,7 +136,7 @@ ZoomableImage.prototype.load = function (el) {
   var responsiveImg = new Image()
   var img = this.img
   // Get image width rounded to nearest 100
-  var width = Math.ceil(img.width / 100) * 100 * window.devicePixelRatio
+  var width = Math.ceil(this.element.clientWidth / 100) * 100 * window.devicePixelRatio
   var imageUrl = RESIZE_URL + width + '/' + this.url
   responsiveImg.crossOrigin = 'anonymous'
   responsiveImg.onload = function () {
