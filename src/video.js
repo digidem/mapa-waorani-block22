@@ -60,6 +60,8 @@ function ZoomableVideo () {
 ZoomableVideo.prototype = Object.create(Nanocomponent.prototype)
 
 ZoomableVideo.prototype.zoomin = function () {
+  var dim = getViewport()
+  if (dim[0] <= this.element.clientWidth) return
   this.shade.removeEventListener('transitionend', this.removeShade)
   this.wrapperDiv.removeEventListener('transitionend', this.returnInline)
   disableScroll(this.wrapperDiv)
@@ -170,6 +172,12 @@ ZoomableVideo.prototype.beforerender = function (el) {
 
 ZoomableVideo.prototype.update = function () {
   return false
+}
+
+function getViewport () {
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+  return [w, h]
 }
 
 function disableScroll (el) {

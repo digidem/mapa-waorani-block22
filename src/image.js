@@ -45,10 +45,12 @@ ZoomableImage.prototype = Object.create(Nanocomponent.prototype)
 
 ZoomableImage.prototype.zoomin = function () {
   var self = this
-  disableScroll(this.img)
-  var dim = getViewport().map(function (n) {
+  var dim = getViewport()
+  if (dim[0] <= this.element.clientWidth) return
+  dim = dim.map(function (n) {
     return n * window.devicePixelRatio
   })
+  disableScroll(this.img)
   var zoomedImgUrl = RESIZE_URL + dim[0] + '/' + dim[1] + '/70/' + this.url
   var zoomedImg = new Image()
   zoomedImg.crossOrigin = 'anonymous'
