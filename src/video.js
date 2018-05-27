@@ -61,7 +61,12 @@ ZoomableVideo.prototype = Object.create(Nanocomponent.prototype)
 
 ZoomableVideo.prototype.zoomin = function () {
   var dim = getViewport()
-  if (dim[0] <= this.element.clientWidth) return
+  if (dim[0] <= this.element.clientWidth) {
+    if (!this.background && this.player) {
+      this.player.play()
+    }
+    return
+  }
   this.shade.removeEventListener('transitionend', this.removeShade)
   this.wrapperDiv.removeEventListener('transitionend', this.returnInline)
   disableScroll(this.wrapperDiv)
@@ -135,7 +140,8 @@ ZoomableVideo.prototype.returnInline = function () {
 ZoomableVideo.prototype.onenter = function () {
   this.player = new Player(this.wrapperDiv, {
     url: this.url,
-    background: this.background
+    background: this.background,
+    playsinline: this.background
   })
   this.player.ready().then(() => {
     this.wrapperDiv.style.backgroundSize = 0
