@@ -87,6 +87,10 @@
     "message": "Involúcrate: Firma la Petición",
     "description": "Text for the action button"
   },
+  "action-link": {
+    "message": "https:\/\/waoresist.amazonfrontlines.org\/action",
+    "description": "action button link"
+  },
   "testimony-caption": {
     "message": "El pueblo Waorani de la cuenca del Curaray – 18 comunidades localizadas dentro del bloque 22 – envían este mensaje a la industria petrolera internacional.",
     "description": "caption for testimony video"
@@ -94,9 +98,5 @@
   "final-copyright": {
     "message": "Todos los datos del mapa y el diseño de símbolos son de propiedad intelectual de la Nación Waorani. Los textos y fotografías de  <a href='https:\/\/www.alianzaceibo.org\/' target='_parent'>Alianza Ceibo<\/a> y  <a href='https:\/\/www.amazonfrontlines.org\/' target='_parent'>Amazon Frontlines<\/a>. El diseño y producción del mapa interactivo de  <a href='https:\/\/www.digital-democracy.org\/' target='_parent'>Digital Democracy<\/a> con el soporte del equipo de  <a href='https:\/\/www.mapbox.com\/community\/' target='_parent'>Mapbox Community<\/a>.",
     "description": "final copyright information"
-  },
-  "action-link": {
-    "message": "https://waoresist.amazonfrontlines.org/es/involucrate/",
-    "description": "action button link"
   }
 }
