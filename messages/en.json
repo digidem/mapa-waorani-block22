@@ -87,6 +87,10 @@
     "message": "Take Action: Sign The Letter",
     "description": "Text for the action button"
   },
+  "action-link": {
+    "message": "https://waoresist.amazonfrontlines.org/action",
+    "description": "action button link"
+  },
   "testimony-caption": {
     "message": "The Waorani people of the Curaray river basin — 18 communities located within oil block 22 — have this message to the international oil industry.",
     "description": "caption for testimony video"

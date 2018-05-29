@@ -180,7 +180,7 @@ module.exports = function (lang, _map) {
   function onview (id) {
     if (map) mapTransition(id, map)
   }
-
+ 
   return html`<div id="sidebar-wrapper" class=${style}>
   <div id="scroll-container">
     <div id="sidebar">
@@ -256,7 +256,7 @@ module.exports = function (lang, _map) {
           <h2>${message('final-title')}</h2>
           <p class="big">${message('final-text')}</p>
           <p class='center'>
-            <a class='button-action' href='https://waoresist.amazonfrontlines.org/action/' target='_parent'>
+            <a class='button-action' href=${message('action-link')} target='_parent'>
               ${message('action-button')}
             </a>
           </p>
