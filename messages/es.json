@@ -92,7 +92,7 @@
     "description": "caption for testimony video"
   },
   "final-copyright": {
-    "message": "All map data and symbol design are the intellectual property of the Waorani Nation. Text and photos by <a href='https:\/\/www.alianzaceibo.org\/' target='_parent'>Alianza Ceibo<\/a> and <a href='https:\/\/www.amazonfrontlines.org\/' target='_parent'>Amazon Frontlines<\/a>. Interactive map design and production by <a href='https:\/\/www.digital-democracy.org\/' target='_parent'>Digital Democracy<\/a> with support from the <a href='https:\/\/www.mapbox.com\/community\/' target='_parent'>Mapbox Community<\/a> team.",
+    "message": "Todos los datos del mapa y el diseño de símbolos son de propiedad intelectual de la Nación Waorani. Los textos y fotografías de  <a href='https:\/\/www.alianzaceibo.org\/' target='_parent'>Alianza Ceibo<\/a> y  <a href='https:\/\/www.amazonfrontlines.org\/' target='_parent'>Amazon Frontlines<\/a>. El diseño y producción del mapa interactivo de  <a href='https:\/\/www.digital-democracy.org\/' target='_parent'>Digital Democracy<\/a> con el soporte del equipo de  <a href='https:\/\/www.mapbox.com\/community\/' target='_parent'>Mapbox Community<\/a>.",
     "description": "final copyright information"
   }
 }
