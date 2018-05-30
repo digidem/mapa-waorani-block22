@@ -248,7 +248,7 @@ module.exports = function (lang, _map) {
         <p>
         ${message('testimony-caption')}</p>
         <p>
-        ${video('https://vimeo.com/270212698/62b62abe89', {
+        ${video(lang === 'es' ? 'https://vimeo.com/272374602' : 'https://vimeo.com/270212698/62b62abe89' , {
           background: false,
           placeholderImg: '5testimonies.jpg'})}
         </p>
