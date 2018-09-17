@@ -1,5 +1,176 @@
 {
   "start": {
-    "bounds": [-75.89, -0.57, -74.80, -0.39]
+    "bounds": [-81.94, -5.79, -73.15, 2.65],
+    "layerOpacity": {
+      "bing-satellite": 1,
+      "petrol-blocks-*": 0,
+      "block-22-label": 0,
+      "wildlife-view*": 0,
+      "plant-view*": 0,
+      "territory-points-*": 0,
+      "rivers-peru-ecuador-colo*": 0,
+      "rivers-area-peru-ecuador-colo*": 0,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0,
+      "yasuni-label": 0,
+      "yasuni": 0,
+      "background": 0
+    }
+  },
+  "oil-rush": {
+    "bounds": [-78.3155, -3.3493, -74.9871, 0.6275],
+    "layerOpacity": {
+      "bing-satellite": 0.4,
+      "petrol-blocks-label": 1,
+      "block-22-label": 0,
+      "petrol-blocks-label copy": 1,
+      "petrol-blocks-line": 0.7,
+      "territory-points-*": 0,
+      "wildlife-view*": 0,
+      "plant-view*": 0,
+      "rivers-peru-ecuador-colo*": 1,
+      "rivers-area-peru-ecuador-colo*": 1,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0,
+      "yasuni-label": 1,
+      "yasuni": 1,
+      "background": 1,
+      "rivers-large*": 1
+    }
+  },
+  "maps-and-resistance": {
+    "bounds": [-77.2757, -1.2483, -77.2156, -1.2044],
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-*": 0,
+      "block-22-label": 0,
+      "territory-points-*": 1,
+      "wildlife-view*": 0,
+      "plant-view*": 0,
+      "rivers-peru-ecuador-colo*": 1,
+      "caminos-caseria": 1,
+      "caminos-viajar": 1,
+      "community": 1,
+      "rivers-label-*": 1,
+      "yasuni-label": 0,
+      "yasuni": 0,
+      "background": 1,
+      "rivers-large*": 1
+    }
+  },
+  "wildlife": {
+    "bounds": [-77.339, -1.3037, -77.2718, -1.2505],
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-*": 0,
+      "block-22-label": 0,
+      "territory-points-*": 0,
+      "wildlife-view*": 1,
+      "plant-view*": 0,
+      "final-*": 0,
+      "rivers-label-*": 0,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0,
+      "rivers-peru-ecuador-colo*": 1,
+      "rivers-area-peru-ecuador-colo*": 1,
+      "yasuni-label": 0,
+      "yasuni": 0,
+      "background": 1,
+      "rivers-large*": 1
+    }
+  },
+  "pharmacy": {
+    "bounds": [-77.2851, -1.4407, -77.1949, -1.3693],
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-*": 0,
+      "block-22-label": 0,
+      "territory-points-*": 0,
+      "plant-view*": 1,
+      "wildlife-view*": 0,
+      "final-*": 0,
+      "rivers-label-*": 0,
+      "caminos-caseria": 0,
+      "caminos-viajar": 0,
+      "community": 0,
+      "rivers-peru-ecuador-colo*": 1,
+      "rivers-area-peru-ecuador-colo*": 1,
+      "yasuni-label": 0,
+      "yasuni": 0,
+      "background": 1,
+      "rivers-large*": 1
+    }
+  },
+  "culture": {
+    "bounds": [-77.5504, -1.2109, -77.4813, -1.1562],
+    "layerOpacity":  {
+      "bing-satellite": 0,
+      "petrol-blocks-*": 0,
+      "block-22-label": 0,
+      "territory-points-*": 1,
+      "plant-view*": 0,
+      "wildlife-view*": 0,
+      "final-*": 0,
+      "rivers-label-*": 1,
+      "caminos-caseria": 1,
+      "caminos-viajar": 1,
+      "community": 1,
+      "rivers-peru-ecuador-colo*": 1,
+      "rivers-area-peru-ecuador-colo*": 1,
+      "yasuni-label": 0,
+      "yasuni": 0,
+      "background": 1,
+      "rivers-large*": 1
+    }
+  },
+  "conflict-visions": {
+    "bounds": [-77.4195, -1.4229, -77.0865, -1.1671],
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-label copy": 1,
+      "petrol-blocks-label": 1,
+      "block-22-label": 0,
+      "petrol-blocks-line": 0.5,
+      "petrol-blocks-fill": 0.6,
+      "territory-points-*": 1,
+      "wildlife-view*": 0,
+      "final-*": 0,
+      "rivers-label-*": 1,
+      "caminos-caseria": 1,
+      "caminos-viajar": 1,
+      "community": 0,
+      "rivers-peru-ecuador-colo*": 1,
+      "rivers-area-peru-ecuador-colo*": 1,
+      "yasuni-label": 0,
+      "yasuni": 0,
+      "background": 1,
+      "rivers-large*": 1
+    }
+  },
+  "resistance": {
+    "bounds": [-77.581, -1.4577, -77.0242, -1.0969],
+    "layerOpacity": {
+      "bing-satellite": 0,
+      "petrol-blocks-label": 0,
+      "block-22-label": 1,
+      "petrol-blocks-line": 0.3,
+      "petrol-blocks-fill": 0,
+      "territory-points-*": 1,
+      "plant-view*": 0,
+      "wildlife-view*": 0,
+      "final-*": 1,
+      "caminos-caseria": 1,
+      "caminos-viajar": 1,
+      "community": 0,
+      "rivers-peru-ecuador-colo*": 1,
+      "rivers-area-peru-ecuador-colo*": 1,
+      "yasuni-label": 0,
+      "yasuni": 0,
+      "background": 1,
+      "rivers-large*": 1
+    }
   }
 }

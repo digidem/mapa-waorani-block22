@@ -180,7 +180,7 @@ module.exports = function (lang, _map) {
   function onview (id) {
     if (map) mapTransition(id, map)
   }
-
+ 
   return html`<div id="sidebar-wrapper" class=${style}>
   <div id="scroll-container">
     <div id="sidebar">
@@ -194,6 +194,76 @@ module.exports = function (lang, _map) {
       <section>
         ${image('1e')}
         <p>${message('start-2')}</p>
+      </section>
+      <section>
+        ${mapView('oil-rush', onview, html`<h2>${message('oil-rush-title')}</h2>`)}
+        ${image('2a')}
+        <p>${message('oil-rush')}</p>
+        ${video('https://vimeo.com/270208622/ee7d7a12cc', {
+          background: true,
+          placeholderImg: '2oil.jpg'})}
+      </section>
+      <section>
+        ${mapView('maps-and-resistance', onview, html`<h2>${message('maps-and-resistance-title')}</h2>`)}
+        ${image('3a')}
+        <p>${message('maps-and-resistance')}</p>
+        ${image('3b')}
+        <p>${message('maps-and-resistance-2')}</p>
+        ${image('3c')}
+      </section>
+      <section>
+        ${mapView('wildlife', onview, html`<h2>${message('at-stake')}</h2>`)}
+        <h3>${message('wildlife-title')}</h3>
+        ${video('https://vimeo.com/270211119/a857892d50', {
+          background: true,
+          placeholderImg: '3wildlife.jpg'})}
+        <p>${message('wildlife')}</p>
+        ${image('4WildlifeB')}
+      </section>
+      <section>
+        ${mapView('pharmacy', onview, html`<h2>${message('pharmacy-title')}</h2>`)}
+        ${image('5MedicineA')}
+        <p>${message('pharmacy')}</p>
+        ${image('5MedicineB')}
+      </section>
+      <section>
+        ${mapView('culture', onview, html`<h3>${message('living-title')}</h3>`)}
+        ${video('https://vimeo.com/270211741/575052a044', {
+          background: false,
+          placeholderImg: '4chant.jpg'})}
+        <p>${message('living')}</p>
+        ${image('6CultureB')}
+      </section>
+      <section>
+        ${mapView('conflict-visions', onview, html`<h2>${message('conflict-visions-title')}</h2>`)}
+        ${image('IMG_4881')}
+        <p>${message('conflict-visions')}</p>
+        ${image('7Conflictvisions')}
+      </section>
+      <section>
+        ${mapView('resistance', onview, html`
+          <h2>${message('resistance-title')}</h2>`)}
+        <p>${message('resistance')}</p>
+        ${image('8a')}
+        <p>
+        ${message('testimony-caption')}</p>
+        <p>
+        ${video(lang === 'es' ? 'https://vimeo.com/272374602' : 'https://vimeo.com/270212698/62b62abe89' , {
+          background: false,
+          placeholderImg: '5testimonies.jpg'})}
+        </p>
+        <div class='center'>
+          <h2>${message('final-title')}</h2>
+          <p class="big">${message('final-text')}</p>
+          <p class='center'>
+            <a class='button-action' href=${message('action-link')} target='_parent'>
+              ${message('action-button')}
+            </a>
+          </p>
+          <p class='footnote'>
+            ${raw(message('final-copyright'))}
+          </p>
+        </div>
       </section>
     </div>
   </div>
