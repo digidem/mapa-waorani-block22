@@ -12,7 +12,7 @@ var lang = qs.lang || 'en'
 
 if (typeof qs.translate !== 'undefined') {
   lang = 'xx'
-  window._jipt = [['project', 'mapa-waorani-block22']]
+  window._jipt = [['project', 'mapa-seikopei']]
   const script = document.createElement('script')
   script.type = 'text/javascript'
   script.src = '//cdn.crowdin.com/jipt/jipt.js'

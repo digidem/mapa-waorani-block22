@@ -1,7 +1,7 @@
 {
-  "name": "mapa-waorani",
+  "name": "mapa-seikopei-story",
   "version": "1.0.0",
-  "description": "waorani map",
+  "description": "seikopei story map",
   "main": "index.js",
   "scripts": {
     "test": "standard",
@@ -53,7 +53,6 @@
     "mkdirp": "^0.5.1",
     "request": "^2.87.0",
     "sheetify": "^6.1.1",
-    "sheetify-nested": "^1.0.2",
     "standard": "^10.0.3",
     "traverse": "^0.6.6",
     "uglify-js": "^3.3.27",

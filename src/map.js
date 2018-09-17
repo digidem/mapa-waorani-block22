@@ -54,18 +54,19 @@ DdLogoControl.prototype.onRemove = function () {
 module.exports = function () {
   // var qs = querystring.parse(window.location.search.replace('?', ''))
   mapboxgl.accessToken = config.accessToken
-  var defaultCenter = [ -79.656232, -0.489971 ]
+  var defaultCenter = [-75.3506, -0.4848]
 
   var map = window.map = new mapboxgl.Map({
     container: 'map',
     center: defaultCenter,
-    zoom: 6,
+    zoom: 10,
     style: config.style,
     hash: false,
     zoomControl: false,
     attributionControl: false,
     scrollZoom: false,
     boxZoom: false,
+    maxBounds: [-87, -9, -70, 6],
     doubleClickZoom: false,
     interactive: false,
     logoPosition: 'bottom-right'
@@ -116,28 +117,31 @@ module.exports = function () {
 
   map.once('load', function () {
     document.body.style['background-image'] = 'none'
-  })
 
-  // Attempt at bootstrapping Wao territory to improve initial load speed
-  // map.once('styledata', function () {
-  //   map.addSource('territory-bootstrapped', {
-  //     type: 'geojson',
-  //     data: territory
-  //   })
-  //   var layers = map.getStyle().layers
-  //   var territoryFill = layers.find(function (l) {
-  //     return l.id === 'territory-fill'
-  //   })
-  //   var territoryOutline = layers.find(function (l) {
-  //     return l.id === 'territory-outline'
-  //   })
-  //   territoryFill.id = 'territory-fill-bootstrapped'
-  //   territoryOutline.id = 'territory-outline-bootstrapped'
-  //   territoryFill.source = territoryOutline.source = 'territory-bootstrapped'
-  //   territoryFill['source-layer'] = territoryOutline['source-layer'] = ''
-  //   map.addLayer(territoryFill, 'territory-fill')
-  //   map.addLayer(territoryOutline, 'territory-fill')
-  // })
+    var lakes = map.getLayer('S - Lakes')
+    var lakeHighlight = {
+      id: 'lakeHighlight',
+      source: lakes.source,
+      filter: lakes.filter,
+      metadata: lakes.metadata,
+      'source-layer': lakes.sourceLayer,
+      type: 'line',
+      layout: {
+        'line-join': 'round'
+      },
+      paint: {
+        'line-color': {
+          stops: [
+            [12, 'hsl(196, 53%, 40%)'],
+            [22, 'hsl(196, 79%, 24%)']
+          ]
+        },
+        'line-opacity': 0,
+        'line-width': 3
+      }
+    }
+    map.addLayer(lakeHighlight, 'S - River Areas')
+  })
 
   map.addControl(new DdLogoControl(), 'bottom-right')
   map.addControl(new mapboxgl.ScaleControl(), 'top-right')
