@@ -46,11 +46,11 @@ ZoomableImage.prototype = Object.create(Nanocomponent.prototype)
 ZoomableImage.prototype.zoomin = function () {
   var self = this
   var dim = getViewport()
-  if (dim[0] <= this.img.width) return
+  if (dim[0] <= this.element.width) return
   dim = dim.map(function (n) {
     return n * window.devicePixelRatio
   })
-  disableScroll(this.img)
+  disableScroll(this.element)
   var zoomedImgUrl = RESIZE_URL + dim[0] + '/' + dim[1] + '/70/' + this.url
   var zoomedImg = new Image()
   zoomedImg.crossOrigin = 'anonymous'
@@ -58,7 +58,7 @@ ZoomableImage.prototype.zoomin = function () {
     self.img.src = zoomedImgUrl
   }
   zoomedImg.src = zoomedImgUrl
-  var rect = this.img.getBoundingClientRect()
+  var rect = this.element.getBoundingClientRect()
   Object.assign(this.img.style, {
     top: rect.top + 'px',
     left: rect.left + 'px',
@@ -68,7 +68,7 @@ ZoomableImage.prototype.zoomin = function () {
     transform: 'translateZ(0)',
     zIndex: 9999
   })
-  this.img.insertBefore(this.shade, this.img)
+  this.element.insertBefore(this.shade, this.img)
   setTimeout(function () {
     self.img.style.cursor = 'zoom-out'
     self.shade.classList.add('zoomed')
@@ -88,7 +88,7 @@ ZoomableImage.prototype.zoomout = function () {
   this.shade.classList.remove('zoomed')
   this.shade.addEventListener('transitionend', this.removeShade)
   this.img.addEventListener('transitionend', this.returnInline)
-  var rect = this.img.getBoundingClientRect()
+  var rect = this.element.getBoundingClientRect()
   Object.assign(this.img.style, {
     top: rect.top + 'px',
     left: rect.left + 'px',
