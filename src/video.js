@@ -60,9 +60,16 @@ function ZoomableVideo () {
 ZoomableVideo.prototype = Object.create(Nanocomponent.prototype)
 
 ZoomableVideo.prototype.zoomin = function () {
+  var dim = getViewport()
+  if (dim[0] <= this.element.clientWidth) {
+    if (!this.background && this.player) {
+      this.player.play()
+    }
+    return
+  }
   this.shade.removeEventListener('transitionend', this.removeShade)
   this.wrapperDiv.removeEventListener('transitionend', this.returnInline)
-  this.wrapperDiv.addEventListener('mousewheel', noscroll)
+  disableScroll(this.wrapperDiv)
   var self = this
   var wrapperDiv = this.wrapperDiv
   var rect = this.element.getBoundingClientRect()
@@ -114,7 +121,7 @@ ZoomableVideo.prototype.removeShade = function () {
 
 ZoomableVideo.prototype.returnInline = function () {
   this.wrapperDiv.removeEventListener('transitionend', this.returnInline)
-  this.wrapperDiv.removeEventListener('mousewheel', noscroll)
+  enableScroll(this.wrapperDiv)
   this.wrapperDiv.onclick = this.zoomin
   if (this.iframe) this.iframe.style.transform = null
   Object.assign(this.wrapperDiv.style, {
@@ -133,7 +140,8 @@ ZoomableVideo.prototype.returnInline = function () {
 ZoomableVideo.prototype.onenter = function () {
   this.player = new Player(this.wrapperDiv, {
     url: this.url,
-    background: this.background
+    background: this.background,
+    playsinline: this.background
   })
   this.player.ready().then(() => {
     this.wrapperDiv.style.backgroundSize = 0
@@ -172,7 +180,24 @@ ZoomableVideo.prototype.update = function () {
   return false
 }
 
-function noscroll (e) {
+function getViewport () {
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+  return [w, h]
+}
+
+function disableScroll (el) {
+  el.addEventListener('mousewheel', stopPropagation)
+  el.addEventListener('touchmove', stopPropagation)
+}
+
+function enableScroll (el) {
+  el.removeEventListener('mousewheel', stopPropagation)
+  el.removeEventListener('touchmove', stopPropagation)
+}
+
+function stopPropagation (e) {
   e.stopPropagation()
   e.preventDefault()
+  return false
 }

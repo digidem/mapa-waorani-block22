@@ -14,7 +14,8 @@
       "caminos-viajar": 0,
       "community": 0,
       "yasuni-label": 0,
-      "yasuni": 0
+      "yasuni": 0,
+      "background": 0
     }
   },
   "oil-rush": {
@@ -35,7 +36,8 @@
       "community": 0,
       "yasuni-label": 1,
       "yasuni": 1,
-      "background": 1
+      "background": 1,
+      "rivers-large*": 1
     }
   },
   "maps-and-resistance": {
@@ -54,7 +56,8 @@
       "rivers-label-*": 1,
       "yasuni-label": 0,
       "yasuni": 0,
-      "background": 1
+      "background": 1,
+      "rivers-large*": 1
     }
   },
   "wildlife": {
@@ -75,7 +78,8 @@
       "rivers-area-peru-ecuador-colo*": 1,
       "yasuni-label": 0,
       "yasuni": 0,
-      "background": 1
+      "background": 1,
+      "rivers-large*": 1
     }
   },
   "pharmacy": {
@@ -96,7 +100,8 @@
       "rivers-area-peru-ecuador-colo*": 1,
       "yasuni-label": 0,
       "yasuni": 0,
-      "background": 1
+      "background": 1,
+      "rivers-large*": 1
     }
   },
   "culture": {
@@ -117,7 +122,8 @@
       "rivers-area-peru-ecuador-colo*": 1,
       "yasuni-label": 0,
       "yasuni": 0,
-      "background": 1
+      "background": 1,
+      "rivers-large*": 1
     }
   },
   "conflict-visions": {
@@ -140,7 +146,8 @@
       "rivers-area-peru-ecuador-colo*": 1,
       "yasuni-label": 0,
       "yasuni": 0,
-      "background": 1
+      "background": 1,
+      "rivers-large*": 1
     }
   },
   "resistance": {
@@ -162,7 +169,8 @@
       "rivers-area-peru-ecuador-colo*": 1,
       "yasuni-label": 0,
       "yasuni": 0,
-      "background": 1
+      "background": 1,
+      "rivers-large*": 1
     }
   }
 }

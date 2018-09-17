@@ -45,10 +45,12 @@ ZoomableImage.prototype = Object.create(Nanocomponent.prototype)
 
 ZoomableImage.prototype.zoomin = function () {
   var self = this
-  this.img.addEventListener('mousewheel', noscroll)
-  var dim = getViewport().map(function (n) {
+  var dim = getViewport()
+  if (dim[0] <= this.img.width) return
+  dim = dim.map(function (n) {
     return n * window.devicePixelRatio
   })
+  disableScroll(this.img)
   var zoomedImgUrl = RESIZE_URL + dim[0] + '/' + dim[1] + '/70/' + this.url
   var zoomedImg = new Image()
   zoomedImg.crossOrigin = 'anonymous'
@@ -56,7 +58,7 @@ ZoomableImage.prototype.zoomin = function () {
     self.img.src = zoomedImgUrl
   }
   zoomedImg.src = zoomedImgUrl
-  var rect = this.element.getBoundingClientRect()
+  var rect = this.img.getBoundingClientRect()
   Object.assign(this.img.style, {
     top: rect.top + 'px',
     left: rect.left + 'px',
@@ -66,7 +68,7 @@ ZoomableImage.prototype.zoomin = function () {
     transform: 'translateZ(0)',
     zIndex: 9999
   })
-  this.element.insertBefore(this.shade, this.img)
+  this.img.insertBefore(this.shade, this.img)
   setTimeout(function () {
     self.img.style.cursor = 'zoom-out'
     self.shade.classList.add('zoomed')
@@ -86,7 +88,7 @@ ZoomableImage.prototype.zoomout = function () {
   this.shade.classList.remove('zoomed')
   this.shade.addEventListener('transitionend', this.removeShade)
   this.img.addEventListener('transitionend', this.returnInline)
-  var rect = this.element.getBoundingClientRect()
+  var rect = this.img.getBoundingClientRect()
   Object.assign(this.img.style, {
     top: rect.top + 'px',
     left: rect.left + 'px',
@@ -103,7 +105,7 @@ ZoomableImage.prototype.removeShade = function () {
 
 ZoomableImage.prototype.returnInline = function () {
   this.img.removeEventListener('transitionend', this.returnInline)
-  this.img.removeEventListener('mousewheel', noscroll)
+  enableScroll(this.img)
   this.img.onclick = this.zoomin
   Object.assign(this.img.style, {
     objectFit: 'cover',
@@ -136,7 +138,7 @@ ZoomableImage.prototype.load = function (el) {
   var responsiveImg = new Image()
   var img = this.img
   // Get image width rounded to nearest 100
-  var width = Math.ceil(img.width / 100) * 100 * window.devicePixelRatio
+  var width = Math.ceil(this.img.width / 100) * 100 * window.devicePixelRatio
   var imageUrl = RESIZE_URL + width + '/' + this.url
   responsiveImg.crossOrigin = 'anonymous'
   responsiveImg.onload = function () {
@@ -151,7 +153,18 @@ function getViewport () {
   return [w, h]
 }
 
-function noscroll (e) {
+function disableScroll (el) {
+  el.addEventListener('mousewheel', stopPropagation)
+  el.addEventListener('touchmove', stopPropagation)
+}
+
+function enableScroll (el) {
+  el.removeEventListener('mousewheel', stopPropagation)
+  el.removeEventListener('touchmove', stopPropagation)
+}
+
+function stopPropagation (e) {
   e.stopPropagation()
   e.preventDefault()
+  return false
 }

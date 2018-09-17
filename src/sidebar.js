@@ -7,6 +7,9 @@ var document = require('global/document')
 var ZoomableImage = require('./image')
 var ZoomableVideo = require('./video')
 
+var ZoomableImage = require('./image')
+var ZoomableVideo = require('./video')
+
 function onIntersect () {
   if (typeof window === 'undefined') return
   onIntersectOrig.apply(null, arguments)
@@ -187,6 +190,10 @@ var style = css`
           padding-top: 0;
         }
       }
+      #scroll-container {
+        padding: 10px;
+        box-sizing: border-box;
+      }
     }
     :host:before {
       content: attr(data-content);
@@ -329,7 +336,7 @@ module.exports = function (lang, _map) {
         <p>
         ${message('testimony-caption')}</p>
         <p>
-        ${video('https://vimeo.com/270212698/62b62abe89', {
+        ${video(lang === 'es' ? 'https://vimeo.com/272374602' : 'https://vimeo.com/270212698/62b62abe89' , {
           background: false,
           placeholderImg: '5testimonies.jpg'})}
         </p>
@@ -337,7 +344,7 @@ module.exports = function (lang, _map) {
           <h2>${message('final-title')}</h2>
           <p class="big">${message('final-text')}</p>
           <p class='center'>
-            <a class='button-action' href='https://waoresist.amazonfrontlines.org/action/' target='_parent'>
+            <a class='button-action' href=${message('action-link')} target='_parent'>
               ${message('action-button')}
             </a>
           </p>
