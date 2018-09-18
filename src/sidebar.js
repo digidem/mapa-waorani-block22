@@ -2,6 +2,10 @@ const css = require('sheetify')
 const html = require('nanohtml')
 const raw = require('nanohtml/raw')
 const onIntersectOrig = require('on-intersect')
+var document = require('global/document')
+
+var ZoomableImage = require('./image')
+var ZoomableVideo = require('./video')
 
 var ZoomableImage = require('./image')
 var ZoomableVideo = require('./video')
@@ -22,14 +26,19 @@ var mapTransition = require('./map_transition')
 
 const IMAGE_URL = 'https://images.digital-democracy.org/waorani-images/'
 
-function mapView (id, onenter, el) {
+function mapView (id, el, onenter, onexit) {
+  var mobile = isMobile()
   // Don't consider title in map view until more than 40% from bottom
   // of the viewport
-  var opts = {
-    rootMargin: `0px 0px -40% 0px`
-  }
-  onIntersect(el, opts, function () {
+  var rootMarginWithMap = '0px 0px -40% 0px'
+  var rootMarginMobile = '-100% 0px 0px 0px'
+  onIntersect(el, {
+    root: document.getElementById('#scroll-container'),
+    rootMargin: mobile ? rootMarginMobile : rootMarginWithMap
+  }, function () {
     onenter(id)
+  }, function () {
+    onexit(id)
   })
   return el
 }
@@ -54,6 +63,9 @@ var style = css`
     height: 100%;
     overflow: hidden;
     transform: translateZ(0);
+    .mobile-background {
+      display: none;
+    }
     #scroll-container {
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
@@ -146,11 +158,50 @@ var style = css`
   }
   @media only screen and (max-width: 600px) {
     :host {
-      background: black;
+      background-color: black;
+      .mobile-background {
+        display: block;
+        transition: opacity 500ms linear;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
       #scroll-container {
         padding: 10px;
         box-sizing: border-box;
       }
+      #sidebar {
+        section {
+          p:last-child {
+            margin-bottom: 0;
+          }
+          padding-bottom: 75vh;
+          padding-top: 0;
+        }
+        section > h1:first-child, section > h2:first-child, section > h3:first-child  {
+          padding-top: 50vh;
+        }
+        section:first-child > h1:first-child {
+          padding-top: 0;
+        }
+      }
+      #scroll-container {
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+    :host:before {
+      content: attr(data-content);
+      padding-bottom: 20vh;
+      font-size: 40px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
     }
   }
   @media only screen and (min-width: 601px) {
@@ -173,19 +224,57 @@ var style = css`
 
 module.exports = function (lang, _map) {
   map = _map
+  var i = 0
+  var mobileBackground = html`<div class='mobile-background' />`
+  var entered = true
+
   function message (key) {
     var msg = translations[lang][key]
     return msg ? msg.message : translations['en'][key].message
   }
-  function onview (id) {
-    if (map) mapTransition(id, map)
+  function onenter (id) {
+    entered = true
+    var mobile = isMobile()
+    var sidebarWidth = document.getElementById('sidebar').clientWidth || 500
+    if (map) {
+      mapTransition(id, map, {
+        padding: {top: 0, left: sidebarWidth, right: 0, bottom: 0}
+      })
+    }
+    if (!mobile) return
+    var img = new Image()
+    var imageUrl = '/screenshots/' + id + '.jpg'
+    img.onload = function () {
+      if (mobileBackground.style.backgroundImage.indexOf(imageUrl) > -1) {
+        mobileBackground.style.opacity = 1
+        return
+      }
+      mobileBackground.addEventListener('transitionend', switchImage)
+      mobileBackground.style.opacity = 0
+    }
+    function switchImage () {
+      mobileBackground.removeEventListener('transitionend', switchImage)
+      mobileBackground.style.backgroundImage = 'url(' + imageUrl + ')'
+      // don't change opacity if we have exited whilst loading
+      if (!entered) mobileBackground.style.opacity = 0.3
+      else mobileBackground.style.opacity = 1
+    }
+    img.src = imageUrl
   }
- 
+
+  function onexit (id) {
+    entered = false
+    var mobile = isMobile()
+    if (!mobile) return
+    mobileBackground.style.opacity = 0.3
+  }
+
   return html`<div id="sidebar-wrapper" class=${style}>
+  ${mobileBackground}
   <div id="scroll-container">
     <div id="sidebar">
       <section>
-        ${mapView('start', onview, html`<h1>${message('title')}</h1>`)}
+        ${mapView('start', html`<h1>${message('title')}</h1>`, onenter, onexit)}
         ${video('https://vimeo.com/270209852/d857a916b5', {
           background: true,
           placeholderImg: '1territory.jpg'})}
@@ -196,7 +285,7 @@ module.exports = function (lang, _map) {
         <p>${message('start-2')}</p>
       </section>
       <section>
-        ${mapView('oil-rush', onview, html`<h2>${message('oil-rush-title')}</h2>`)}
+        ${mapView('oil-rush', html`<h2>${message('oil-rush-title')}</h2>`, onenter, onexit)}
         ${image('2a')}
         <p>${message('oil-rush')}</p>
         ${video('https://vimeo.com/270208622/ee7d7a12cc', {
@@ -204,7 +293,7 @@ module.exports = function (lang, _map) {
           placeholderImg: '2oil.jpg'})}
       </section>
       <section>
-        ${mapView('maps-and-resistance', onview, html`<h2>${message('maps-and-resistance-title')}</h2>`)}
+        ${mapView('maps-and-resistance', html`<h2>${message('maps-and-resistance-title')}</h2>`, onenter, onexit)}
         ${image('3a')}
         <p>${message('maps-and-resistance')}</p>
         ${image('3b')}
@@ -212,7 +301,7 @@ module.exports = function (lang, _map) {
         ${image('3c')}
       </section>
       <section>
-        ${mapView('wildlife', onview, html`<h2>${message('at-stake')}</h2>`)}
+        ${mapView('wildlife', html`<h2>${message('at-stake')}</h2>`, onenter, onexit)}
         <h3>${message('wildlife-title')}</h3>
         ${video('https://vimeo.com/270211119/a857892d50', {
           background: true,
@@ -221,13 +310,13 @@ module.exports = function (lang, _map) {
         ${image('4WildlifeB')}
       </section>
       <section>
-        ${mapView('pharmacy', onview, html`<h2>${message('pharmacy-title')}</h2>`)}
+        ${mapView('pharmacy', html`<h2>${message('pharmacy-title')}</h2>`, onenter, onexit)}
         ${image('5MedicineA')}
         <p>${message('pharmacy')}</p>
         ${image('5MedicineB')}
       </section>
       <section>
-        ${mapView('culture', onview, html`<h3>${message('living-title')}</h3>`)}
+        ${mapView('culture', html`<h3>${message('living-title')}</h3>`, onenter, onexit)}
         ${video('https://vimeo.com/270211741/575052a044', {
           background: false,
           placeholderImg: '4chant.jpg'})}
@@ -235,14 +324,13 @@ module.exports = function (lang, _map) {
         ${image('6CultureB')}
       </section>
       <section>
-        ${mapView('conflict-visions', onview, html`<h2>${message('conflict-visions-title')}</h2>`)}
+        ${mapView('conflict-visions', html`<h2>${message('conflict-visions-title')}</h2>`, onenter, onexit)}
         ${image('IMG_4881')}
         <p>${message('conflict-visions')}</p>
         ${image('7Conflictvisions')}
       </section>
       <section>
-        ${mapView('resistance', onview, html`
-          <h2>${message('resistance-title')}</h2>`)}
+        ${mapView('resistance', html`<h2>${message('resistance-title')}</h2>`, onenter, onexit)}
         <p>${message('resistance')}</p>
         ${image('8a')}
         <p>
@@ -268,4 +356,9 @@ module.exports = function (lang, _map) {
     </div>
   </div>
   </div>`
+}
+
+function isMobile () {
+  if (typeof window === 'undefined') return false
+  return window.innerWidth < 601
 }
