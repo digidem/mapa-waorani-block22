@@ -76,11 +76,11 @@
     "description": "final title"
   },
   "resistance": {
-    "message": "Armed with 500 years of experience fighting invasions, the Waorani are challenging the government’s plans to exploit oil in their rainforest. They have produced territorial maps documenting the rich biodiversity of their lands, and demonstrating their people’s historical and present-day connection to their forests.  They have organized dozens of community assemblies, building strategies to resist the imminent auctioning of their ancestral territory to the oil industry.",
+    "message": "In 2019 the Waorani of Pastaza beat big oil with a historic verdict indefinitely suspending the auctioning of Waorani lands to oil companies, immediately protecting nearly 500,000 acres of Amazon forest and calling into question the planned auctioning of 16 oil blocks over nearly 7 million acres of Indigenous territory. Now, led by their representative organization CONCONAWEP, the Waorani of Pastaza are building power in their communities through grassroots organizing and collective action.",
     "description": "resistance"
   },
   "final-text": {
-    "message": "Sign the global petition to support the Waorani peoples’ defense of their lands, their cultures, and our global climate. Tell oil companies that the most biodiverse place on Earth is not for sale.",
+    "message": "Armed with 500 years of fighting invasions and governing their territory, the Waorani are spearheading a movement in Ecuador to ensure that Indigenous peoples’ right to decide what happens in their territories is guaranteed. Sign their letter to Ecuador’s Constitutional Court and join the fight.",
     "description": "Final text under the heading"
   },
   "action-button": {
