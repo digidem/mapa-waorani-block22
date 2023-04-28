@@ -51,7 +51,7 @@ ZoomableImage.prototype.zoomin = function () {
     return n * window.devicePixelRatio
   })
   disableScroll(this.element)
-  var zoomedImgUrl = RESIZE_URL + dim[0] + '/' + dim[1] + '/70/' + this.url
+  var zoomedImgUrl = /** RESIZE_URL + dim[0] + '/' + dim[1] + '/70/' + */ this.url
   var zoomedImg = new Image()
   zoomedImg.crossOrigin = 'anonymous'
   zoomedImg.onload = function () {
@@ -123,7 +123,7 @@ ZoomableImage.prototype.returnInline = function () {
 
 ZoomableImage.prototype.createElement = function (url) {
   this.url = url
-  var src = RESIZE_URL + '400/400/20/' + url
+  var src = /** RESIZE_URL + '400/400/20/' + */ url
   this.img = html`<img class=${imageClass} crossorigin="anonymous" onclick=${this.zoomin} src=${src} />`
   this.shade = html`<div class=${shadeClass} />`
   this.shade.onclick = this.zoomout
@@ -139,7 +139,7 @@ ZoomableImage.prototype.load = function (el) {
   var img = this.img
   // Get image width rounded to nearest 100
   var width = Math.ceil(this.img.width / 100) * 100 * window.devicePixelRatio
-  var imageUrl = RESIZE_URL + width + '/' + this.url
+  var imageUrl = /** RESIZE_URL + width + '/' + */ this.url
   responsiveImg.crossOrigin = 'anonymous'
   responsiveImg.onload = function () {
     img.src = imageUrl
