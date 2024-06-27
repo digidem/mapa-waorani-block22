@@ -12,7 +12,7 @@ var config = require('../mapbox-config')
 
 var cachableUrls = [
   'https://fonts.googleapis.com/css?family=Nunito+Sans',
-  'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver',
+  'https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=IntersectionObserver',
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css',
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'
 ]
